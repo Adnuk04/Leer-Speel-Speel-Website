@@ -5,6 +5,19 @@
     var yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+    /* ---------- Logo: scroll to top ----------
+       The header is position:sticky, so its own bounding box is always at
+       y=0 once stuck — the browser's native #top anchor jump sees it as
+       "already in view" and does nothing. Scroll explicitly instead. */
+    var wordmark = document.querySelector('.wordmark');
+    if (wordmark) {
+        wordmark.addEventListener('click', function (event) {
+            event.preventDefault();
+            var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+        });
+    }
+
     /* ---------- Mobile nav ---------- */
     var navToggle = document.getElementById('navToggle');
     var primaryNav = document.getElementById('primaryNav');
@@ -126,7 +139,13 @@
         });
     }
 
-    /* ---------- Enquiry form (opens the visitor's email app; nothing is sent automatically) ---------- */
+    /* ---------- Enquiry form ----------
+       TEMPORARY (demo only): opens Gmail's web compose in a new tab, addressed
+       to Sean's inbox, instead of a mailto: link (which was launching Outlook
+       or whatever the OS default mail app happened to be). Nothing is sent
+       automatically. Before handing the site over to the school, switch this
+       back to a plain mailto: link addressed to potgieter@iway.na so it works
+       regardless of which email provider or app the visitor uses. */
     var enquiryForm = document.getElementById('enquiryForm');
     if (enquiryForm) {
         enquiryForm.addEventListener('submit', function (event) {
@@ -146,9 +165,8 @@
             var subject = encodeURIComponent('Enrolment Enquiry - Leer Speel-Speel');
             var body = encodeURIComponent(bodyLines.join('\n'));
 
-            // TEMPORARY (demo testing): routes to Sean's inbox so the flow can be tested end to end.
-            // Change back to potgieter@iway.na before handing the site over to the school.
-            window.location.href = 'mailto:seanchembe@gmail.com?subject=' + subject + '&body=' + body;
+            var gmailComposeUrl = 'https://mail.google.com/mail/u/0/?view=cm&fs=1&to=seanchembe@gmail.com&su=' + subject + '&body=' + body;
+            window.open(gmailComposeUrl, '_blank', 'noopener');
         });
     }
 })();
