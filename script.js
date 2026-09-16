@@ -53,6 +53,7 @@
     var galleryItems = Array.prototype.slice.call(document.querySelectorAll('.gallery-item'));
     var lightbox = document.getElementById('lightbox');
     var lightboxCaption = document.getElementById('lightboxCaption');
+    var lightboxImage = document.getElementById('lightboxImage');
     var lightboxPrev = document.getElementById('lightboxPrev');
     var lightboxNext = document.getElementById('lightboxNext');
     var currentIndex = 0;
@@ -61,8 +62,14 @@
     function showItem(index) {
         if (!galleryItems.length) return;
         currentIndex = (index + galleryItems.length) % galleryItems.length;
-        var caption = galleryItems[currentIndex].getAttribute('data-caption') || 'Photo coming soon';
-        if (lightboxCaption) lightboxCaption.textContent = caption + ' — real photo coming soon';
+        var item = galleryItems[currentIndex];
+        var caption = item.getAttribute('data-caption') || 'Photo';
+        var file = item.getAttribute('data-file');
+        if (lightboxCaption) lightboxCaption.textContent = caption;
+        if (lightboxImage && file) {
+            lightboxImage.src = file;
+            lightboxImage.alt = item.querySelector('img') ? item.querySelector('img').alt : caption;
+        }
     }
 
     function openLightbox(index, trigger) {
