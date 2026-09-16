@@ -159,21 +159,12 @@ p:last-child { margin-bottom: 0; }
     align-items: center;
     gap: 0.75rem;
 }
-.wordmark-mark { flex-shrink: 0; display: flex; }
-.wordmark-logo { width: 44px; height: 44px; border-radius: 14px; }
-.wordmark-text { display: flex; flex-direction: column; line-height: 1.15; }
-.wordmark-line1 {
-    font-family: var(--font-heading);
-    font-weight: 800;
-    font-size: 1.2rem;
-    color: var(--color-green-dark);
-}
-.wordmark-line2 {
-    font-size: 0.72rem;
-    font-weight: 700;
-    color: var(--color-blue-soft);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
+.wordmark-logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    object-fit: cover;
+    flex-shrink: 0;
 }
 
 .nav-toggle {
