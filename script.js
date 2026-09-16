@@ -139,7 +139,9 @@
             var subject = encodeURIComponent('Enrolment Enquiry - Leer Speel-Speel');
             var body = encodeURIComponent(bodyLines.join('\n'));
 
-            window.location.href = 'mailto:potgieter@iway.na?subject=' + subject + '&body=' + body;
+            // TEMPORARY (demo testing): routes to Sean's inbox so the flow can be tested end to end.
+            // Change back to potgieter@iway.na before handing the site over to the school.
+            window.location.href = 'mailto:seanchembe@gmail.com?subject=' + subject + '&body=' + body;
         });
     }
 })();
