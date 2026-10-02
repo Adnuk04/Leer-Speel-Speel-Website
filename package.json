@@ -1,0 +1,29 @@
+{
+  "name": "leer-speel-speel",
+  "version": "1.0.0",
+  "description": "Website for Leer Speel-Speel school, built with plain HTML, CSS, and JavaScript.",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx live-server --port=3000",
+    "lint": "npx eslint script.js"
+  },
+  "keywords": [
+    "school",
+    "website",
+    "static-site",
+    "leer-speel-speel"
+  ],
+  "author": "Sean Chembe <seanchembe@gmail.com>",
+  "license": "UNLICENSED",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Adnuk04/my-first-website.git"
+  },
+  "devDependencies": {
+    "eslint": "^9.9.0",
+    "live-server": "^1.2.2",
+    "serve": "^14.2.3"
+  }
+}

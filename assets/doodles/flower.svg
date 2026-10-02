@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 130" fill="none"><defs><filter id="crayon" x="-15%" y="-15%" width="130%" height="130%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="wobble"/><feDisplacementMap in="SourceGraphic" in2="wobble" scale="4" xChannelSelector="R" yChannelSelector="G" result="shaky"/><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="9" result="grain"/><feColorMatrix in="grain" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -2.4 0 0 0 1.75" result="grainMask"/><feComposite in="shaky" in2="grainMask" operator="in"/></filter></defs>
+<g filter="url(#crayon)" stroke-linecap="round" stroke-linejoin="round">
+<path d="M50 58c-2 22 2 44-1 66" stroke="#3FA34D" stroke-width="4"/>
+<path d="M49 98c-14-2-24-10-26-20 12 0 22 8 26 20zM51 88c12-4 22-12 24-22-12 1-21 9-24 22z" fill="#9FD9A8" stroke="#3FA34D" stroke-width="3"/>
+<path d="M50 6c7 0 12 5 12 12s-5 10-12 10-12-4-12-11 5-11 12-11zM70 21c7 2 10 9 8 15s-9 8-15 6-9-7-7-13 7-10 14-8zM63 45c6 4 7 12 3 17s-12 5-17 1-5-10-1-15 9-7 15-3zM37 45c6-4 13-2 16 3s2 12-3 15-13 3-16-2-3-12 3-16zM22 25c3-7 10-9 16-6s8 9 5 15-10 8-16 5-8-8-5-14z" fill="#F7B3AE" stroke="#E8483F" stroke-width="3"/>
+<path d="M50 30c5 0 9 4 9 9s-4 8-9 8-9-3-9-8 4-9 9-9z" fill="#F6C443" stroke="#F28C28" stroke-width="3"/>
+</g></svg>

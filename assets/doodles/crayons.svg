@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 124" fill="none"><defs><filter id="crayon" x="-15%" y="-15%" width="130%" height="130%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="wobble"/><feDisplacementMap in="SourceGraphic" in2="wobble" scale="4" xChannelSelector="R" yChannelSelector="G" result="shaky"/><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="9" result="grain"/><feColorMatrix in="grain" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -2.4 0 0 0 1.75" result="grainMask"/><feComposite in="shaky" in2="grainMask" operator="in"/></filter></defs>
+<g filter="url(#crayon)" stroke-linecap="round" stroke-linejoin="round">
+<g transform="translate(18 72) rotate(-30)">
+<path d="M2-2.5L19-9v18L2 2.5z" fill="#F6C443" stroke="#B45309" stroke-width="2.4"/>
+<path d="M19-9h76c3 0 5 4 5 9s-2 9-5 9H19z" fill="#F6C443" stroke="#B45309" stroke-width="2.6"/>
+<path d="M33-9h50v18H33z" fill="#FEF7DC" stroke="#B45309" stroke-width="2.2"/>
+<path d="M38-3l6 6 6-6 6 6 6-6 6 6 6-6 6 6" stroke="#B45309" stroke-width="1.8"/>
+<path d="M88-9v18M91-9v18" stroke="#B45309" stroke-width="1.6"/>
+</g>
+<g transform="translate(30 88) rotate(-30)">
+<path d="M2-2.5L19-9v18L2 2.5z" fill="#3FA34D" stroke="#2E7D3A" stroke-width="2.4"/>
+<path d="M19-9h76c3 0 5 4 5 9s-2 9-5 9H19z" fill="#3FA34D" stroke="#2E7D3A" stroke-width="2.6"/>
+<path d="M33-9h50v18H33z" fill="#E3F4E6" stroke="#2E7D3A" stroke-width="2.2"/>
+<path d="M38-3l6 6 6-6 6 6 6-6 6 6 6-6 6 6" stroke="#2E7D3A" stroke-width="1.8"/>
+<path d="M88-9v18M91-9v18" stroke="#2E7D3A" stroke-width="1.6"/>
+</g>
+<g transform="translate(42 104) rotate(-30)">
+<path d="M2-2.5L19-9v18L2 2.5z" fill="#2E9BDA" stroke="#1D6F91" stroke-width="2.4"/>
+<path d="M19-9h76c3 0 5 4 5 9s-2 9-5 9H19z" fill="#2E9BDA" stroke="#1D6F91" stroke-width="2.6"/>
+<path d="M33-9h50v18H33z" fill="#E4F3FB" stroke="#1D6F91" stroke-width="2.2"/>
+<path d="M38-3l6 6 6-6 6 6 6-6 6 6 6-6 6 6" stroke="#1D6F91" stroke-width="1.8"/>
+<path d="M88-9v18M91-9v18" stroke="#1D6F91" stroke-width="1.6"/>
+</g>
+</g></svg>
