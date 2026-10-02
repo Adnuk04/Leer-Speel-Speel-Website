@@ -8,11 +8,12 @@ Built as a single-page static site with plain HTML, CSS, and JavaScript — no b
 
 - **Responsive single-page layout** covering Hero, About, What We Offer, A Day of Learning, Gallery, Downloads, Locations, and Contact/Enrolment sections
 - **Accessible mobile navigation** with a hamburger toggle, `aria-expanded` state, outside-click and `Escape`-key dismissal
-- **Photo gallery with lightbox** — click any photo to open a full-size, keyboard-navigable viewer (arrow keys, `Escape`, focus trap, and focus restoration on close)
-- **Downloadable resources** section linking to PDF documents (fees structure and application form) that open in a new tab
+- **Photo gallery in albums** — a highlights mosaic plus illustrated Premises / Petting Zoo / Fun Days album cards that open each album in a pop-up; photos open in a full-size lightbox (arrow keys, swipe, `Escape`, focus trap, and focus restoration)
+- **Rainbow colour system and crayon-style doodles** — section accents in red → violet order and hand-drawn-style SVG decorations
+- **Downloadable resources** section linking to the school’s parent guides (Ongwediva & Okatana) and forms (registration, transport, uniform order), opening in a new tab
 - **Enrolment enquiry form** that builds an email (parent/child name and message) and opens it as a pre-filled Gmail compose window — nothing is sent automatically
 - **Location cards** for both campuses with click-to-call phone links and a Google Maps "Get Directions" link
-- **Social links** to Facebook and Instagram, plus a footer with quick links, contact details, locations, and banking details
+- **Social links** to Facebook and Instagram, plus a footer with quick links, contact details, locations, and how to request banking details
 - **Accessibility touches** throughout: skip-to-content link, `aria-label`/`aria-live` attributes, screen-reader-only text, and reduced-motion support for smooth scrolling
 - **Auto-updating copyright year** in the footer
 - Custom fonts (Baloo 2 and Nunito via Google Fonts) and a favicon using the centre's logo
@@ -30,10 +31,11 @@ Built as a single-page static site with plain HTML, CSS, and JavaScript — no b
 Leer Speel-Speel/
 ├── index.html              Main page markup
 ├── style.css                Site-wide styles
-├── script.js                 Navigation, gallery lightbox, and enquiry form logic
+├── script.js                 Navigation, album pop-up, gallery lightbox, and enquiry form logic
 ├── assets/
 │   ├── images/               Logo and gallery photos
-│   └── documents/            Downloadable PDFs (fees structure, application form)
+│   ├── doodles/              Crayon-style SVG decorations
+│   └── documents/            Parent guides and forms (PDF)
 ├── package.json               Project metadata and npm scripts
 └── README.md
 ```
@@ -81,4 +83,3 @@ This is a static website, so no build step is strictly required — you can open
 ## Notes
 
 - The enquiry form currently opens a Gmail compose window as a temporary demo measure (see the comment in [script.js](script.js)). Before go-live, this should be switched to a plain `mailto:` link addressed to the school's inbox so it works regardless of the visitor's email provider.
-- Banking details in the footer are placeholders ("To be confirmed") pending information from the school.
