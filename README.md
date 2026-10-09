@@ -6,13 +6,15 @@ Built as a single-page static site with plain HTML, CSS, and JavaScript — no b
 
 ## Features
 
-- **Responsive single-page layout** covering Hero, About, What We Offer, A Day of Learning, Gallery, Downloads, Locations, and Contact/Enrolment sections
-- **Accessible mobile navigation** with a hamburger toggle, `aria-expanded` state, outside-click and `Escape`-key dismissal
-- **Photo gallery in albums** — a highlights mosaic plus illustrated Premises / Petting Zoo / Fun Days album cards that open each album in a pop-up; photos open in a full-size lightbox (arrow keys, swipe, `Escape`, focus trap, and focus restoration)
-- **Rainbow colour system and crayon-style doodles** — section accents in red → violet order and hand-drawn-style SVG decorations
+- **Responsive single-page layout** covering Hero, At a Glance stats, About, What We Offer, A Day of Learning, Gallery, Downloads, Campuses, and Contact/Enrolment sections
+- **Accessible mobile navigation** with an animated hamburger toggle and drop-down panel, `aria-expanded` state, outside-click and `Escape`-key dismissal
+- **Picture gallery in albums** (illustrations standing in until the school's real photos arrive) — a highlights mosaic, swipeable on phones, plus illustrated Premises / Petting Zoo / Fun Days album cards that open each album in a pop-up; photos open in a full-size lightbox (arrow keys, swipe, `Escape`, focus trap, and focus restoration)
+- **Rainbow colour system and crayon doodles** — every section tinted in red → violet order with wavy or scalloped dividers, and floating crayon drawings and illustrations (prompts logged in `assets/images/fal-prompts.md`)
+- **WhatsApp first** — a "WhatsApp Us" button ahead of every email option, a sticky WhatsApp/Call bar on phones and a floating button on wider screens; the number lives in one constant at the top of `script.js`
+- **Gentle motion** — scroll reveals, count-up stats and tap feedback, all switched off for visitors who prefer reduced motion
 - **Downloadable resources** section linking to the school’s parent guides (Ongwediva & Okatana) and forms (registration, transport, uniform order), opening in a new tab
 - **Enrolment enquiry form** that builds an email (parent/child name and message) and opens it as a pre-filled Gmail compose window — nothing is sent automatically
-- **Location cards** for both campuses with click-to-call phone links and a Google Maps "Get Directions" link
+- **Campus cards** for Ongwediva and Okatana, each with an embedded map, click-to-call phone link and a Google Maps "Get Directions" button
 - **Social links** to Facebook and Instagram, plus a footer with quick links, contact details, locations, and how to request banking details
 - **Accessibility touches** throughout: skip-to-content link, `aria-label`/`aria-live` attributes, screen-reader-only text, and reduced-motion support for smooth scrolling
 - **Auto-updating copyright year** in the footer
@@ -31,10 +33,10 @@ Built as a single-page static site with plain HTML, CSS, and JavaScript — no b
 Leer Speel-Speel/
 ├── index.html              Main page markup
 ├── style.css                Site-wide styles
-├── script.js                 Navigation, album pop-up, gallery lightbox, and enquiry form logic
+├── script.js                 WhatsApp links, navigation, album pop-up, gallery lightbox, motion, and enquiry form logic
 ├── assets/
-│   ├── images/               Logo and gallery photos
-│   ├── doodles/              Crayon-style SVG decorations
+│   ├── images/               Logo, illustrations and gallery pictures
+│   ├── doodles/              Crayon doodles (SVG and WebP) and section dividers
 │   └── documents/            Parent guides and forms (PDF)
 ├── package.json               Project metadata and npm scripts
 └── README.md

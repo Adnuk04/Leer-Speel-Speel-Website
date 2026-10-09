@@ -31,6 +31,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Shared icon: referenced by every WhatsApp button with <use href="#icon-whatsapp"> -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </symbol>
+    </svg>
+
     <a class="skip-link" href="#main">Skip to main content</a>
 
     <header class="site-header" id="top">
@@ -65,46 +72,94 @@
 
     <main id="main">
         <!-- HERO -->
-        <section class="hero has-doodles" aria-labelledby="hero-heading">
+        <section class="hero" aria-labelledby="hero-heading">
+            <!-- Crayon doodles: decorative, behind the content. Each one is placed with
+                 inline custom properties (--t/--r/--b/--l position, --s width, --rot angle,
+                 --dur animation length). doodle--desk hides on phones, doodle--wide shows
+                 only on wide screens. See "Crayon doodles" in style.css. -->
+            <div class="doodle-layer" aria-hidden="true">
+                <img class="doodle doodle--spin doodle--desk" src="assets/doodles/doodle-sun.webp" alt="" width="494" height="512" decoding="async" style="--r:-60px;--t:-72px;--s:250px;--dur:70s">
+                <img class="doodle doodle--drift" src="assets/doodles/doodle-cloud.webp" alt="" width="512" height="364" decoding="async" style="--l:36%;--t:14px;--s:118px;--dur:19s">
+                <img class="doodle doodle--drift" src="assets/doodles/doodle-cloud.webp" alt="" width="512" height="364" decoding="async" style="--l:6%;--t:20px;--s:82px;--rot:-4deg;--dur:26s">
+                <img class="doodle doodle--drift doodle--desk" src="assets/doodles/cloud.svg" alt="" width="120" height="80" decoding="async" style="--r:23%;--t:26px;--s:64px;--dur:23s">
+                <img class="doodle doodle--wiggle" src="assets/doodles/doodle-star.webp" alt="" width="512" height="454" decoding="async" style="--l:47%;--b:12px;--s:42px;--rot:10deg;--dur:5s">
+                <img class="doodle doodle--bob doodle--desk" src="assets/doodles/doodle-star.webp" alt="" width="512" height="454" decoding="async" style="--l:20%;--b:16px;--s:28px;--rot:-14deg;--dur:6.5s">
+                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-flower.webp" alt="" width="392" height="512" decoding="async" style="--l:1%;--b:-8px;--s:66px;--rot:-6deg;--dur:7s">
+                <img class="doodle doodle--float" src="assets/doodles/doodle-butterfly.webp" alt="" width="512" height="342" decoding="async" style="--r:5%;--b:10px;--s:70px;--rot:12deg;--dur:8s">
+                <img class="doodle doodle--bob doodle--wide" src="assets/doodles/doodle-kite.webp" alt="" width="316" height="512" decoding="async" style="--l:1.5%;--t:38%;--s:74px;--rot:-12deg;--dur:9s">
+            </div>
             <div class="container hero-inner">
                 <div class="hero-copy">
                     <p class="eyebrow">Daycare &amp; Pre-Primary · Ongwediva &amp; Okatana</p>
-                    <h1 id="hero-heading">Leer Speel-Speel<br><span class="hero-subname">Play-to-Learn Educational Centre</span></h1>
+                    <h1 id="hero-heading">Leer <span class="hero-word">Speel</span>-<span class="hero-word">Speel</span><br><span class="hero-subname">Play-to-Learn Educational Centre</span></h1>
                     <p class="hero-motto">&ldquo;Because every child deserves to be loved, guided and truly known.&rdquo;</p>
                     <p class="hero-lead">A warm, holistic daycare and pre-primary centre in Ongwediva and Okatana for children from 3 months to Grade 0 &mdash; teaching in English and Afrikaans, with meals provided and half-day or full-day options.</p>
                     <div class="hero-actions">
+                        <a class="btn btn-whatsapp" data-whatsapp href="https://wa.me/264812156444?text=Hi%20Leer%20Speel%20Speel%2C%20I%27d%20like%20to%20ask%20about%20enrolment" target="_blank" rel="noopener noreferrer">
+                            <svg class="btn-icon" aria-hidden="true" focusable="false"><use href="#icon-whatsapp"/></svg>
+                            WhatsApp Us<span class="sr-only"> (opens in a new tab)</span>
+                        </a>
                         <a class="btn btn-primary" href="#contact">Enquire About Enrolment</a>
                         <a class="btn btn-secondary" href="#about">Explore Our Centre</a>
                     </div>
                 </div>
 
-                <div class="hero-visual" role="img" aria-label="Photo of the Leer Speel-Speel centre — coming soon">
-                    <!--
-                        PHOTO SLOT: replace this placeholder div with a real photo once approved, e.g.:
-                        <img src="assets/images/hero.jpg" alt="Children playing and learning at Leer Speel-Speel">
-                    -->
-                    <div class="hero-visual-blob hero-visual-blob-1" aria-hidden="true"></div>
-                    <div class="hero-visual-blob hero-visual-blob-2" aria-hidden="true"></div>
-                    <div class="hero-visual-frame">
-                        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <rect x="3" y="6" width="18" height="14" rx="2.5" stroke="currentColor" stroke-width="1.6"/>
-                            <path d="M3 9.5h18" stroke="currentColor" stroke-width="1.6"/>
-                            <circle cx="8" cy="4.5" r="1.1" fill="currentColor"/>
-                            <circle cx="16" cy="4.5" r="1.1" fill="currentColor"/>
-                            <path d="M8 14.5l2.4 2.4L16.5 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <p>A photo of our centre is coming soon</p>
-                    </div>
-                </div>
+                <!-- ILLUSTRATION SLOT: swap for a real photo of the centre once one is approved
+                     (keep the width/height attributes in step with the new file). -->
+                <figure class="hero-visual">
+                    <img src="assets/images/illustration-school.webp" alt="Illustration of a small school building with a red roof and a blue door, beside a fenced playground with a swing and a slide, under palm trees and a bright sun." width="1140" height="852" fetchpriority="high" decoding="async">
+                </figure>
+            </div>
+        </section>
+
+        <!-- AT A GLANCE
+             Numbers count up when scrolled into view (script.js). All four come from the
+             parent guides. Not shown yet: years open — add it once the school confirms the
+             year it opened, e.g.
+             <li class="stat accent-green"><span class="stat-number"><span data-count="[XX]">[XX]</span></span><span class="stat-label">years of caring for little ones</span></li> -->
+        <section class="stats accent-pink" aria-label="Leer Speel-Speel at a glance">
+            <div class="doodle-layer" aria-hidden="true">
+                <img class="doodle doodle--wiggle" src="assets/doodles/doodle-star.webp" alt="" width="512" height="454" loading="lazy" decoding="async" style="--l:2.5%;--t:12px;--s:38px;--rot:-12deg;--dur:6s">
+                <img class="doodle doodle--bob doodle--desk" src="assets/doodles/doodle-heart.webp" alt="" width="512" height="501" loading="lazy" decoding="async" style="--r:3%;--b:10px;--s:34px;--rot:14deg;--dur:7s">
+            </div>
+            <div class="container">
+                <ul class="stats-list">
+                    <li class="stat accent-red">
+                        <span class="stat-number"><span data-count="2">2</span></span>
+                        <span class="stat-label">campuses: Ongwediva &amp; Okatana</span>
+                    </li>
+                    <li class="stat accent-yellow">
+                        <span class="stat-number"><span data-count="3">3</span><small>months</small></span>
+                        <span class="stat-label">old and up, all the way to Grade 0</span>
+                    </li>
+                    <li class="stat accent-blue">
+                        <span class="stat-number"><span data-count="2">2</span></span>
+                        <span class="stat-label">languages: English &amp; Afrikaans</span>
+                    </li>
+                    <li class="stat accent-violet">
+                        <span class="stat-number"><span data-count="10">10</span><small>hours</small></span>
+                        <span class="stat-label">of care a day, 07:00&ndash;17:00</span>
+                    </li>
+                </ul>
             </div>
         </section>
 
         <!-- ABOUT -->
         <section id="about" class="section accent-red" aria-labelledby="about-heading">
+            <div class="doodle-layer" aria-hidden="true">
+                <img class="doodle doodle--wiggle" src="assets/doodles/doodle-heart.webp" alt="" width="512" height="501" loading="lazy" decoding="async" style="--r:5%;--t:20px;--s:60px;--rot:12deg;--dur:6s">
+                <img class="doodle doodle--bob doodle--desk" src="assets/doodles/doodle-abc.webp" alt="" width="512" height="219" loading="lazy" decoding="async" style="--r:15%;--t:28px;--s:124px;--rot:-6deg;--dur:8s">
+                <img class="doodle doodle--bob" src="assets/doodles/doodle-apple.webp" alt="" width="439" height="512" loading="lazy" decoding="async" style="--r:3%;--b:12px;--s:58px;--rot:-10deg;--dur:7.5s">
+                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-star.webp" alt="" width="512" height="454" loading="lazy" decoding="async" style="--l:46%;--b:22px;--s:32px;--rot:18deg;--dur:5.5s">
+                <img class="doodle doodle--spin doodle--wide" src="assets/doodles/doodle-scribble.webp" alt="" width="512" height="467" loading="lazy" decoding="async" style="--r:1.5%;--t:44%;--s:86px;--dur:48s">
+            </div>
             <div class="container section-grid">
                 <div class="section-heading">
                     <p class="eyebrow">About Us</p>
                     <h2 id="about-heading">Learning that feels like play</h2>
+                    <figure class="art-frame art-frame--left">
+                        <img src="assets/images/illustration-story-time.webp" alt="Illustration of a teacher reading a picture book to five children sitting on a colourful round rug in a classroom." width="900" height="673" loading="lazy" decoding="async">
+                    </figure>
                 </div>
                 <div class="section-copy">
                     <p>At Leer Speel-Speel / Play-to-Learn Educational Centre, we believe every child deserves to be loved, guided and truly known. Our daycare and pre-primary programme takes a holistic approach to early learning, nurturing each child's curiosity, confidence and character alongside their early academic skills.</p>
@@ -115,11 +170,23 @@
 
         <!-- WHAT WE OFFER -->
         <section id="offer" class="section section-alt accent-orange" aria-labelledby="offer-heading">
+            <div class="doodle-layer" aria-hidden="true">
+                <img class="doodle doodle--bob" src="assets/doodles/doodle-balloon.webp" alt="" width="275" height="512" loading="lazy" decoding="async" style="--l:4%;--t:8px;--s:44px;--rot:-8deg;--dur:7s">
+                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-123.webp" alt="" width="512" height="241" loading="lazy" decoding="async" style="--r:4%;--t:24px;--s:128px;--rot:8deg;--dur:6.5s">
+                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-star.webp" alt="" width="512" height="454" loading="lazy" decoding="async" style="--l:14%;--t:42px;--s:32px;--rot:-18deg;--dur:5s">
+                <img class="doodle doodle--wiggle" src="assets/doodles/doodle-flower.webp" alt="" width="392" height="512" loading="lazy" decoding="async" style="--r:2.5%;--b:6px;--s:58px;--rot:8deg;--dur:8s">
+                <img class="doodle doodle--drift doodle--desk" src="assets/doodles/doodle-cloud.webp" alt="" width="512" height="364" loading="lazy" decoding="async" style="--l:5%;--b:18px;--s:104px;--dur:21s">
+                <img class="doodle doodle--bob doodle--wide" src="assets/doodles/doodle-kite.webp" alt="" width="316" height="512" loading="lazy" decoding="async" style="--l:1.5%;--t:42%;--s:78px;--rot:14deg;--dur:9.5s">
+            </div>
             <div class="container">
                 <div class="section-heading section-heading-center">
                     <p class="eyebrow">What We Offer</p>
                     <h2 id="offer-heading">Care and learning, all in one place</h2>
                 </div>
+
+                <figure class="art-frame art-frame--banner">
+                    <img src="assets/images/illustration-building-blocks.webp" alt="Illustration of colourful wooden building blocks stacked into a tower and an arch, with crayons scattered on a classroom table." width="900" height="502" loading="lazy" decoding="async">
+                </figure>
 
                 <ul class="offer-grid">
                     <li class="offer-card accent-red">
@@ -169,7 +236,15 @@
         </section>
 
         <!-- A DAY OF LEARNING -->
-        <section id="day" class="section accent-yellow has-doodles" aria-labelledby="day-heading">
+        <section id="day" class="section accent-yellow" aria-labelledby="day-heading">
+            <div class="doodle-layer" aria-hidden="true">
+                <img class="doodle doodle--spin doodle--desk" src="assets/doodles/doodle-sun.webp" alt="" width="494" height="512" loading="lazy" decoding="async" style="--r:-52px;--t:-62px;--s:210px;--dur:80s">
+                <img class="doodle doodle--float" src="assets/doodles/doodle-butterfly.webp" alt="" width="512" height="342" loading="lazy" decoding="async" style="--l:5%;--t:24px;--s:80px;--rot:-10deg;--dur:8.5s">
+                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-star.webp" alt="" width="512" height="454" loading="lazy" decoding="async" style="--l:18%;--t:52px;--s:28px;--rot:16deg;--dur:5.5s">
+                <img class="doodle doodle--bob" src="assets/doodles/doodle-handprint.webp" alt="" width="415" height="512" loading="lazy" decoding="async" style="--l:2%;--b:10px;--s:60px;--rot:-14deg;--dur:7s">
+                <img class="doodle doodle--drift doodle--desk" src="assets/doodles/doodle-cloud.webp" alt="" width="512" height="364" loading="lazy" decoding="async" style="--r:13%;--b:16px;--s:108px;--dur:24s">
+                <img class="doodle doodle--wiggle doodle--wide" src="assets/doodles/doodle-heart.webp" alt="" width="512" height="501" loading="lazy" decoding="async" style="--r:1.5%;--t:50%;--s:68px;--rot:10deg;--dur:6s">
+            </div>
             <div class="container">
                 <div class="section-heading section-heading-center">
                     <p class="eyebrow">A Day of Learning</p>
@@ -177,6 +252,10 @@
                     <p class="section-intro">Every day at Leer Speel-Speel is built around gentle discovery &mdash; time to play, time to learn, and time to simply be a child in a place that feels like home.</p>
                 </div>
 
+                <div class="day-layout">
+                <figure class="art-frame art-frame--right">
+                    <img src="assets/images/illustration-finger-painting.webp" alt="Illustration of children's hands finger painting bright handprints and swirls on a big sheet of paper, with pots of red, yellow, blue and green paint." width="900" height="673" loading="lazy" decoding="async">
+                </figure>
                 <div class="day-grid">
                     <div class="day-card accent-red">
                         <span class="day-icon" aria-hidden="true">
@@ -207,6 +286,7 @@
                         <p>A gentle, encouraging environment that helps every child grow in confidence, day by day.</p>
                     </div>
                 </div>
+                </div>
             </div>
         </section>
 
@@ -215,47 +295,59 @@
              album pop-up (#albumModal) and opens it when the URL hash is #album-<name>; without JS
              they render inline here. Each [data-gallery-group] is its own lightbox set. To add a photo, add a .gallery-item <li> to an album's grid —
              the album card's photo count updates automatically. -->
-        <section id="gallery" class="section section-alt accent-green has-doodles" aria-labelledby="gallery-heading">
+        <section id="gallery" class="section section-alt accent-green" aria-labelledby="gallery-heading">
+            <div class="doodle-layer" aria-hidden="true">
+                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-tree.webp" alt="" width="512" height="428" loading="lazy" decoding="async" style="--l:-34px;--b:-12px;--s:190px;--rot:-4deg;--dur:11s">
+                <img class="doodle doodle--bob" src="assets/doodles/doodle-kite.webp" alt="" width="316" height="512" loading="lazy" decoding="async" style="--r:4%;--t:6px;--s:50px;--rot:12deg;--dur:8s">
+                <img class="doodle doodle--wiggle" src="assets/doodles/doodle-star.webp" alt="" width="512" height="454" loading="lazy" decoding="async" style="--l:5%;--t:28px;--s:44px;--rot:-10deg;--dur:5.5s">
+                <img class="doodle doodle--bob doodle--desk" src="assets/doodles/doodle-heart.webp" alt="" width="512" height="501" loading="lazy" decoding="async" style="--l:16%;--t:54px;--s:26px;--rot:16deg;--dur:6.5s">
+                <img class="doodle doodle--drift doodle--desk" src="assets/doodles/doodle-snail.webp" alt="" width="512" height="384" loading="lazy" decoding="async" style="--r:6%;--b:12px;--s:84px;--dur:28s">
+                <img class="doodle doodle--bob doodle--wide" src="assets/doodles/balloons.svg" alt="" width="110" height="150" loading="lazy" decoding="async" style="--r:1.5%;--t:34%;--s:82px;--rot:6deg;--dur:9s">
+            </div>
             <div class="container">
                 <div class="section-heading section-heading-center">
                     <p class="eyebrow">Gallery</p>
                     <h2 id="gallery-heading">A peek into our centre</h2>
-                    <p class="section-intro">A glimpse of the play, learning and care that fills each day. Tap a photo to see it larger, or open one of our albums below.</p>
+                    <p class="section-intro">A glimpse of the play, learning and care that fills each day. Tap a picture to see it larger, or open one of our albums below.</p>
+                    <p class="gallery-note">These are illustrations for now &mdash; real photos of our centre are on their way.</p>
                 </div>
 
+                <!-- Stand-in illustrations until the school's real photos arrive. On phones this
+                     list becomes a swipeable carousel (see style.css). -->
                 <div class="gallery-overview">
-                    <ul class="gallery-preview" data-gallery-group="preview" aria-label="Photo highlights">
-                        <li class="accent-violet">
-                            <button type="button" class="gallery-item" data-caption="Outdoor Play" data-file="assets/images/outdoor-01.jpg">
-                                <img class="gallery-photo" src="assets/images/outdoor-01.jpg" alt="Children running and playing together on a grassy field outdoors." width="736" height="552">
-                                <span class="gallery-label"><span class="gallery-chip">Fun Days</span> Outdoor Play</span>
+                    <ul class="gallery-preview" data-gallery-group="preview" aria-label="Picture highlights">
+                        <li class="accent-red">
+                            <button type="button" class="gallery-item" data-caption="Our Playground (illustration)" data-file="assets/images/illustration-playground.webp">
+                                <img class="gallery-photo" src="assets/images/illustration-playground.webp" alt="Illustration of a sunny playground with a jungle gym, a red slide, swings, a seesaw and painted tyres under acacia trees." width="900" height="673" loading="lazy" decoding="async">
+                                <span class="gallery-label"><span class="gallery-chip">Premises</span> Our Playground</span>
                             </button>
                         </li>
                         <li class="accent-red">
-                            <button type="button" class="gallery-item" data-caption="Our Learning Space" data-file="assets/images/space-01.jpg">
-                                <img class="gallery-photo" src="assets/images/space-01.jpg" alt="A bright, well-organised classroom play area with shelves, toys and a reading corner." width="736" height="552">
+                            <button type="button" class="gallery-item" data-caption="Our Learning Space (illustration)" data-file="assets/images/illustration-classroom.webp">
+                                <img class="gallery-photo" src="assets/images/illustration-classroom.webp" alt="Illustration of a bright classroom corner with toy shelves, baskets, a teddy bear, cushions and a book rack under colourful bunting." width="900" height="673" loading="lazy" decoding="async">
                                 <span class="gallery-label"><span class="gallery-chip">Premises</span> Our Learning Space</span>
                             </button>
                         </li>
                         <li class="accent-violet">
-                            <button type="button" class="gallery-item" data-caption="Arts &amp; Crafts" data-file="assets/images/activities-01.jpg">
-                                <img class="gallery-photo" src="assets/images/activities-01.jpg" alt="A child doing a sponge-painting craft activity." width="736" height="981">
+                            <button type="button" class="gallery-item" data-caption="Arts &amp; Crafts (illustration)" data-file="assets/images/illustration-art-table.webp">
+                                <img class="gallery-photo" src="assets/images/illustration-art-table.webp" alt="Illustration of a craft table with pots of paint, brushes, crayons, scissors, coloured paper and a child's painting of a flower and a butterfly." width="900" height="673" loading="lazy" decoding="async">
                                 <span class="gallery-label"><span class="gallery-chip">Fun Days</span> Arts &amp; Crafts</span>
                             </button>
                         </li>
-                        <li class="accent-red">
-                            <button type="button" class="gallery-item" data-caption="Classroom Learning" data-file="assets/images/classroom-01.jpg">
-                                <img class="gallery-photo" src="assets/images/classroom-01.jpg" alt="A teacher reads a story to a group of children seated together on a classroom rug." width="736" height="552">
-                                <span class="gallery-label"><span class="gallery-chip">Premises</span> Classroom Learning</span>
+                        <li class="accent-green">
+                            <button type="button" class="gallery-item" data-caption="Petting Zoo (illustration)" data-file="assets/images/illustration-petting-zoo.webp">
+                                <img class="gallery-photo" src="assets/images/illustration-petting-zoo.webp" alt="Illustration of two white bunnies, three yellow chicks and a baby goat in a grassy pen with a wooden fence and a small hutch." width="900" height="673" loading="lazy" decoding="async">
+                                <span class="gallery-label"><span class="gallery-chip">Petting Zoo</span> Furry Friends</span>
                             </button>
                         </li>
                         <li class="accent-violet">
-                            <button type="button" class="gallery-item" data-caption="Lunch &amp; Snack Time" data-file="assets/images/mealtime-01.jpg">
-                                <img class="gallery-photo" src="assets/images/mealtime-01.jpg" alt="Children smiling and enjoying a healthy meal together." width="736" height="736">
-                                <span class="gallery-label"><span class="gallery-chip">Fun Days</span> Lunch &amp; Snack Time</span>
+                            <button type="button" class="gallery-item" data-caption="Fun Day (illustration)" data-file="assets/images/illustration-fun-day.webp">
+                                <img class="gallery-photo" src="assets/images/illustration-fun-day.webp" alt="Illustration of a school fun day with balloons, bunting, a bouncy castle, hula hoops and a table of cupcakes, juice and fruit." width="900" height="673" loading="lazy" decoding="async">
+                                <span class="gallery-label"><span class="gallery-chip">Fun Days</span> Fun Day</span>
                             </button>
                         </li>
                     </ul>
+                    <p class="swipe-hint" aria-hidden="true">Swipe to see more &rarr;</p>
 
                     <h3 class="album-picker-heading">Explore our albums</h3>
 
@@ -477,20 +569,20 @@
                         </div>
                         <ul class="gallery-grid">
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Our Learning Space" data-file="assets/images/space-01.jpg">
-                                    <img class="gallery-photo" src="assets/images/space-01.jpg" alt="A bright, well-organised classroom play area with shelves, toys and a reading corner." width="736" height="552" loading="lazy">
-                                    <span class="gallery-label">Our Learning Space</span>
+                                <button type="button" class="gallery-item" data-caption="Our Playground (illustration)" data-file="assets/images/illustration-playground.webp">
+                                    <img class="gallery-photo" src="assets/images/illustration-playground.webp" alt="Illustration of a sunny playground with a jungle gym, a red slide, swings, a seesaw and painted tyres under acacia trees." width="900" height="673" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Our Playground</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Classroom Learning" data-file="assets/images/classroom-01.jpg">
-                                    <img class="gallery-photo" src="assets/images/classroom-01.jpg" alt="A teacher reads a story to a group of children seated together on a classroom rug." width="736" height="552" loading="lazy">
-                                    <span class="gallery-label">Classroom Learning</span>
+                                <button type="button" class="gallery-item" data-caption="Our Learning Space (illustration)" data-file="assets/images/illustration-classroom.webp">
+                                    <img class="gallery-photo" src="assets/images/illustration-classroom.webp" alt="Illustration of a bright classroom corner with toy shelves, baskets, a teddy bear, cushions and a book rack under colourful bunting." width="900" height="673" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Our Learning Space</span>
                                 </button>
                             </li>
                             <li class="gallery-placeholder">
                                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7M5 9.5V20h14V9.5M10 20v-5h4v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                <span>More photos coming soon</span>
+                                <span>Real photos coming soon</span>
                             </li>
                         </ul>
                     </section>
@@ -504,9 +596,11 @@
                             </a>
                         </div>
                         <ul class="gallery-grid">
-                            <li class="gallery-placeholder">
-                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="currentColor"><ellipse cx="12" cy="16" rx="5" ry="4.2"/><circle cx="5.8" cy="10.5" r="2.2"/><circle cx="9.8" cy="6.2" r="2.2"/><circle cx="14.2" cy="6.2" r="2.2"/><circle cx="18.2" cy="10.5" r="2.2"/></g></svg>
-                                <span>Photos coming soon</span>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Petting Zoo (illustration)" data-file="assets/images/illustration-petting-zoo.webp">
+                                    <img class="gallery-photo" src="assets/images/illustration-petting-zoo.webp" alt="Illustration of two white bunnies, three yellow chicks and a baby goat in a grassy pen with a wooden fence and a small hutch." width="900" height="673" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Furry Friends</span>
+                                </button>
                             </li>
                             <li class="gallery-placeholder">
                                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="currentColor"><ellipse cx="12" cy="16" rx="5" ry="4.2"/><circle cx="5.8" cy="10.5" r="2.2"/><circle cx="9.8" cy="6.2" r="2.2"/><circle cx="14.2" cy="6.2" r="2.2"/><circle cx="18.2" cy="10.5" r="2.2"/></g></svg>
@@ -529,20 +623,20 @@
                         </div>
                         <ul class="gallery-grid">
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Outdoor Play" data-file="assets/images/outdoor-01.jpg">
-                                    <img class="gallery-photo" src="assets/images/outdoor-01.jpg" alt="Children running and playing together on a grassy field outdoors." width="736" height="552" loading="lazy">
-                                    <span class="gallery-label">Outdoor Play</span>
+                                <button type="button" class="gallery-item" data-caption="Fun Day (illustration)" data-file="assets/images/illustration-fun-day.webp">
+                                    <img class="gallery-photo" src="assets/images/illustration-fun-day.webp" alt="Illustration of a school fun day with balloons, bunting, a bouncy castle, hula hoops and a table of cupcakes, juice and fruit." width="900" height="673" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Fun Day</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Arts &amp; Crafts" data-file="assets/images/activities-01.jpg">
-                                    <img class="gallery-photo" src="assets/images/activities-01.jpg" alt="A child doing a sponge-painting craft activity." width="736" height="981" loading="lazy">
+                                <button type="button" class="gallery-item" data-caption="Arts &amp; Crafts (illustration)" data-file="assets/images/illustration-art-table.webp">
+                                    <img class="gallery-photo" src="assets/images/illustration-art-table.webp" alt="Illustration of a craft table with pots of paint, brushes, crayons, scissors, coloured paper and a child's painting of a flower and a butterfly." width="900" height="673" loading="lazy" decoding="async">
                                     <span class="gallery-label">Arts &amp; Crafts</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Lunch &amp; Snack Time" data-file="assets/images/mealtime-01.jpg">
-                                    <img class="gallery-photo" src="assets/images/mealtime-01.jpg" alt="Children smiling and enjoying a healthy meal together." width="736" height="736" loading="lazy">
+                                <button type="button" class="gallery-item" data-caption="Lunch &amp; Snack Time (illustration)" data-file="assets/images/illustration-lunchbox.webp">
+                                    <img class="gallery-photo" src="assets/images/illustration-lunchbox.webp" alt="Illustration of an open green lunchbox with a sandwich, an apple, a banana, orange slices and carrot sticks, beside a water bottle and a bowl of fruit salad." width="900" height="900" loading="lazy" decoding="async">
                                     <span class="gallery-label">Lunch &amp; Snack Time</span>
                                 </button>
                             </li>
@@ -554,7 +648,14 @@
 
         <!-- DOWNLOADS
              Cards run red → violet across both groups (R, Y | G, B, V). -->
-        <section id="downloads" class="section accent-blue has-doodles" aria-labelledby="downloads-heading">
+        <section id="downloads" class="section accent-blue" aria-labelledby="downloads-heading">
+            <div class="doodle-layer" aria-hidden="true">
+                <img class="doodle doodle--wiggle" src="assets/doodles/crayons.svg" alt="" width="160" height="124" loading="lazy" decoding="async" style="--r:4%;--t:14px;--s:104px;--rot:6deg;--dur:7s">
+                <img class="doodle doodle--bob" src="assets/doodles/doodle-abc.webp" alt="" width="512" height="219" loading="lazy" decoding="async" style="--l:3%;--t:28px;--s:112px;--rot:-8deg;--dur:8s">
+                <img class="doodle doodle--spin doodle--desk" src="assets/doodles/doodle-scribble.webp" alt="" width="512" height="467" loading="lazy" decoding="async" style="--l:2%;--b:12px;--s:76px;--dur:55s">
+                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-star.webp" alt="" width="512" height="454" loading="lazy" decoding="async" style="--r:8%;--b:24px;--s:40px;--rot:12deg;--dur:5s">
+                <img class="doodle doodle--bob doodle--wide" src="assets/doodles/doodle-apple.webp" alt="" width="439" height="512" loading="lazy" decoding="async" style="--r:1.5%;--t:48%;--s:66px;--rot:10deg;--dur:7.5s">
+            </div>
             <div class="container">
                 <div class="section-heading section-heading-center">
                     <p class="eyebrow">Downloads</p>
@@ -639,38 +740,78 @@
 
         <!-- LOCATIONS -->
         <section id="locations" class="section accent-indigo" aria-labelledby="locations-heading">
+            <div class="doodle-layer" aria-hidden="true">
+                <img class="doodle doodle--bob" src="assets/doodles/doodle-map-pin.webp" alt="" width="512" height="373" loading="lazy" decoding="async" style="--r:3%;--t:8px;--s:118px;--rot:4deg;--dur:8s">
+                <img class="doodle doodle--drift" src="assets/doodles/doodle-cloud.webp" alt="" width="512" height="364" loading="lazy" decoding="async" style="--l:4%;--t:22px;--s:98px;--dur:22s">
+                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-star.webp" alt="" width="512" height="454" loading="lazy" decoding="async" style="--l:20%;--t:56px;--s:26px;--rot:-16deg;--dur:5.5s">
+                <img class="doodle doodle--bob doodle--desk" src="assets/doodles/house.svg" alt="" width="120" height="120" loading="lazy" decoding="async" style="--l:2%;--b:8px;--s:78px;--rot:-5deg;--dur:9s">
+                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-tree.webp" alt="" width="512" height="428" loading="lazy" decoding="async" style="--r:3%;--b:6px;--s:92px;--rot:5deg;--dur:10s">
+            </div>
             <div class="container">
                 <div class="section-heading section-heading-center">
-                    <p class="eyebrow">Locations</p>
+                    <p class="eyebrow">Our Campuses</p>
                     <h2 id="locations-heading">Serving Ongwediva &amp; Okatana</h2>
+                    <p class="section-intro">Two campuses, one Leer Speel-Speel family. Tap Get Directions to open either campus in Google Maps.</p>
                 </div>
 
+                <!-- Two equal campus cards. The maps are keyless Google Maps embeds:
+                     Ongwediva by the listing's place ID (cid), Okatana by its coordinates. -->
                 <div class="locations-grid">
-                    <div class="location-card">
-                        <h3>Ongwediva</h3>
-                        <p class="location-address">Erf 2762, Onguti Street<br>Ongwediva, Namibia</p>
-                        <p><a class="tel-link" href="tel:+264812156444">+264 81 215 6444</a></p>
-                        <a class="btn btn-outline" href="https://www.google.com/maps/place/Leer+Speel-Speel+Play-to-Learn+Educational+Centre+Daycare+%26+Pre-Primary/data=!4m2!3m1!1s0x0:0xc8fd8fece5292140?sa=X" target="_blank" rel="noopener noreferrer">
-                            Get Directions <span class="sr-only">to our Ongwediva centre (opens in a new tab)</span>
-                        </a>
-                    </div>
-                    <div class="location-card">
-                        <h3>Okatana</h3>
-                        <p class="location-address">We proudly serve families in Okatana too.</p>
-                        <p><a class="tel-link" href="tel:+264812156444">+264 81 215 6444</a></p>
-                        <a class="btn btn-outline" href="#contact">Contact Us for Directions</a>
-                    </div>
+                    <article class="location-card">
+                        <div class="location-map">
+                            <iframe src="https://www.google.com/maps?cid=14482890224313114944&amp;z=16&amp;output=embed" title="Map showing the Leer Speel-Speel Ongwediva campus on Onguti Street" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                        </div>
+                        <div class="location-body">
+                            <span class="location-tag">Ongwediva Campus</span>
+                            <h3>Leer Speel-Speel Play-to-Learn Educational Centre <span class="location-kind">Daycare &amp; Pre-Primary</span></h3>
+                            <p class="location-address">Erf 2762, Onguti Street<br>Ongwediva, Namibia</p>
+                            <p class="location-hours">Open 07:00&ndash;17:00</p>
+                            <p><a class="tel-link" href="tel:+264812156444">+264 81 215 6444</a></p>
+                            <a class="btn btn-outline" href="https://www.google.com/maps/place/Leer+Speel-Speel+Play-to-Learn+Educational+Centre+Daycare+%26+Pre-Primary/data=!4m2!3m1!1s0x0:0xc8fd8fece5292140?sa=X" target="_blank" rel="noopener noreferrer">
+                                Get Directions <span class="sr-only">to our Ongwediva campus (opens in a new tab)</span>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="location-card">
+                        <div class="location-map">
+                            <iframe src="https://www.google.com/maps?q=-17.7463585,15.7096291&amp;z=16&amp;output=embed" title="Map showing the Leer Speel-Speel Okatana campus" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                        </div>
+                        <div class="location-body">
+                            <span class="location-tag">Okatana Campus</span>
+                            <h3>Leer Speel-Speel Play-to-Learn Educational Centre <span class="location-kind">Daycare &amp; Pre-Primary</span></h3>
+                            <!-- PLACEHOLDER: replace with the Okatana campus street address -->
+                            <p class="location-address">[Okatana street address]<br>Okatana, Namibia</p>
+                            <p class="location-hours">Open 07:00&ndash;17:00</p>
+                            <p><a class="tel-link" href="tel:+264812156444">+264 81 215 6444</a></p>
+                            <a class="btn btn-outline" href="https://www.google.com/maps/place/Leer+Speel-Speel+Play-to-Learn+Educational+Centre+Daycare+%26+Pre-Primary/@-17.7460315,15.7083416,17z/data=!4m6!3m5!1s0x1b939f75734f0edf:0x16e43468c0de4375!8m2!3d-17.7463585!4d15.7096291!16s%2Fg%2F11v64wkpvy" target="_blank" rel="noopener noreferrer">
+                                Get Directions <span class="sr-only">to our Okatana campus (opens in a new tab)</span>
+                            </a>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
 
         <!-- CONTACT / ENROLMENT -->
-        <section id="contact" class="section section-alt accent-violet has-doodles" aria-labelledby="contact-heading">
+        <section id="contact" class="section section-alt accent-violet" aria-labelledby="contact-heading">
+            <div class="doodle-layer" aria-hidden="true">
+                <img class="doodle doodle--wiggle" src="assets/doodles/doodle-heart.webp" alt="" width="512" height="501" loading="lazy" decoding="async" style="--r:6%;--t:22px;--s:58px;--rot:-10deg;--dur:6s">
+                <img class="doodle doodle--float doodle--desk" src="assets/doodles/doodle-butterfly.webp" alt="" width="512" height="342" loading="lazy" decoding="async" style="--r:18%;--t:32px;--s:64px;--rot:14deg;--dur:8.5s">
+                <img class="doodle doodle--wiggle" src="assets/doodles/doodle-flower.webp" alt="" width="392" height="512" loading="lazy" decoding="async" style="--r:3%;--b:4px;--s:56px;--rot:7deg;--dur:7.5s">
+                <img class="doodle doodle--bob doodle--desk" src="assets/doodles/doodle-123.webp" alt="" width="512" height="241" loading="lazy" decoding="async" style="--l:40%;--b:22px;--s:100px;--rot:-6deg;--dur:8s">
+                <img class="doodle doodle--bob doodle--desk" src="assets/doodles/crayon.svg" alt="" width="150" height="96" loading="lazy" decoding="async" style="--l:2%;--b:10px;--s:112px;--rot:-8deg;--dur:9s">
+                <img class="doodle doodle--bob doodle--wide" src="assets/doodles/doodle-handprint.webp" alt="" width="415" height="512" loading="lazy" decoding="async" style="--r:1.5%;--t:46%;--s:66px;--rot:12deg;--dur:7s">
+            </div>
             <div class="container section-grid">
                 <div class="section-heading">
                     <p class="eyebrow">Enrolment</p>
                     <h2 id="contact-heading">Enrolment is open all year</h2>
-                    <p>We'd love to welcome your child to the Leer Speel-Speel family. Call or email us any time to ask about enrolment &mdash; or send us a quick note below and we'll open it up in your email app, ready to send.</p>
+                    <p>We'd love to welcome your child to the Leer Speel-Speel family. WhatsApp, call or email us any time to ask about enrolment &mdash; or send us a quick note below and we'll open it up in your email app, ready to send.</p>
+
+                    <a class="btn btn-whatsapp contact-whatsapp" data-whatsapp href="https://wa.me/264812156444?text=Hi%20Leer%20Speel%20Speel%2C%20I%27d%20like%20to%20ask%20about%20enrolment" target="_blank" rel="noopener noreferrer">
+                        <svg class="btn-icon" aria-hidden="true" focusable="false"><use href="#icon-whatsapp"/></svg>
+                        WhatsApp Us<span class="sr-only"> (opens in a new tab)</span>
+                    </a>
 
                     <ul class="contact-list">
                         <li>
@@ -717,8 +858,14 @@
                         <label for="enquiryMessage">Message</label>
                         <textarea id="enquiryMessage" name="enquiryMessage" rows="4" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Open Email to Enquire</button>
-                    <p class="form-note" id="formNote" role="status" aria-live="polite">Clicking the button opens Gmail in a new tab with this message ready to send &mdash; nothing is sent automatically.</p>
+                    <div class="form-actions">
+                        <a class="btn btn-whatsapp" data-whatsapp href="https://wa.me/264812156444?text=Hi%20Leer%20Speel%20Speel%2C%20I%27d%20like%20to%20ask%20about%20enrolment" target="_blank" rel="noopener noreferrer">
+                            <svg class="btn-icon" aria-hidden="true" focusable="false"><use href="#icon-whatsapp"/></svg>
+                            WhatsApp Us<span class="sr-only"> (opens in a new tab)</span>
+                        </a>
+                        <button type="submit" class="btn btn-primary">Open Email to Enquire</button>
+                    </div>
+                    <p class="form-note" id="formNote" role="status" aria-live="polite">The email button opens Gmail in a new tab with this message ready to send &mdash; nothing is sent automatically.</p>
                 </form>
             </div>
         </section>
@@ -755,15 +902,22 @@
 
             <div class="footer-contact">
                 <h3>Contact</h3>
+                <p>
+                    <a class="btn btn-whatsapp btn-sm" data-whatsapp href="https://wa.me/264812156444?text=Hi%20Leer%20Speel%20Speel%2C%20I%27d%20like%20to%20ask%20about%20enrolment" target="_blank" rel="noopener noreferrer">
+                        <svg class="btn-icon" aria-hidden="true" focusable="false"><use href="#icon-whatsapp"/></svg>
+                        WhatsApp Us<span class="sr-only"> (opens in a new tab)</span>
+                    </a>
+                </p>
                 <p><a href="tel:+264812156444">+264 81 215 6444</a></p>
                 <p><a href="mailto:potgieter@iway.na">potgieter@iway.na</a></p>
                 <p>P.O. Box 15405, Oshakati</p>
             </div>
 
             <div class="footer-locations">
-                <h3>Locations</h3>
-                <p>Ongwediva &mdash; Erf 2762, Onguti Street</p>
-                <p>Okatana</p>
+                <h3>Our Campuses</h3>
+                <p>Ongwediva &mdash; Erf 2762, Onguti Street<br><a href="https://www.google.com/maps/place/Leer+Speel-Speel+Play-to-Learn+Educational+Centre+Daycare+%26+Pre-Primary/data=!4m2!3m1!1s0x0:0xc8fd8fece5292140?sa=X" target="_blank" rel="noopener noreferrer">Get directions <span class="sr-only">to our Ongwediva campus (opens in a new tab)</span></a></p>
+                <!-- PLACEHOLDER: add the Okatana street address here once known -->
+                <p>Okatana<br><a href="https://www.google.com/maps/place/Leer+Speel-Speel+Play-to-Learn+Educational+Centre+Daycare+%26+Pre-Primary/@-17.7460315,15.7083416,17z/data=!4m6!3m5!1s0x1b939f75734f0edf:0x16e43468c0de4375!8m2!3d-17.7463585!4d15.7096291!16s%2Fg%2F11v64wkpvy" target="_blank" rel="noopener noreferrer">Get directions <span class="sr-only">to our Okatana campus (opens in a new tab)</span></a></p>
             </div>
 
             <div class="footer-banking">
@@ -776,6 +930,23 @@
             <p>&copy; <span id="year"></span> Leer Speel-Speel / Play-to-Learn Educational Centre. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- QUICK CONTACT
+         Phones get a sticky bar along the bottom (WhatsApp first, then Call); wider screens
+         get a round floating WhatsApp button instead. Only one of the two shows at a time. -->
+    <nav class="contact-bar" aria-label="Quick contact">
+        <a class="contact-bar-btn contact-bar-btn--whatsapp" data-whatsapp href="https://wa.me/264812156444?text=Hi%20Leer%20Speel%20Speel%2C%20I%27d%20like%20to%20ask%20about%20enrolment" target="_blank" rel="noopener noreferrer">
+            <svg class="btn-icon" aria-hidden="true" focusable="false"><use href="#icon-whatsapp"/></svg>
+            WhatsApp<span class="sr-only"> us (opens in a new tab)</span>
+        </a>
+        <a class="contact-bar-btn contact-bar-btn--call" href="tel:+264812156444">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 4h3.5l1.5 4-2 1.3a12 12 0 006.7 6.7l1.3-2 4 1.5V19a2 2 0 01-2 2C10.5 21 3 13.5 3 6a2 2 0 012-2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            Call<span class="sr-only"> us</span>
+        </a>
+    </nav>
+    <a class="whatsapp-fab" data-whatsapp href="https://wa.me/264812156444?text=Hi%20Leer%20Speel%20Speel%2C%20I%27d%20like%20to%20ask%20about%20enrolment" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp us (opens in a new tab)">
+        <svg class="btn-icon" aria-hidden="true" focusable="false"><use href="#icon-whatsapp"/></svg>
+    </a>
 
     <!-- ALBUM POP-UP (filled by script.js with the .album sections from #gallery) -->
     <div class="album-modal" id="albumModal" hidden>

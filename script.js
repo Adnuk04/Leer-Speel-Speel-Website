@@ -5,6 +5,18 @@
     var yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+    /* ---------- WhatsApp links ----------
+       THE ONE PLACE TO CHANGE THE SCHOOL'S WHATSAPP NUMBER (country code first,
+       no "+", spaces or leading zero). Every link marked data-whatsapp is
+       pointed here; the same number is written into those links in index.html
+       only as a fallback for visitors without JavaScript. */
+    var WHATSAPP_NUMBER = '264812156444';
+    var WHATSAPP_MESSAGE = 'Hi Leer Speel Speel, I\'d like to ask about enrolment';
+    var whatsappUrl = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(WHATSAPP_MESSAGE);
+    document.querySelectorAll('a[data-whatsapp]').forEach(function (link) {
+        link.href = whatsappUrl;
+    });
+
     /* ---------- Logo: scroll to top ----------
        The header is position:sticky, so its own bounding box is always at
        y=0 once stuck — the browser's native #top anchor jump sees it as
@@ -103,7 +115,8 @@
 
         albums.forEach(function (album) {
             var count = album.querySelectorAll('.gallery-item').length;
-            var label = count === 0 ? 'Photos coming soon' : count + (count === 1 ? ' photo' : ' photos');
+            // "picture(s)" while the albums hold stand-in illustrations; switch back to "photo(s)" once real photos are in
+            var label = count === 0 ? 'Photos coming soon' : count + (count === 1 ? ' picture' : ' pictures');
             document.querySelectorAll('[data-album-count="' + album.id + '"]').forEach(function (el) {
                 el.textContent = label;
             });
@@ -337,6 +350,79 @@
                 }
             }
         });
+    }
+
+    /* ---------- Motion: scroll reveals, count-up stats, doodles ----------
+       All of it is skipped for visitors who prefer reduced motion (and in
+       browsers without IntersectionObserver), so nothing is ever left hidden. */
+    var motionOk = 'IntersectionObserver' in window &&
+        !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (motionOk) {
+        // Scroll reveal: elements fade/slide in as they enter the screen.
+        // Cards "pop"; everything else slides up. Siblings are staggered.
+        var popSelector = '.offer-card, .day-card, .album-card, .download-card, .location-card, .stat';
+        var revealTargets = Array.prototype.slice.call(document.querySelectorAll(
+            'main .section-heading, main .section-copy, main .art-frame, .hero-visual, .gallery-preview, ' +
+            '.album-picker-heading, .downloads-group-title, .enquiry-form, ' + popSelector
+        ));
+
+        var revealObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('is-visible');
+                revealObserver.unobserve(entry.target);
+            });
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+
+        revealTargets.forEach(function (el) {
+            var isCard = el.matches(popSelector);
+            if (isCard) {
+                // Stagger cards by their position in the row (wraps after 4 so late cards don't lag)
+                var index = Array.prototype.indexOf.call(el.parentNode.children, el);
+                el.style.setProperty('--reveal-delay', (index % 4) * 0.09 + 's');
+                el.classList.add('reveal--pop');
+            }
+            el.classList.add('reveal');
+            revealObserver.observe(el);
+        });
+
+        // Stats: count up from zero the first time they scroll into view
+        var counters = document.querySelectorAll('[data-count]');
+        if (counters.length) {
+            var countObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return;
+                    countObserver.unobserve(entry.target);
+                    var el = entry.target;
+                    var target = parseInt(el.getAttribute('data-count'), 10);
+                    if (isNaN(target)) return; // placeholder such as [XX]: leave the text alone
+                    var duration = 1100;
+                    var startTime = null;
+                    el.textContent = '0';
+                    var tick = function (now) {
+                        if (startTime === null) startTime = now;
+                        var progress = Math.min((now - startTime) / duration, 1);
+                        var eased = 1 - Math.pow(1 - progress, 3);
+                        el.textContent = Math.round(target * eased);
+                        if (progress < 1) window.requestAnimationFrame(tick);
+                    };
+                    window.requestAnimationFrame(tick);
+                });
+            }, { threshold: 0.6 });
+            counters.forEach(function (el) { countObserver.observe(el); });
+        }
+
+        // Doodles: only animate the ones in sections that are on screen
+        var doodleLayers = document.querySelectorAll('.doodle-layer');
+        if (doodleLayers.length) {
+            var doodleObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    entry.target.classList.toggle('is-paused', !entry.isIntersecting);
+                });
+            }, { rootMargin: '80px 0px' });
+            doodleLayers.forEach(function (layer) { doodleObserver.observe(layer); });
+        }
     }
 
     /* ---------- Enquiry form ----------
