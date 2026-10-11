@@ -16,13 +16,15 @@
     <meta property="og:title" content="Leer Speel-Speel / Play-to-Learn Educational Centre">
     <meta property="og:description" content="Daycare &amp; pre-primary in Ongwediva &amp; Okatana, from 3 months to Grade 0. English &amp; Afrikaans, meals provided.">
     <meta property="og:url" content="https://lss-play-to-learn.seanchembe.workers.dev/">
-    <meta property="og:image" content="https://lss-play-to-learn.seanchembe.workers.dev/assets/images/logo.jpg">
-    <meta property="og:image:width" content="200">
-    <meta property="og:image:height" content="200">
-    <meta property="og:image:alt" content="Leer Speel-Speel Play-to-Learn Educational Centre logo">
-    <meta name="twitter:card" content="summary">
+    <meta property="og:image" content="https://lss-play-to-learn.seanchembe.workers.dev/assets/images/share-card.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Leer Speel Speel logo">
+    <meta name="twitter:card" content="summary_large_image">
 
-    <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,7 +45,7 @@
     <header class="site-header" id="top">
         <div class="container header-inner">
             <a class="wordmark" href="#top" aria-label="Leer Speel-Speel Play-to-Learn Educational Centre — home">
-                <img class="wordmark-logo" src="assets/images/logo.jpg" alt="Leer Speel-Speel Play-to-Learn Educational Centre logo">
+                <img class="wordmark-logo" src="assets/images/logo.webp" alt="Leer Speel Speel logo" width="256" height="256" decoding="async">
                 <span class="wordmark-text sr-only">Leer Speel-Speel Play-to-Learn Educational Centre</span>
             </a>
 
@@ -59,6 +61,7 @@
             <nav class="primary-nav" id="primaryNav" aria-label="Primary">
                 <ul class="primary-nav-list">
                     <li class="accent-red"><a href="#about">About</a></li>
+                    <li class="accent-pink"><a href="#founder">Our Founder</a></li>
                     <li class="accent-orange"><a href="#offer">What We Offer</a></li>
                     <li class="accent-green"><a href="#gallery">Gallery</a></li>
                     <li class="accent-blue"><a href="#downloads">Downloads</a></li>
@@ -104,19 +107,19 @@
                     </div>
                 </div>
 
-                <!-- ILLUSTRATION SLOT: swap for a real photo of the centre once one is approved
-                     (keep the width/height attributes in step with the new file). -->
+                <!-- Hero photo (Fun Days, FD1). To swap it, keep the width/height attributes in
+                     step with the new file. -->
                 <figure class="hero-visual">
-                    <img src="assets/images/illustration-school.webp" alt="Illustration of a small school building with a red roof and a blue door, beside a fenced playground with a swing and a slide, under palm trees and a bright sun." width="1140" height="852" fetchpriority="high" decoding="async">
+                    <img src="assets/images/gallery/fd-01-large.webp" srcset="assets/images/gallery/fd-01.webp 800w, assets/images/gallery/fd-01-large.webp 1600w" sizes="(max-width: 900px) min(92vw, 480px), 520px" alt="Children on the school lawn holding up big paper-plate flowers they made." width="1600" height="967" fetchpriority="high" decoding="async">
                 </figure>
             </div>
         </section>
 
         <!-- AT A GLANCE
-             Numbers count up when scrolled into view (script.js). All four come from the
-             parent guides. Not shown yet: years open — add it once the school confirms the
-             year it opened, e.g.
-             <li class="stat accent-green"><span class="stat-number"><span data-count="[XX]">[XX]</span></span><span class="stat-label">years of caring for little ones</span></li> -->
+             Numbers count up when scrolled into view (script.js). The school opened in 2003
+             (logo and founder's letter); script.js keeps every [data-years-since] number up to
+             date, and the number written here is the no-JS fallback. The other four come from
+             the parent guides. Cards run R, Y, G, B, V. -->
         <section class="stats accent-pink" aria-label="Leer Speel-Speel at a glance">
             <div class="doodle-layer" aria-hidden="true">
                 <img class="doodle doodle--wiggle" src="assets/doodles/doodle-star.webp" alt="" width="512" height="454" loading="lazy" decoding="async" style="--l:2.5%;--t:12px;--s:38px;--rot:-12deg;--dur:6s">
@@ -124,11 +127,15 @@
             </div>
             <div class="container">
                 <ul class="stats-list">
-                    <li class="stat accent-red">
+                    <li class="stat stat--since accent-red">
+                        <span class="stat-number"><span data-count="23" data-years-since="2003">23</span><small>years</small></span>
+                        <span class="stat-label">of caring for little ones, since 2003</span>
+                    </li>
+                    <li class="stat accent-yellow">
                         <span class="stat-number"><span data-count="2">2</span></span>
                         <span class="stat-label">campuses: Ongwediva &amp; Okatana</span>
                     </li>
-                    <li class="stat accent-yellow">
+                    <li class="stat accent-green">
                         <span class="stat-number"><span data-count="3">3</span><small>months</small></span>
                         <span class="stat-label">old and up, all the way to Grade 0</span>
                     </li>
@@ -157,13 +164,59 @@
                 <div class="section-heading">
                     <p class="eyebrow">About Us</p>
                     <h2 id="about-heading">Learning that feels like play</h2>
+                    <!-- .art-crop trims a photo to the frame: --ratio sets the shape (default 4 / 3)
+                         and --pos the part of the photo to keep in view. -->
                     <figure class="art-frame art-frame--left">
-                        <img src="assets/images/illustration-story-time.webp" alt="Illustration of a teacher reading a picture book to five children sitting on a colourful round rug in a classroom." width="900" height="673" loading="lazy" decoding="async">
+                        <img class="art-crop" style="--pos:50% 45%" src="assets/images/gallery/ea-10.webp" srcset="assets/images/gallery/ea-10.webp 640w, assets/images/gallery/ea-10-large.webp 1086w" sizes="(max-width: 900px) min(92vw, 520px), 480px" alt="A smiling child in an orange Leer Speel-Speel shirt linking colourful plastic chains at a classroom table." width="640" height="853" loading="lazy" decoding="async">
                     </figure>
                 </div>
                 <div class="section-copy">
                     <p>At Leer Speel-Speel / Play-to-Learn Educational Centre, we believe every child deserves to be loved, guided and truly known. Our daycare and pre-primary programme takes a holistic approach to early learning, nurturing each child's curiosity, confidence and character alongside their early academic skills.</p>
                     <p>We teach in both English and Afrikaans, so children grow up comfortable moving between languages from an early age. Our team works to hold every family in Ongwediva and Okatana to a high standard of care and education &mdash; a place where little ones are safe, well fed, and genuinely known by the people looking after them.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- MEET OUR FOUNDER
+             The words are the founder's own, from the letter the school supplied; nothing has
+             been added. Pink is the extra accent outside the rainbow order. script.js keeps the
+             [data-years-since] number up to date (the number written here is the no-JS fallback).
+
+             FOUNDER PHOTO: when the school sends one, save it as assets/images/founder-1.webp
+             (portrait, about 800 x 1000px) and replace the whole .founder-photo-slot div with
+             <img src="assets/images/founder-1.webp" alt="MC (Lientjie) Potgieter, founder of Leer Speel-Speel" width="800" height="1000" loading="lazy" decoding="async">
+             The frame keeps its 4:5 shape either way, so the layout does not move. -->
+        <section id="founder" class="section accent-pink" aria-labelledby="founder-heading">
+            <div class="doodle-layer" aria-hidden="true">
+                <img class="doodle doodle--wiggle" src="assets/doodles/doodle-flower.webp" alt="" width="392" height="512" loading="lazy" decoding="async" style="--r:4%;--t:14px;--s:62px;--rot:8deg;--dur:7.5s">
+                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-star.webp" alt="" width="512" height="454" loading="lazy" decoding="async" style="--l:6%;--t:30px;--s:34px;--rot:-14deg;--dur:5.5s">
+                <img class="doodle doodle--float" src="assets/doodles/doodle-butterfly.webp" alt="" width="512" height="342" loading="lazy" decoding="async" style="--l:3%;--b:14px;--s:66px;--rot:-8deg;--dur:8.5s">
+                <img class="doodle doodle--drift doodle--desk" src="assets/doodles/doodle-snail.webp" alt="" width="512" height="384" loading="lazy" decoding="async" style="--r:9%;--b:12px;--s:78px;--dur:27s">
+                <img class="doodle doodle--bob doodle--wide" src="assets/doodles/doodle-balloon.webp" alt="" width="275" height="512" loading="lazy" decoding="async" style="--r:1.5%;--t:40%;--s:46px;--rot:8deg;--dur:8s">
+            </div>
+            <div class="container founder-layout">
+                <div class="founder-aside">
+                    <figure class="art-frame art-frame--left founder-photo">
+                        <div class="founder-photo-slot">
+                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4 8h3l1.6-2.4h6.8L17 8h3a1.5 1.5 0 011.5 1.5v8A1.5 1.5 0 0120 19H4a1.5 1.5 0 01-1.5-1.5v-8A1.5 1.5 0 014 8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.4" stroke="currentColor" stroke-width="1.6"/></svg>
+                            <span>Founder photo coming soon</span>
+                        </div>
+                    </figure>
+                    <p class="since-badge"><span class="since-badge-label">Since</span> <span class="since-badge-year">2003</span></p>
+                </div>
+                <div class="founder-body">
+                    <div class="section-heading">
+                        <p class="eyebrow">Caring for little ones since 2003</p>
+                        <h2 id="founder-heading">Meet Our Founder</h2>
+                        <p class="founder-name">MC (Lientjie) Potgieter</p>
+                    </div>
+                    <div class="founder-letter">
+                        <p>My name is Lientjie Potgieter, founder of Leer Speel-Speel / Play-to-Learn. For the past <span data-years-since="2003">23</span> years, teaching and guiding young children has been my calling.</p>
+                        <p>I treat every child as if they were my own, focusing not only on academics, but also on character, morals, values and confidence. I believe that a child should grow as an individual and not merely as part of a group. Each child matters, and the individual child is very important to me.</p>
+                        <p>Our name speaks for itself: &ldquo;Leer Speel-Speel&rdquo; means <span lang="af">&ldquo;leer terwyl jy speel&rdquo;</span>, and &ldquo;Play-to-Learn&rdquo; means &ldquo;learn while you're playing&rdquo;. This philosophy guides everything we do. Children learn best in a safe, loving environment where faith, kindness and respect form a strong moral foundation.</p>
+                        <p>I remain personally involved in planning and teaching, to ensure strong foundations and a smooth transition into Grade 1.</p>
+                        <p class="founder-promise">As always, my promise remains: to walk this journey with you and to give my very best to every child entrusted to me.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -185,7 +238,7 @@
                 </div>
 
                 <figure class="art-frame art-frame--banner">
-                    <img src="assets/images/illustration-building-blocks.webp" alt="Illustration of colourful wooden building blocks stacked into a tower and an arch, with crayons scattered on a classroom table." width="900" height="502" loading="lazy" decoding="async">
+                    <img class="art-crop" style="--ratio:16 / 9;--pos:50% 30%" src="assets/images/gallery/ea-02.webp" alt="Children hopping through a row of colourful hoops on the school lawn." width="800" height="600" loading="lazy" decoding="async">
                 </figure>
 
                 <ul class="offer-grid">
@@ -235,7 +288,7 @@
             </div>
         </section>
 
-        <!-- A DAY OF LEARNING -->
+        <!-- OUR 10 SPECIAL LEARNING EXPERIENCES (the section keeps its old id, "day") -->
         <section id="day" class="section accent-yellow" aria-labelledby="day-heading">
             <div class="doodle-layer" aria-hidden="true">
                 <img class="doodle doodle--spin doodle--desk" src="assets/doodles/doodle-sun.webp" alt="" width="494" height="512" loading="lazy" decoding="async" style="--r:-52px;--t:-62px;--s:210px;--dur:80s">
@@ -247,46 +300,116 @@
             </div>
             <div class="container">
                 <div class="section-heading section-heading-center">
-                    <p class="eyebrow">A Day of Learning</p>
-                    <h2 id="day-heading">Play, discovery and care, every day</h2>
+                    <p class="eyebrow">Play, discovery and care, every day</p>
+                    <h2 id="day-heading">Our 10 Special Learning Experiences</h2>
                     <p class="section-intro">Every day at Leer Speel-Speel is built around gentle discovery &mdash; time to play, time to learn, and time to simply be a child in a place that feels like home.</p>
                 </div>
 
-                <div class="day-layout">
-                <figure class="art-frame art-frame--right">
-                    <img src="assets/images/illustration-finger-painting.webp" alt="Illustration of children's hands finger painting bright handprints and swirls on a big sheet of paper, with pots of red, yellow, blue and green paint." width="900" height="673" loading="lazy" decoding="async">
-                </figure>
-                <div class="day-grid">
-                    <div class="day-card accent-red">
-                        <span class="day-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.6"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8L6 18M18 6l1.8-1.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                <!-- Ten numbered cards with the school's own wording. Colours run R → V, then pink,
+                     then start again (R, O), so no two neighbours match at any column count. A card
+                     shows a real photo where one fits; the others show an icon in the same space. -->
+                <ol class="learn-grid" role="list">
+                    <li class="learn-card accent-red">
+                        <span class="learn-media">
+                            <img style="--pos:50% 35%" src="assets/images/gallery/ea-09.webp" alt="A child proudly holding up a wooden stacking-ring toy in the classroom." width="800" height="600" loading="lazy" decoding="async">
                         </span>
-                        <h3>Play</h3>
-                        <p>Hands-on, playful activities that let children explore and learn at their own pace.</p>
-                    </div>
-                    <div class="day-card accent-yellow">
-                        <span class="day-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.2 6.8 19l1-5.8-4.3-4.1 5.9-.9L12 3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                        <span class="learn-num" aria-hidden="true">1</span>
+                        <div class="learn-text">
+                            <h3>Personalised Learning</h3>
+                            <p>Every child learns at their own pace, with individual attention, encouragement and support.</p>
+                        </div>
+                    </li>
+                    <li class="learn-card accent-orange">
+                        <span class="learn-media">
+                            <img style="--pos:50% 30%" src="assets/images/gallery/ea-11.webp" alt="Two children building with wooden shape blocks and gears at a classroom table." width="640" height="853" loading="lazy" decoding="async">
                         </span>
-                        <h3>Discover</h3>
-                        <p>Guided activities that spark curiosity and introduce new ideas, letters, numbers and stories.</p>
-                    </div>
-                    <div class="day-card accent-blue">
-                        <span class="day-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none"><path d="M12 20s-7.5-4.6-9.4-9.1C1.4 7.8 3.4 5 6.4 5c1.9 0 3.2 1 4.6 2.8C12.4 6 13.7 5 15.6 5c3 0 5 2.8 3.8 5.9C17.5 15.4 12 20 12 20z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                        <span class="learn-num" aria-hidden="true">2</span>
+                        <div class="learn-text">
+                            <h3>Early Childhood Development</h3>
+                            <p>Building strong foundations through play, exploration and age-appropriate learning activities.</p>
+                        </div>
+                    </li>
+                    <li class="learn-card accent-yellow">
+                        <span class="learn-media">
+                            <img style="--pos:50% 62%" src="assets/images/gallery/ea-12.webp" alt="A child shaping playdough numbers on a number mat." width="640" height="853" loading="lazy" decoding="async">
                         </span>
-                        <h3>Care</h3>
-                        <p>Every child is looked after with warmth and patience, so they feel safe, seen and truly known.</p>
-                    </div>
-                    <div class="day-card accent-violet">
-                        <span class="day-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none"><path d="M12 21c0-6 4-7 4-11.5A4 4 0 0012 5a4 4 0 00-4 4.5C8 14 12 15 12 21z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 21v-6" stroke="currentColor" stroke-width="1.6"/></svg>
+                        <span class="learn-num" aria-hidden="true">3</span>
+                        <div class="learn-text">
+                            <h3>Early Mathematics</h3>
+                            <p>Developing number recognition, counting, shapes, patterns and problem-solving skills, while teaching children to recognise and write numbers correctly.</p>
+                        </div>
+                    </li>
+                    <li class="learn-card accent-green">
+                        <span class="learn-media learn-media--icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 24" focusable="false"><text x="24" y="19" text-anchor="middle" font-family="'Baloo 2', ui-rounded, sans-serif" font-weight="800" font-size="20" fill="currentColor">Abc</text></svg>
                         </span>
-                        <h3>Grow</h3>
-                        <p>A gentle, encouraging environment that helps every child grow in confidence, day by day.</p>
-                    </div>
-                </div>
-                </div>
+                        <span class="learn-num" aria-hidden="true">4</span>
+                        <div class="learn-text">
+                            <h3>Alphabet &amp; Early Literacy</h3>
+                            <p>Introducing letters, sounds, vocabulary and early reading skills, while teaching children to recognise and form letters correctly through fun, interactive activities.</p>
+                        </div>
+                    </li>
+                    <li class="learn-card accent-blue">
+                        <span class="learn-media learn-media--icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M8.5 7.5L4 12l4.5 4.5M15.5 7.5L20 12l-4.5 4.5M13.5 5.5l-3 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </span>
+                        <span class="learn-num" aria-hidden="true">5</span>
+                        <div class="learn-text">
+                            <h3>Coding Classes</h3>
+                            <p>Encouraging logical thinking, sequencing, creativity and problem-solving through fun, age-appropriate coding activities.</p>
+                        </div>
+                    </li>
+                    <li class="learn-card accent-indigo">
+                        <span class="learn-media">
+                            <img style="--pos:50% 30%" src="assets/images/gallery/pz-13.webp" alt="Children holding feed tubs beside the chickens in the petting zoo." width="800" height="600" loading="lazy" decoding="async">
+                        </span>
+                        <span class="learn-num" aria-hidden="true">6</span>
+                        <div class="learn-text">
+                            <h3>Petting Zoo &amp; Animal Care</h3>
+                            <p>Teaching responsibility, kindness and respect for animals through hands-on care and daily duties.</p>
+                        </div>
+                    </li>
+                    <li class="learn-card accent-violet">
+                        <span class="learn-media">
+                            <img style="--pos:50% 45%" src="assets/images/gallery/fd-08.webp" alt="Three children in hair nets icing and decorating cupcakes." width="800" height="600" loading="lazy" decoding="async">
+                        </span>
+                        <span class="learn-num" aria-hidden="true">7</span>
+                        <div class="learn-text">
+                            <h3>Life Skills &amp; Independence</h3>
+                            <p>Building confidence, responsibility, social skills and independence through everyday experiences.</p>
+                        </div>
+                    </li>
+                    <li class="learn-card accent-pink">
+                        <span class="learn-media learn-media--icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M8.5 3.5L12 8l3.5-4.5L20 6l-1.5 4.6-2-.8v10.7h-9V9.8l-2 .8L4 6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.5 14h9" stroke="currentColor" stroke-width="2.6"/><path d="M12 14l-1.6 4.2M12 14l1.6 4.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                        </span>
+                        <span class="learn-num" aria-hidden="true">8</span>
+                        <div class="learn-text">
+                            <h3>Karate Classes</h3>
+                            <p>Developing discipline, coordination, concentration and self-confidence through structured physical activities.</p>
+                        </div>
+                    </li>
+                    <li class="learn-card accent-red">
+                        <span class="learn-media">
+                            <img style="--pos:50% 78%" src="assets/images/gallery/fd-04.webp" alt="Trays of cupcakes with sprinkles and icing flowers on a party table." width="640" height="853" loading="lazy" decoding="async">
+                        </span>
+                        <span class="learn-num" aria-hidden="true">9</span>
+                        <div class="learn-text">
+                            <h3>Birthday Celebrations &amp; Special Events</h3>
+                            <p>Creating special memories, celebrating milestones and making every child feel valued and included.</p>
+                        </div>
+                    </li>
+                    <li class="learn-card accent-orange">
+                        <span class="learn-media learn-media--icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" focusable="false"><rect x="5" y="3" width="14" height="18" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8.2 3v18" stroke="currentColor" stroke-width="1.6"/><path d="M13.6 7.5v8M11 10.3h5.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                        </span>
+                        <span class="learn-num" aria-hidden="true">10</span>
+                        <div class="learn-text">
+                            <h3>Bible Lessons &amp; Christian Values</h3>
+                            <p>Teaching kindness, love, respect and important Christian values through age-appropriate Bible stories and lessons.</p>
+                        </div>
+                    </li>
+                </ol>
             </div>
         </section>
 
@@ -294,7 +417,10 @@
              Preview mosaic + album cards. script.js moves the .album sections below into the
              album pop-up (#albumModal) and opens it when the URL hash is #album-<name>; without JS
              they render inline here. Each [data-gallery-group] is its own lightbox set. To add a photo, add a .gallery-item <li> to an album's grid —
-             the album card's photo count updates automatically. -->
+             the album card's photo count updates automatically. Each photo has two files in
+             assets/images/gallery: <name>.webp for the tile and <name>-large.webp for the lightbox
+             (data-file). --pos on a tile's <img> picks the part of the photo the tile shows.
+             Albums run R, Y, G, V: Premises, Educational Activities, Petting Zoo, Fun Days. -->
         <section id="gallery" class="section section-alt accent-green" aria-labelledby="gallery-heading">
             <div class="doodle-layer" aria-hidden="true">
                 <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-tree.webp" alt="" width="512" height="428" loading="lazy" decoding="async" style="--l:-34px;--b:-12px;--s:190px;--rot:-4deg;--dur:11s">
@@ -309,11 +435,15 @@
                     <p class="eyebrow">Gallery</p>
                     <h2 id="gallery-heading">A peek into our centre</h2>
                     <p class="section-intro">A glimpse of the play, learning and care that fills each day. Tap a picture to see it larger, or open one of our albums below.</p>
-                    <p class="gallery-note">These are illustrations for now &mdash; real photos of our centre are on their way.</p>
+                    <p class="gallery-note">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M12 3l7.5 2.8v5.4c0 4.6-3.1 8.2-7.5 9.8-4.4-1.6-7.5-5.2-7.5-9.8V5.8L12 3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 15.6s-3.4-2.1-3.4-4.3a1.9 1.9 0 013.4-1.2 1.9 1.9 0 013.4 1.2c0 2.2-3.4 4.3-3.4 4.3z" fill="currentColor"/></svg>
+                        To protect the privacy of the children in our care, their faces have been illustrated in these photos.
+                    </p>
                 </div>
 
-                <!-- Stand-in illustrations until the school's real photos arrive. On phones this
-                     list becomes a swipeable carousel (see style.css). -->
+                <!-- Five highlights: the two Premises tiles are still stand-in illustrations (the
+                     school has not sent photos of the buildings yet); the other three are real
+                     photos. On phones this list becomes a swipeable carousel (see style.css). -->
                 <div class="gallery-overview">
                     <ul class="gallery-preview" data-gallery-group="preview" aria-label="Picture highlights">
                         <li class="accent-red">
@@ -328,22 +458,22 @@
                                 <span class="gallery-label"><span class="gallery-chip">Premises</span> Our Learning Space</span>
                             </button>
                         </li>
-                        <li class="accent-violet">
-                            <button type="button" class="gallery-item" data-caption="Arts &amp; Crafts (illustration)" data-file="assets/images/illustration-art-table.webp">
-                                <img class="gallery-photo" src="assets/images/illustration-art-table.webp" alt="Illustration of a craft table with pots of paint, brushes, crayons, scissors, coloured paper and a child's painting of a flower and a butterfly." width="900" height="673" loading="lazy" decoding="async">
-                                <span class="gallery-label"><span class="gallery-chip">Fun Days</span> Arts &amp; Crafts</span>
+                        <li class="accent-yellow">
+                            <button type="button" class="gallery-item" data-caption="Shapes &amp; Patterns" data-file="assets/images/gallery/ea-08-large.webp">
+                                <img class="gallery-photo" style="--pos:50% 12%" src="assets/images/gallery/ea-08.webp" alt="A smiling child fitting colourful shape tiles into a pattern board at a classroom table." width="640" height="853" loading="lazy" decoding="async">
+                                <span class="gallery-label"><span class="gallery-chip">Educational Activities</span> Shapes &amp; Patterns</span>
                             </button>
                         </li>
                         <li class="accent-green">
-                            <button type="button" class="gallery-item" data-caption="Petting Zoo (illustration)" data-file="assets/images/illustration-petting-zoo.webp">
-                                <img class="gallery-photo" src="assets/images/illustration-petting-zoo.webp" alt="Illustration of two white bunnies, three yellow chicks and a baby goat in a grassy pen with a wooden fence and a small hutch." width="900" height="673" loading="lazy" decoding="async">
-                                <span class="gallery-label"><span class="gallery-chip">Petting Zoo</span> Furry Friends</span>
+                            <button type="button" class="gallery-item" data-caption="Meeting the Pony" data-file="assets/images/gallery/pz-10-large.webp">
+                                <img class="gallery-photo" src="assets/images/gallery/pz-10.webp" alt="Children reaching over the fence to stroke a pony's nose." width="800" height="599" loading="lazy" decoding="async">
+                                <span class="gallery-label"><span class="gallery-chip">Petting Zoo</span> Meeting the Pony</span>
                             </button>
                         </li>
                         <li class="accent-violet">
-                            <button type="button" class="gallery-item" data-caption="Fun Day (illustration)" data-file="assets/images/illustration-fun-day.webp">
-                                <img class="gallery-photo" src="assets/images/illustration-fun-day.webp" alt="Illustration of a school fun day with balloons, bunting, a bouncy castle, hula hoops and a table of cupcakes, juice and fruit." width="900" height="673" loading="lazy" decoding="async">
-                                <span class="gallery-label"><span class="gallery-chip">Fun Days</span> Fun Day</span>
+                            <button type="button" class="gallery-item" data-caption="Animal Mask Day" data-file="assets/images/gallery/fd-10-large.webp">
+                                <img class="gallery-photo" style="--pos:50% 30%" src="assets/images/gallery/fd-10.webp" alt="A group of children wearing paper animal masks and holding party bags." width="800" height="656" loading="lazy" decoding="async">
+                                <span class="gallery-label"><span class="gallery-chip">Fun Days</span> Animal Mask Day</span>
                             </button>
                         </li>
                     </ul>
@@ -402,6 +532,60 @@
                                     <path d="M2.5 21.5h19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                                 </svg>
                                 <span>Tour Our Premises</span><span class="sr-only"> (opens the Premises album)</span>
+                            </a>
+                        </li>
+
+                        <!-- Educational Activities (yellow): a worksheet with a folded corner, ABC blocks and a pencil -->
+                        <li class="album-card album-card--learning accent-yellow">
+                            <a class="album-art" href="#album-educational-activities" tabindex="-1" aria-hidden="true">
+                                <svg viewBox="0 0 320 240" focusable="false">
+                                    <path d="M18 0h256l46 46v176a18 18 0 01-18 18H18a18 18 0 01-18-18V18A18 18 0 0118 0z" fill="#eaf6fc"/>
+                                    <path d="M274 0v28a18 18 0 0018 18h28z" fill="#c9e4f3"/>
+                                    <path d="M28 84h150M28 118h60M196 118h50" stroke="#d3e8f4" stroke-width="3" stroke-linecap="round"/>
+                                    <g font-family="'Baloo 2', ui-rounded, sans-serif" font-weight="800" font-size="40">
+                                        <text x="30" y="62" fill="#f28c28">1</text>
+                                        <text x="58" y="62" fill="#5b5fd6">2</text>
+                                        <text x="88" y="62" fill="#a35bc9">3</text>
+                                    </g>
+                                    <path class="party-star" d="M196 28l5.4 13.8 14.8.9-11.4 9.4 3.7 14.4L196 58.5l-12.5 8 3.7-14.4-11.4-9.4 14.8-.9z" fill="#f6c443" stroke="#f28c28" stroke-width="3" stroke-linejoin="round"/>
+                                    <path d="M26 204h268" stroke="#b45309" stroke-width="5" stroke-linecap="round"/>
+                                    <g font-family="'Baloo 2', ui-rounded, sans-serif" font-weight="800" font-size="38" text-anchor="middle" fill="#ffffff">
+                                        <rect x="62" y="148" width="54" height="54" rx="7" fill="#e8483f" stroke="#16425b" stroke-width="3"/>
+                                        <text x="89" y="189">A</text>
+                                        <rect x="120" y="148" width="54" height="54" rx="7" fill="#2e9bda" stroke="#16425b" stroke-width="3"/>
+                                        <text x="147" y="189">B</text>
+                                        <g class="animal">
+                                            <rect x="91" y="92" width="54" height="54" rx="7" fill="#3fa34d" stroke="#16425b" stroke-width="3"/>
+                                            <text x="118" y="133">C</text>
+                                        </g>
+                                    </g>
+                                    <g transform="rotate(16 244 130)">
+                                        <g class="pencil">
+                                            <rect x="234" y="58" width="20" height="16" rx="4" fill="#f8a5b3" stroke="#16425b" stroke-width="3"/>
+                                            <rect x="234" y="72" width="20" height="10" fill="#c8d3d8" stroke="#16425b" stroke-width="3"/>
+                                            <rect x="234" y="82" width="20" height="84" fill="#f6c443" stroke="#16425b" stroke-width="3"/>
+                                            <path d="M234 166l10 26 10-26z" fill="#fff7e6" stroke="#16425b" stroke-width="3" stroke-linejoin="round"/>
+                                            <path d="M240.5 183l3.5 9 3.5-9z" fill="#16425b"/>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </a>
+                            <h3>Educational Activities</h3>
+                            <p class="album-blurb">Puzzles, counting, building blocks and outdoor games that make learning feel like play.</p>
+                            <span class="album-count" data-album-count="album-educational-activities">Photos</span>
+                            <a class="album-btn album-btn--learning" href="#album-educational-activities">
+                                <svg class="album-btn-blocks" viewBox="0 0 78 26" aria-hidden="true" focusable="false">
+                                    <g font-family="'Baloo 2', ui-rounded, sans-serif" font-weight="800" font-size="15" text-anchor="middle" fill="#ffffff">
+                                        <g class="hop"><rect x="2" y="4" width="22" height="22" rx="4" fill="#e8483f" stroke="#7a5800" stroke-width="2"/><text x="13" y="20.5">A</text></g>
+                                        <g class="hop"><rect x="28" y="4" width="22" height="22" rx="4" fill="#2e9bda" stroke="#7a5800" stroke-width="2"/><text x="39" y="20.5">B</text></g>
+                                        <g class="hop"><rect x="54" y="4" width="22" height="22" rx="4" fill="#3fa34d" stroke="#7a5800" stroke-width="2"/><text x="65" y="20.5">C</text></g>
+                                    </g>
+                                </svg>
+                                <svg class="album-btn-icon pencil-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <path d="M4 20l1.3-5L14.8 5.5l3.7 3.7L9 18.7z" fill="currentColor"/>
+                                    <path d="M16.2 4.1l1.3-1.3a1.5 1.5 0 012.1 0l1.6 1.6a1.5 1.5 0 010 2.1l-1.3 1.3z" fill="currentColor"/>
+                                </svg>
+                                <span>Watch Us Learn</span><span class="sr-only"> (opens the Educational Activities album)</span>
                             </a>
                         </li>
 
@@ -559,7 +743,9 @@
                 </div>
 
                 <div class="album-views">
-                    <section class="album accent-red" id="album-premises" data-gallery-group="premises" aria-labelledby="album-premises-title">
+                    <!-- data-count-noun: this album still holds illustrations, so its count reads
+                         "pictures". Remove the attribute once the real building photos are in. -->
+                    <section class="album accent-red" id="album-premises" data-gallery-group="premises" data-count-noun="picture" aria-labelledby="album-premises-title">
                         <div class="album-head">
                             <h3 id="album-premises-title" tabindex="-1">Premises <span class="album-count" data-album-count="album-premises">Photos</span></h3>
                             <a class="album-back" href="#gallery">
@@ -587,6 +773,84 @@
                         </ul>
                     </section>
 
+                    <section class="album accent-yellow" id="album-educational-activities" data-gallery-group="educational-activities" aria-labelledby="album-educational-activities-title">
+                        <div class="album-head">
+                            <h3 id="album-educational-activities-title" tabindex="-1">Educational Activities <span class="album-count" data-album-count="album-educational-activities">Photos</span></h3>
+                            <a class="album-back" href="#gallery">
+                                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                All albums
+                            </a>
+                        </div>
+                        <ul class="gallery-grid">
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Shapes &amp; Patterns" data-file="assets/images/gallery/ea-08-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 12%" src="assets/images/gallery/ea-08.webp" alt="A smiling child fitting colourful shape tiles into a pattern board at a classroom table." width="640" height="853" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Shapes &amp; Patterns</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Linking Chains" data-file="assets/images/gallery/ea-10-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 45%" src="assets/images/gallery/ea-10.webp" alt="A smiling child in an orange Leer Speel-Speel shirt linking colourful plastic chains at a classroom table." width="640" height="853" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Linking Chains</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Playdough Numbers" data-file="assets/images/gallery/ea-12-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 62%" src="assets/images/gallery/ea-12.webp" alt="A child shaping playdough numbers on a number mat, with classmates working behind." width="640" height="853" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Playdough Numbers</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Building with Blocks" data-file="assets/images/gallery/ea-11-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 30%" src="assets/images/gallery/ea-11.webp" alt="Two children building with wooden shape blocks and gears at a classroom table." width="640" height="853" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Building with Blocks</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Stacking &amp; Sorting" data-file="assets/images/gallery/ea-09-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 35%" src="assets/images/gallery/ea-09.webp" alt="A child proudly holding up a wooden stacking-ring toy in the classroom." width="800" height="600" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Stacking &amp; Sorting</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Hoop Hopping" data-file="assets/images/gallery/ea-02-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 30%" src="assets/images/gallery/ea-02.webp" alt="Children hopping through a row of colourful hoops on the school lawn." width="800" height="600" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Hoop Hopping</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Bean Bag Toss" data-file="assets/images/gallery/ea-01-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/ea-01.webp" alt="A child throwing a bean bag at a hoop target on the lawn while classmates watch." width="800" height="600" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Bean Bag Toss</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Ball Games" data-file="assets/images/gallery/ea-04-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/ea-04.webp" alt="Children playing a catching game with buckets, cones and coloured balls under a big tree." width="800" height="600" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Ball Games</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Outdoor Games" data-file="assets/images/gallery/ea-03-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 80%" src="assets/images/gallery/ea-03.webp" alt="Children in navy school tracksuits running during an outdoor game under the trees." width="800" height="545" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Outdoor Games</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Fine Motor Activities" data-file="assets/images/gallery/ea-06-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 60%" src="assets/images/gallery/ea-06.webp" alt="A classroom table set out with lacing hands, shape sorters and peg boards." width="640" height="853" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Fine Motor Activities</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Colour Sorting" data-file="assets/images/gallery/ea-07-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 75%" src="assets/images/gallery/ea-07.webp" alt="Plastic chain links sorted by colour inside a hoop on the mat." width="640" height="853" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Colour Sorting</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </section>
+
                     <section class="album accent-green" id="album-petting-zoo" data-gallery-group="petting-zoo" aria-labelledby="album-petting-zoo-title">
                         <div class="album-head">
                             <h3 id="album-petting-zoo-title" tabindex="-1">Petting Zoo <span class="album-count" data-album-count="album-petting-zoo">Photos</span></h3>
@@ -597,18 +861,100 @@
                         </div>
                         <ul class="gallery-grid">
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Petting Zoo (illustration)" data-file="assets/images/illustration-petting-zoo.webp">
-                                    <img class="gallery-photo" src="assets/images/illustration-petting-zoo.webp" alt="Illustration of two white bunnies, three yellow chicks and a baby goat in a grassy pen with a wooden fence and a small hutch." width="900" height="673" loading="lazy" decoding="async">
-                                    <span class="gallery-label">Furry Friends</span>
+                                <button type="button" class="gallery-item" data-caption="Meeting the Pony" data-file="assets/images/gallery/pz-10-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/pz-10.webp" alt="Children reaching over the fence to stroke a pony's nose." width="800" height="599" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Meeting the Pony</span>
                                 </button>
                             </li>
-                            <li class="gallery-placeholder">
-                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="currentColor"><ellipse cx="12" cy="16" rx="5" ry="4.2"/><circle cx="5.8" cy="10.5" r="2.2"/><circle cx="9.8" cy="6.2" r="2.2"/><circle cx="14.2" cy="6.2" r="2.2"/><circle cx="18.2" cy="10.5" r="2.2"/></g></svg>
-                                <span>Photos coming soon</span>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Feeding the Chickens" data-file="assets/images/gallery/pz-13-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 30%" src="assets/images/gallery/pz-13.webp" alt="Children holding feed tubs beside the chickens in the petting zoo." width="800" height="600" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Feeding the Chickens</span>
+                                </button>
                             </li>
-                            <li class="gallery-placeholder">
-                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="currentColor"><ellipse cx="12" cy="16" rx="5" ry="4.2"/><circle cx="5.8" cy="10.5" r="2.2"/><circle cx="9.8" cy="6.2" r="2.2"/><circle cx="14.2" cy="6.2" r="2.2"/><circle cx="18.2" cy="10.5" r="2.2"/></g></svg>
-                                <span>Photos coming soon</span>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Feeding Time" data-file="assets/images/gallery/pz-12-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 35%" src="assets/images/gallery/pz-12.webp" alt="A smiling child holding a feed tub in the chicken run." width="640" height="853" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Feeding Time</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Feeding the Birds" data-file="assets/images/gallery/pz-11-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 40%" src="assets/images/gallery/pz-11.webp" alt="Three smiling children with feed cups in the bird enclosure." width="800" height="599" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Feeding the Birds</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Feeding the Pony" data-file="assets/images/gallery/pz-14-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 25%" src="assets/images/gallery/pz-14.webp" alt="Children pouring feed into a pony's trough." width="640" height="776" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Feeding the Pony</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Grooming the Pony" data-file="assets/images/gallery/pz-16-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 30%" src="assets/images/gallery/pz-16.webp" alt="A child brushing a pony while classmates and a teacher look on." width="640" height="853" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Grooming the Pony</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Collecting Eggs" data-file="assets/images/gallery/pz-15-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 85%" src="assets/images/gallery/pz-15.webp" alt="Children holding up eggs and feed bowls outside the animal enclosures." width="640" height="853" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Collecting Eggs</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Picking Lemons" data-file="assets/images/gallery/pz-09-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/pz-09.webp" alt="Children reaching up to pick lemons from a tree." width="800" height="600" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Picking Lemons</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Our Goats" data-file="assets/images/gallery/pz-03-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 70%" src="assets/images/gallery/pz-03.webp" alt="Two goats standing in their straw-covered pen." width="800" height="600" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Our Goats</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Our Pony" data-file="assets/images/gallery/pz-05-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 35%" src="assets/images/gallery/pz-05.webp" alt="A black-and-white pony standing in its stable." width="640" height="853" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Our Pony</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Peeking Out" data-file="assets/images/gallery/pz-06-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 35%" src="assets/images/gallery/pz-06.webp" alt="A brown-and-white pony looking out over its stable door." width="640" height="853" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Peeking Out</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="A New Foal" data-file="assets/images/gallery/pz-08-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/pz-08.webp" alt="A young brown foal standing in long grass." width="800" height="697" loading="lazy" decoding="async">
+                                    <span class="gallery-label">A New Foal</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Our Turkeys" data-file="assets/images/gallery/pz-07-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 70%" src="assets/images/gallery/pz-07.webp" alt="Four turkeys strutting on the grass." width="640" height="629" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Our Turkeys</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Splash Time" data-file="assets/images/gallery/pz-02-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/pz-02.webp" alt="A duck spreading its wings in the pond while others swim by." width="800" height="600" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Splash Time</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Our Goose" data-file="assets/images/gallery/pz-04-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 55%" src="assets/images/gallery/pz-04.webp" alt="A white goose stretching its wings beside a small pond." width="640" height="800" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Our Goose</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Our Vegetable Garden" data-file="assets/images/gallery/pz-01-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/pz-01.webp" alt="Raised beds of flowers and seedlings under a green shade-net tunnel." width="800" height="600" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Our Vegetable Garden</span>
+                                </button>
                             </li>
                         </ul>
                     </section>
@@ -623,21 +969,57 @@
                         </div>
                         <ul class="gallery-grid">
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Fun Day (illustration)" data-file="assets/images/illustration-fun-day.webp">
-                                    <img class="gallery-photo" src="assets/images/illustration-fun-day.webp" alt="Illustration of a school fun day with balloons, bunting, a bouncy castle, hula hoops and a table of cupcakes, juice and fruit." width="900" height="673" loading="lazy" decoding="async">
-                                    <span class="gallery-label">Fun Day</span>
+                                <button type="button" class="gallery-item" data-caption="Paper Flower Day" data-file="assets/images/gallery/fd-01-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/fd-01.webp" alt="Children on the school lawn holding up big paper-plate flowers they made." width="800" height="484" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Paper Flower Day</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Arts &amp; Crafts (illustration)" data-file="assets/images/illustration-art-table.webp">
-                                    <img class="gallery-photo" src="assets/images/illustration-art-table.webp" alt="Illustration of a craft table with pots of paint, brushes, crayons, scissors, coloured paper and a child's painting of a flower and a butterfly." width="900" height="673" loading="lazy" decoding="async">
-                                    <span class="gallery-label">Arts &amp; Crafts</span>
+                                <button type="button" class="gallery-item" data-caption="Animal Mask Day" data-file="assets/images/gallery/fd-10-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 30%" src="assets/images/gallery/fd-10.webp" alt="A group of children wearing paper animal masks and holding party bags." width="800" height="656" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Animal Mask Day</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Lunch &amp; Snack Time (illustration)" data-file="assets/images/illustration-lunchbox.webp">
-                                    <img class="gallery-photo" src="assets/images/illustration-lunchbox.webp" alt="Illustration of an open green lunchbox with a sandwich, an apple, a banana, orange slices and carrot sticks, beside a water bottle and a bowl of fruit salad." width="900" height="900" loading="lazy" decoding="async">
-                                    <span class="gallery-label">Lunch &amp; Snack Time</span>
+                                <button type="button" class="gallery-item" data-caption="Wild Friends" data-file="assets/images/gallery/fd-11-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 35%" src="assets/images/gallery/fd-11.webp" alt="Four children in paper animal masks holding party bags beside a painted wall." width="800" height="600" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Wild Friends</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Decorating Cupcakes" data-file="assets/images/gallery/fd-08-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 45%" src="assets/images/gallery/fd-08.webp" alt="Three children in hair nets icing and decorating cupcakes." width="800" height="600" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Decorating Cupcakes</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Picnic Time" data-file="assets/images/gallery/fd-13-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 70%" src="assets/images/gallery/fd-13.webp" alt="Children smiling around a picnic table with snacks and drinks at the playground." width="800" height="600" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Picnic Time</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Cupcakes Galore" data-file="assets/images/gallery/fd-04-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 72%" src="assets/images/gallery/fd-04.webp" alt="Trays of cupcakes with sprinkles and icing flowers on a party table." width="640" height="853" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Cupcakes Galore</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Party Treats" data-file="assets/images/gallery/fd-03-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 72%" src="assets/images/gallery/fd-03.webp" alt="A party table with doughnuts, muffins and a fruit platter." width="640" height="853" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Party Treats</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Snack Table" data-file="assets/images/gallery/fd-05-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 40%" src="assets/images/gallery/fd-05.webp" alt="A party table with popcorn, crackers, wafers and sweets." width="640" height="853" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Snack Table</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Fresh Fruit Platter" data-file="assets/images/gallery/fd-06-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/fd-06.webp" alt="A round platter of sliced fresh fruit." width="640" height="641" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Fresh Fruit Platter</span>
                                 </button>
                             </li>
                         </ul>
@@ -749,8 +1131,8 @@
             </div>
             <div class="container">
                 <div class="section-heading section-heading-center">
-                    <p class="eyebrow">Our Campuses</p>
-                    <h2 id="locations-heading">Serving Ongwediva &amp; Okatana</h2>
+                    <p class="eyebrow">Ongwediva &amp; Okatana</p>
+                    <h2 id="locations-heading">Our Locations</h2>
                     <p class="section-intro">Two campuses, one Leer Speel-Speel family. Tap Get Directions to open either campus in Google Maps.</p>
                 </div>
 
@@ -874,6 +1256,7 @@
     <footer class="site-footer">
         <div class="container footer-inner">
             <div class="footer-brand">
+                <img class="footer-logo" src="assets/images/logo.webp" alt="Leer Speel Speel logo" width="256" height="256" loading="lazy" decoding="async">
                 <p class="footer-name">Leer Speel-Speel<br>Play-to-Learn Educational Centre</p>
                 <p class="footer-motto">&ldquo;Because every child deserves to be loved, guided and truly known.&rdquo;</p>
                 <div class="footer-social-links">
@@ -892,6 +1275,7 @@
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#founder">Our Founder</a></li>
                     <li><a href="#offer">What We Offer</a></li>
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#downloads">Downloads</a></li>
@@ -914,7 +1298,7 @@
             </div>
 
             <div class="footer-locations">
-                <h3>Our Campuses</h3>
+                <h3>Our Locations</h3>
                 <p>Ongwediva &mdash; Erf 2762, Onguti Street<br><a href="https://www.google.com/maps/place/Leer+Speel-Speel+Play-to-Learn+Educational+Centre+Daycare+%26+Pre-Primary/data=!4m2!3m1!1s0x0:0xc8fd8fece5292140?sa=X" target="_blank" rel="noopener noreferrer">Get directions <span class="sr-only">to our Ongwediva campus (opens in a new tab)</span></a></p>
                 <!-- PLACEHOLDER: add the Okatana street address here once known -->
                 <p>Okatana<br><a href="https://www.google.com/maps/place/Leer+Speel-Speel+Play-to-Learn+Educational+Centre+Daycare+%26+Pre-Primary/@-17.7460315,15.7083416,17z/data=!4m6!3m5!1s0x1b939f75734f0edf:0x16e43468c0de4375!8m2!3d-17.7463585!4d15.7096291!16s%2Fg%2F11v64wkpvy" target="_blank" rel="noopener noreferrer">Get directions <span class="sr-only">to our Okatana campus (opens in a new tab)</span></a></p>
@@ -955,6 +1339,7 @@
             <div class="album-modal-bar">
                 <nav class="album-tabs" aria-label="Switch album">
                     <a class="album-tab accent-red" href="#album-premises">Premises</a>
+                    <a class="album-tab accent-yellow" href="#album-educational-activities">Educational Activities</a>
                     <a class="album-tab accent-green" href="#album-petting-zoo">Petting Zoo</a>
                     <a class="album-tab accent-violet" href="#album-fun-days">Fun Days</a>
                 </nav>

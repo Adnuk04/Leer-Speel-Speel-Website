@@ -5,3 +5,6 @@ CLAUDE.md
 
 # Tooling
 node_modules/
+
+# Client originals (full-size photos, logo, founder image) - web copies live in assets/images
+_originals/

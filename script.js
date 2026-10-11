@@ -5,6 +5,18 @@
     var yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+    /* ---------- Years open ----------
+       The school opened in 2003. Every [data-years-since="2003"] number is
+       worked out from today's year, so "23 years" never goes stale; the number
+       written in index.html is only the fallback for visitors without JavaScript. */
+    document.querySelectorAll('[data-years-since]').forEach(function (el) {
+        var since = parseInt(el.getAttribute('data-years-since'), 10);
+        if (isNaN(since)) return;
+        var years = new Date().getFullYear() - since;
+        el.textContent = years;
+        if (el.hasAttribute('data-count')) el.setAttribute('data-count', years); // the stat counts up to it
+    });
+
     /* ---------- WhatsApp links ----------
        THE ONE PLACE TO CHANGE THE SCHOOL'S WHATSAPP NUMBER (country code first,
        no "+", spaces or leading zero). Every link marked data-whatsapp is
@@ -115,8 +127,9 @@
 
         albums.forEach(function (album) {
             var count = album.querySelectorAll('.gallery-item').length;
-            // "picture(s)" while the albums hold stand-in illustrations; switch back to "photo(s)" once real photos are in
-            var label = count === 0 ? 'Photos coming soon' : count + (count === 1 ? ' picture' : ' pictures');
+            // "photo(s)" by default; an album still holding stand-in illustrations says so with data-count-noun="picture"
+            var noun = album.getAttribute('data-count-noun') || 'photo';
+            var label = count === 0 ? 'Photos coming soon' : count + ' ' + noun + (count === 1 ? '' : 's');
             document.querySelectorAll('[data-album-count="' + album.id + '"]').forEach(function (el) {
                 el.textContent = label;
             });
@@ -361,9 +374,9 @@
     if (motionOk) {
         // Scroll reveal: elements fade/slide in as they enter the screen.
         // Cards "pop"; everything else slides up. Siblings are staggered.
-        var popSelector = '.offer-card, .day-card, .album-card, .download-card, .location-card, .stat';
+        var popSelector = '.offer-card, .learn-card, .album-card, .download-card, .location-card, .stat, .since-badge';
         var revealTargets = Array.prototype.slice.call(document.querySelectorAll(
-            'main .section-heading, main .section-copy, main .art-frame, .hero-visual, .gallery-preview, ' +
+            'main .section-heading, main .section-copy, main .art-frame, .hero-visual, .gallery-preview, .founder-letter, ' +
             '.album-picker-heading, .downloads-group-title, .enquiry-form, ' + popSelector
         ));
 

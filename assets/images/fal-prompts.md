@@ -4,6 +4,8 @@ Every crayon doodle and illustration added in the Round 2 edits (9 October 2026)
 
 This is a working note, not site content: leave it out of the Cloudflare upload folder.
 
+**Round 3 (11 October 2026):** the school's real photos replaced eight of the ten illustrations, and those files were deleted. Only `illustration-playground.webp` and `illustration-classroom.webp` are still on the site (Premises album and two gallery highlights), until photos of the buildings arrive. The prompts below are kept in case any are needed again.
+
 ## Models
 
 | Use | Model | Listed rate | Images |

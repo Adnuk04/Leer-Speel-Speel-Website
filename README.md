@@ -6,10 +6,11 @@ Built as a single-page static site with plain HTML, CSS, and JavaScript — no b
 
 ## Features
 
-- **Responsive single-page layout** covering Hero, At a Glance stats, About, What We Offer, A Day of Learning, Gallery, Downloads, Campuses, and Contact/Enrolment sections
+- **Responsive single-page layout** covering Hero, At a Glance stats, About, Meet Our Founder, What We Offer, Our 10 Special Learning Experiences, Gallery, Downloads, Our Locations, and Contact/Enrolment sections
 - **Accessible mobile navigation** with an animated hamburger toggle and drop-down panel, `aria-expanded` state, outside-click and `Escape`-key dismissal
-- **Picture gallery in albums** (illustrations standing in until the school's real photos arrive) — a highlights mosaic, swipeable on phones, plus illustrated Premises / Petting Zoo / Fun Days album cards that open each album in a pop-up; photos open in a full-size lightbox (arrow keys, swipe, `Escape`, focus trap, and focus restoration)
-- **Rainbow colour system and crayon doodles** — every section tinted in red → violet order with wavy or scalloped dividers, and floating crayon drawings and illustrations (prompts logged in `assets/images/fal-prompts.md`)
+- **Photo gallery in albums** — a highlights mosaic, swipeable on phones, plus illustrated Premises / Educational Activities / Petting Zoo / Fun Days album cards that open each album in a pop-up; photos open in a full-size lightbox (arrow keys, swipe, `Escape`, focus trap, and focus restoration). The school's photos have the children's faces illustrated for privacy; the Premises album still holds stand-in illustrations until photos of the buildings arrive
+- **Meet Our Founder** — the founder's own letter, a "Since 2003" badge and a marked slot for her photo; the number of years open is worked out from the current year
+- **Rainbow colour system and crayon doodles** — every section tinted in red → violet order with wavy or scalloped dividers, and floating crayon drawings (prompts logged in `assets/images/fal-prompts.md`)
 - **WhatsApp first** — a "WhatsApp Us" button ahead of every email option, a sticky WhatsApp/Call bar on phones and a floating button on wider screens; the number lives in one constant at the top of `script.js`
 - **Gentle motion** — scroll reveals, count-up stats and tap feedback, all switched off for visitors who prefer reduced motion
 - **Downloadable resources** section linking to the school’s parent guides (Ongwediva & Okatana) and forms (registration, transport, uniform order), opening in a new tab
@@ -18,7 +19,7 @@ Built as a single-page static site with plain HTML, CSS, and JavaScript — no b
 - **Social links** to Facebook and Instagram, plus a footer with quick links, contact details, locations, and how to request banking details
 - **Accessibility touches** throughout: skip-to-content link, `aria-label`/`aria-live` attributes, screen-reader-only text, and reduced-motion support for smooth scrolling
 - **Auto-updating copyright year** in the footer
-- Custom fonts (Baloo 2 and Nunito via Google Fonts) and a favicon using the centre's logo
+- Custom fonts (Baloo 2 and Nunito via Google Fonts), plus a favicon, touch icon and link-preview card made from the centre's logo
 
 ## Tech Stack
 
@@ -35,7 +36,8 @@ Leer Speel-Speel/
 ├── style.css                Site-wide styles
 ├── script.js                 WhatsApp links, navigation, album pop-up, gallery lightbox, motion, and enquiry form logic
 ├── assets/
-│   ├── images/               Logo, illustrations and gallery pictures
+│   ├── images/               Logo, favicons, link-preview card and the two Premises illustrations
+│   │   └── gallery/          The school's photos as WebP: <name>.webp (tile) and <name>-large.webp (lightbox)
 │   ├── doodles/              Crayon doodles (SVG and WebP) and section dividers
 │   └── documents/            Parent guides and forms (PDF)
 ├── package.json               Project metadata and npm scripts
@@ -84,4 +86,5 @@ This is a static website, so no build step is strictly required — you can open
 
 ## Notes
 
+- The school's full-size originals are kept out of the repository (in a git-ignored `_originals/` folder); only the optimised web copies in `assets/images/gallery/` are committed and deployed.
 - The enquiry form currently opens a Gmail compose window as a temporary demo measure (see the comment in [script.js](script.js)). Before go-live, this should be switched to a plain `mailto:` link addressed to the school's inbox so it works regardless of the visitor's email provider.
