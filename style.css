@@ -118,7 +118,12 @@
 
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+/* No grey/blue flash over things tapped on phones: buttons and cards give their
+   own squish instead (see "Tap feedback" in the Motion block). Keyboard focus
+   rings are separate (:focus-visible) and unaffected. */
+html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+/* Taps act at once (no wait for a possible double-tap zoom) */
+a, button, input, textarea, label { touch-action: manipulation; }
 body {
     margin: 0;
     background: var(--color-bg);
@@ -1683,10 +1688,17 @@ img, .gallery-item, .lightbox-visual {
     /* The floating WhatsApp button gives a little wave now and then */
     .whatsapp-fab .btn-icon { animation: fab-wave 6s ease-in-out 2s infinite; }
 
-    /* Tap feedback: buttons and cards squish under a finger */
-    .btn:active, .contact-bar-btn:active, .whatsapp-fab:active { transform: scale(0.94); }
+    /* Tap feedback: buttons, links and cards squish the moment a finger lands
+       (a fast 0.08s press), then spring back with their normal transition */
+    .btn:active, .contact-bar-btn:active, .whatsapp-fab:active,
+    .nav-toggle:active, .album-tab:active, .album-back:active, .email-chip:active,
+    .album-modal-close:active, .lightbox-close:active { transform: scale(0.94); transition-duration: 0.08s; }
+    .lightbox-nav:active { transform: translateY(-50%) scale(0.9); transition-duration: 0.08s; }
+    .primary-nav-list a:active, .contact-link:active, .tel-link:active,
+    .footer-links a:active, .footer-social-links a:active { opacity: 0.6; transition: opacity 0.08s; }
     .offer-card:active, .learn-card:active, .download-card:active,
-    .location-card:active, .stat:active, .gallery-item:active { transform: scale(0.97); }
+    .location-card:active, .stat:active, .gallery-item:active,
+    .album-card:active { transform: scale(0.97); transition-duration: 0.08s; }
 }
 
 @keyframes reveal-up { from { opacity: 0; transform: translateY(28px); } }

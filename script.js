@@ -1,6 +1,11 @@
 (function () {
     'use strict';
 
+    /* ---------- Tap feedback on iPhones ----------
+       Safari only applies :active (the squish when a button is pressed) on pages
+       that listen for touches; this empty listener switches it on. */
+    document.addEventListener('touchstart', function () {}, { passive: true });
+
     /* ---------- Footer year ---------- */
     var yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
