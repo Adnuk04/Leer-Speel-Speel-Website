@@ -64,8 +64,8 @@ This is a static website, so no build step is strictly required — you can open
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Adnuk04/my-first-website.git
-   cd "Leer Speel-Speel"
+   git clone https://github.com/Adnuk04/Leer-Speel-Speel-Website.git
+   cd Leer-Speel-Speel-Website
    ```
 
 2. **Install dependencies**

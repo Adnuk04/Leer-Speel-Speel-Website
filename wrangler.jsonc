@@ -4,6 +4,11 @@
 {
     "name": "lss-play-to-learn",
     "compatibility_date": "2026-10-02",
+    // The site lives on leerspeelspeel.com (custom domain, set in the dashboard).
+    // Keep the *.workers.dev address and per-version preview links switched off, or
+    // every deploy turns them back on and Google sees a second copy of the site.
+    "workers_dev": false,
+    "preview_urls": false,
     "assets": {
         "directory": "../LSS-cloudflare-upload",
         // Serve 404.html (with a real 404 status) for any address that does not exist

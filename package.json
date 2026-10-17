@@ -19,7 +19,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/Adnuk04/my-first-website.git"
+    "url": "https://github.com/Adnuk04/Leer-Speel-Speel-Website.git"
   },
   "devDependencies": {
     "eslint": "^9.9.0",
