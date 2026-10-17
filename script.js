@@ -23,11 +23,43 @@
        pointed here; the same number is written into those links in index.html
        only as a fallback for visitors without JavaScript. */
     var WHATSAPP_NUMBER = '264812156444';
-    var WHATSAPP_MESSAGE = 'Hi Leer Speel Speel, I\'d like to ask about enrolment';
-    var whatsappUrl = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(WHATSAPP_MESSAGE);
+    var WHATSAPP_MESSAGE = 'Hi Leer Speel-Speel, I\'d like to ask about enrolment';
+    var whatsappLink = function (message) {
+        return 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(message);
+    };
+    var whatsappUrl = whatsappLink(WHATSAPP_MESSAGE);
     document.querySelectorAll('a[data-whatsapp]').forEach(function (link) {
         link.href = whatsappUrl;
     });
+
+    /* ---------- Email address ----------
+       THE ONE PLACE TO CHANGE MRS. POTGIETER'S EMAIL ADDRESS. It is kept in two
+       parts and joined here, so it never appears whole in index.html where simple
+       spam bots look for addresses. Every [data-email-address] shows it. */
+    var EMAIL_USER = 'potgieter';
+    var EMAIL_DOMAIN = 'iway.na';
+    var EMAIL_ADDRESS = EMAIL_USER + '@' + EMAIL_DOMAIN;
+    var EMAIL_SUBJECT = 'Enquiry from the LSS website';
+    document.querySelectorAll('[data-email-address]').forEach(function (el) {
+        el.textContent = EMAIL_ADDRESS;
+    });
+
+    /* ---------- Jumps to #sections ----------
+       For speed, style.css lets the browser skip laying out sections that are
+       off screen, using an estimated height for each. A jump to a #section
+       link needs the real heights, so the first in-page link click (or arriving
+       with a #section in the address) switches the skipping off for good. */
+    var root = document.documentElement;
+    var useRealHeights = function () { root.classList.add('cv-off'); };
+    document.addEventListener('click', function (event) {
+        var link = event.target.closest && event.target.closest('a[href^="#"]');
+        if (link && !/^#album-/.test(link.getAttribute('href'))) useRealHeights();
+    }, true); // capture phase: runs before the browser starts the jump
+    if (window.location.hash && !/^#album-/.test(window.location.hash)) {
+        var hashTarget = document.getElementById(window.location.hash.slice(1));
+        useRealHeights();
+        if (hashTarget) hashTarget.scrollIntoView();
+    }
 
     /* ---------- Logo: scroll to top ----------
        The header is position:sticky, so its own bounding box is always at
@@ -127,9 +159,7 @@
 
         albums.forEach(function (album) {
             var count = album.querySelectorAll('.gallery-item').length;
-            // "photo(s)" by default; an album still holding stand-in illustrations says so with data-count-noun="picture"
-            var noun = album.getAttribute('data-count-noun') || 'photo';
-            var label = count === 0 ? 'Photos coming soon' : count + ' ' + noun + (count === 1 ? '' : 's');
+            var label = count === 0 ? 'Photos coming soon' : count + ' photo' + (count === 1 ? '' : 's');
             document.querySelectorAll('[data-album-count="' + album.id + '"]').forEach(function (el) {
                 el.textContent = label;
             });
@@ -365,6 +395,23 @@
         });
     }
 
+    /* ---------- Photo protection ----------
+       Stops casual saving: no right-click menu on pictures (text, links and
+       forms keep theirs) and no dragging pictures out of the page. The CSS
+       does the rest (no long-press "Save image" menu, a clear layer over gallery
+       and lightbox photos). A screenshot can't be prevented; this only makes
+       saving less easy. */
+    var protectedSelector = 'img, .gallery-item, .lightbox-visual';
+    document.querySelectorAll('img').forEach(function (img) {
+        img.setAttribute('draggable', 'false');
+    });
+    document.addEventListener('contextmenu', function (event) {
+        if (event.target.closest && event.target.closest(protectedSelector)) event.preventDefault();
+    });
+    document.addEventListener('dragstart', function (event) {
+        if (event.target.closest && event.target.closest(protectedSelector)) event.preventDefault();
+    });
+
     /* ---------- Motion: scroll reveals, count-up stats, doodles ----------
        All of it is skipped for visitors who prefer reduced motion (and in
        browsers without IntersectionObserver), so nothing is ever left hidden. */
@@ -376,7 +423,7 @@
         // Cards "pop"; everything else slides up. Siblings are staggered.
         var popSelector = '.offer-card, .learn-card, .album-card, .download-card, .location-card, .stat, .since-badge';
         var revealTargets = Array.prototype.slice.call(document.querySelectorAll(
-            'main .section-heading, main .section-copy, main .art-frame, .hero-visual, .gallery-preview, .founder-letter, ' +
+            'main .section-heading, main .section-copy, main .art-frame, .hero-visual, .gallery-preview, .founder-photo, .founder-letter, ' +
             '.album-picker-heading, .downloads-group-title, .enquiry-form, ' + popSelector
         ));
 
@@ -438,34 +485,111 @@
         }
     }
 
+    /* ---------- Email: Copy buttons and Gmail links ----------
+       Nothing on the site opens a mail app: a mailto: link lands in whatever
+       app the device has (often none on phones), and on phones the Gmail app
+       swallows Gmail web links and drops the address and message. So the
+       address is shown with a Copy button everywhere, and on computers only
+       (.desktop-only in style.css) [data-gmail] links open Gmail's compose
+       page in a new tab, addressed and ready. */
+    var gmailLink = function (subject, body) {
+        var url = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(EMAIL_ADDRESS) +
+            '&su=' + encodeURIComponent(subject || EMAIL_SUBJECT);
+        if (body) url += '&body=' + encodeURIComponent(body);
+        return url;
+    };
+    document.querySelectorAll('a[data-gmail]').forEach(function (link) {
+        link.href = gmailLink(link.getAttribute('data-gmail-subject'));
+    });
+
+    var copyStatus = document.getElementById('copyStatus');
+    document.querySelectorAll('[data-copy-email]').forEach(function (button) {
+        var label = button.innerHTML;
+        var timer = null;
+        var announce = function (text) { if (copyStatus) copyStatus.textContent = text; };
+
+        button.addEventListener('click', function () {
+            var copied = function () {
+                window.clearTimeout(timer);
+                button.textContent = 'Copied!';
+                announce('Email address copied');
+                timer = window.setTimeout(function () {
+                    button.innerHTML = label;
+                    announce('');
+                }, 2000);
+            };
+            var selectAddress = function () {
+                // Copying isn't allowed here: select the address so it can be copied by hand
+                var address = button.closest('li, p').querySelector('[data-email-address]');
+                if (!address) return;
+                var range = document.createRange();
+                range.selectNodeContents(address);
+                var selection = window.getSelection();
+                selection.removeAllRanges();
+                selection.addRange(range);
+                announce('Email address selected. Use your device\'s copy option.');
+            };
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(EMAIL_ADDRESS).then(copied, selectAddress);
+            } else {
+                selectAddress();
+            }
+        });
+    });
+
     /* ---------- Enquiry form ----------
-       TEMPORARY (demo only): opens Gmail's web compose in a new tab, addressed
-       to Sean's inbox, instead of a mailto: link (which was launching Outlook
-       or whatever the OS default mail app happened to be). Nothing is sent
-       automatically. Before handing the site over to the school, switch this
-       back to a plain mailto: link addressed to potgieter@iway.na so it works
-       regardless of which email provider or app the visitor uses. */
+       Nothing is sent from the site itself. "Send on WhatsApp" (the submit
+       button) opens a WhatsApp chat with the message written out; "Send via
+       Gmail" (computers only) opens Gmail's compose page with the same message. */
     var enquiryForm = document.getElementById('enquiryForm');
     if (enquiryForm) {
+        var formNote = document.getElementById('formNote');
+        var formNoteDefault = formNote ? formNote.textContent : '';
+        var requiredFields = [document.getElementById('parentName'), document.getElementById('enquiryMessage')];
+
+        // Returns the message text, or null (and points at the empty field) if something is missing
+        var composeEnquiry = function () {
+            var missing = requiredFields.filter(function (field) { return !field.value.trim(); });
+            requiredFields.forEach(function (field) {
+                if (missing.indexOf(field) > -1) field.setAttribute('aria-invalid', 'true');
+                else field.removeAttribute('aria-invalid');
+            });
+            if (missing.length) {
+                if (formNote) formNote.textContent = 'Please add your name and a message first.';
+                missing[0].focus();
+                return null;
+            }
+            if (formNote) formNote.textContent = formNoteDefault;
+
+            var childName = document.getElementById('childName').value.trim();
+            return [
+                'Hi Leer Speel-Speel, I\'d like to ask about enrolment.',
+                '',
+                'Parent/guardian: ' + requiredFields[0].value.trim(),
+                childName ? 'Child: ' + childName : null,
+                '',
+                requiredFields[1].value.trim()
+            ].filter(function (line) { return line !== null; }).join('\n');
+        };
+
+        requiredFields.forEach(function (field) {
+            field.addEventListener('input', function () {
+                if (field.value.trim()) field.removeAttribute('aria-invalid');
+            });
+        });
+
         enquiryForm.addEventListener('submit', function (event) {
             event.preventDefault();
-
-            var parentName = document.getElementById('parentName').value.trim();
-            var childName = document.getElementById('childName').value.trim();
-            var message = document.getElementById('enquiryMessage').value.trim();
-
-            var bodyLines = [
-                'Parent/guardian name: ' + parentName,
-                childName ? 'Child\'s name: ' + childName : null,
-                '',
-                message
-            ].filter(function (line) { return line !== null; });
-
-            var subject = encodeURIComponent('Enrolment Enquiry - Leer Speel-Speel');
-            var body = encodeURIComponent(bodyLines.join('\n'));
-
-            var gmailComposeUrl = 'https://mail.google.com/mail/u/0/?view=cm&fs=1&to=seanchembe@gmail.com&su=' + subject + '&body=' + body;
-            window.open(gmailComposeUrl, '_blank', 'noopener');
+            var text = composeEnquiry();
+            if (text) window.open(whatsappLink(text), '_blank', 'noopener');
         });
+
+        var enquiryGmail = document.getElementById('enquiryGmail');
+        if (enquiryGmail) {
+            enquiryGmail.addEventListener('click', function () {
+                var text = composeEnquiry();
+                if (text) window.open(gmailLink('Enrolment enquiry from the LSS website', text), '_blank', 'noopener');
+            });
+        }
     }
 })();

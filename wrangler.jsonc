@@ -1,0 +1,12 @@
+// Cloudflare deploy settings for the lss-play-to-learn Worker (static assets only).
+// The upload folder is a clean copy of the site (see CLAUDE.md, "Preview deployment"):
+// never point "directory" at this project folder, which holds private documents.
+{
+    "name": "lss-play-to-learn",
+    "compatibility_date": "2026-10-02",
+    "assets": {
+        "directory": "../LSS-cloudflare-upload",
+        // Serve 404.html (with a real 404 status) for any address that does not exist
+        "not_found_handling": "404-page"
+    }
+}

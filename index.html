@@ -3,34 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Leer Speel-Speel / Play-to-Learn Educational Centre | Daycare &amp; Pre-Primary in Ongwediva &amp; Okatana</title>
-    <meta name="description" content="Leer Speel-Speel / Play-to-Learn Educational Centre offers daycare and pre-primary education in Ongwediva and Okatana, Namibia. From 3 months to Grade 0, in English and Afrikaans, with meals provided and half-day or full-day care. Enrolment open all year.">
+    <title>Leer Speel-Speel Daycare &amp; Pre-Primary | Ongwediva &amp; Okatana</title>
+    <meta name="description" content="Play-based daycare, kindergarten and pre-primary school in Ongwediva and Okatana, Oshana region, Namibia. From 3 months to Grade 0, in English and Afrikaans.">
+    <meta name="theme-color" content="#16425b">
 
-    <!-- PREVIEW ONLY: keeps the Cloudflare preview out of Google. Remove at real launch,
-         and switch og:url / og:image below to the school's own domain. -->
-    <meta name="robots" content="noindex">
+    <!-- THE SITE'S ADDRESS: https://leerspeelspeel.com is written in full here (canonical,
+         og:url, og:image, twitter:image, the JSON-LD below) and in robots.txt and sitemap.xml.
+         Search engines and link previews need full URLs, so it cannot be set in one place:
+         if the address ever changes, search those three files for it. -->
+    <link rel="canonical" href="https://leerspeelspeel.com/">
 
-    <!-- Link preview card (WhatsApp, Facebook, etc.). og:image must be a full URL. -->
+    <!-- Link preview card (WhatsApp, Facebook, X/Twitter). The image must be a full URL. -->
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Leer Speel-Speel / Play-to-Learn">
-    <meta property="og:title" content="Leer Speel-Speel / Play-to-Learn Educational Centre">
-    <meta property="og:description" content="Daycare &amp; pre-primary in Ongwediva &amp; Okatana, from 3 months to Grade 0. English &amp; Afrikaans, meals provided.">
-    <meta property="og:url" content="https://lss-play-to-learn.seanchembe.workers.dev/">
-    <meta property="og:image" content="https://lss-play-to-learn.seanchembe.workers.dev/assets/images/share-card.jpg">
+    <meta property="og:site_name" content="Leer Speel-Speel / Play-to-Learn Educational Centre">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:title" content="Leer Speel-Speel Daycare &amp; Pre-Primary | Ongwediva &amp; Okatana">
+    <meta property="og:description" content="Daycare &amp; pre-primary in Ongwediva &amp; Okatana, from 3 months to Grade 0. English &amp; Afrikaans, meals provided. Enrolment open all year.">
+    <meta property="og:url" content="https://leerspeelspeel.com/">
+    <meta property="og:image" content="https://leerspeelspeel.com/assets/images/share-card.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Leer Speel Speel logo">
+    <meta property="og:image:alt" content="Leer Speel-Speel logo">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Leer Speel-Speel Daycare &amp; Pre-Primary | Ongwediva &amp; Okatana">
+    <meta name="twitter:description" content="Daycare &amp; pre-primary in Ongwediva &amp; Okatana, from 3 months to Grade 0. English &amp; Afrikaans, meals provided. Enrolment open all year.">
+    <meta name="twitter:image" content="https://leerspeelspeel.com/assets/images/share-card.jpg">
+    <meta name="twitter:image:alt" content="Leer Speel-Speel logo">
 
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+    <!-- Self-hosted fonts (see the top of style.css), fetched straight away -->
+    <link rel="preload" href="assets/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/baloo2-latin.woff2" as="font" type="font/woff2" crossorigin>
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- Structured data for Google: the school, plus one Preschool/ChildCare entry per campus.
+         Facts come from the parent guides (hours 07:00-17:00; Monday to Friday is assumed,
+         the guides do not name the days). The email address is left out on purpose: this
+         block is plain text in the page, and script.js keeps the address away from spam bots. -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://leerspeelspeel.com/#organization",
+                "name": "Leer Speel-Speel / Play-to-Learn Educational Centre",
+                "alternateName": ["Leer Speel-Speel", "Play-to-Learn Educational Centre"],
+                "url": "https://leerspeelspeel.com/",
+                "logo": "https://leerspeelspeel.com/assets/images/logo.webp",
+                "image": "https://leerspeelspeel.com/assets/images/share-card.jpg",
+                "description": "Play-based daycare and pre-primary school for children from 3 months to Grade 0, with campuses in Ongwediva and Okatana, Namibia. Teaching in English and Afrikaans.",
+                "foundingDate": "2003",
+                "founder": { "@type": "Person", "name": "Lientjie Potgieter" },
+                "telephone": "+264812156444",
+                "address": {
+                    "@type": "PostalAddress",
+                    "postOfficeBoxNumber": "15405",
+                    "addressLocality": "Oshakati",
+                    "addressCountry": "NA"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/lssongwedivaokatana/",
+                    "https://www.instagram.com/lss_play_to_learn/"
+                ],
+                "subOrganization": [
+                    { "@id": "https://leerspeelspeel.com/#ongwediva" },
+                    { "@id": "https://leerspeelspeel.com/#okatana" }
+                ]
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://leerspeelspeel.com/#website",
+                "url": "https://leerspeelspeel.com/",
+                "name": "Leer Speel-Speel",
+                "inLanguage": "en",
+                "publisher": { "@id": "https://leerspeelspeel.com/#organization" }
+            },
+            {
+                "@type": ["Preschool", "ChildCare"],
+                "@id": "https://leerspeelspeel.com/#ongwediva",
+                "name": "Leer Speel-Speel Play-to-Learn Educational Centre (Ongwediva)",
+                "description": "Daycare and pre-primary school in Ongwediva for children from 3 months to Grade 0, in English and Afrikaans, with breakfast, lunch and snacks provided.",
+                "url": "https://leerspeelspeel.com/#locations",
+                "image": "https://leerspeelspeel.com/assets/images/location-ongwediva.webp",
+                "logo": "https://leerspeelspeel.com/assets/images/logo.webp",
+                "telephone": "+264812156444",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Erf 2762, Onguti Street",
+                    "addressLocality": "Ongwediva",
+                    "addressRegion": "Oshana",
+                    "addressCountry": "NA"
+                },
+                "geo": { "@type": "GeoCoordinates", "latitude": -17.763075, "longitude": 15.7534263 },
+                "hasMap": "https://www.google.com/maps?cid=14482890224313114944",
+                "openingHoursSpecification": [{
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                    "opens": "07:00",
+                    "closes": "17:00"
+                }],
+                "parentOrganization": { "@id": "https://leerspeelspeel.com/#organization" }
+            },
+            {
+                "@type": ["Preschool", "ChildCare"],
+                "@id": "https://leerspeelspeel.com/#okatana",
+                "name": "Leer Speel-Speel Play-to-Learn Educational Centre (Okatana)",
+                "description": "Daycare and pre-primary school in Okatana for children from 3 months to Grade 0, in English and Afrikaans, with lunch and snacks provided.",
+                "url": "https://leerspeelspeel.com/#locations",
+                "image": "https://leerspeelspeel.com/assets/images/location-okatana.webp",
+                "logo": "https://leerspeelspeel.com/assets/images/logo.webp",
+                "telephone": "+264812156444",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Okatana",
+                    "addressRegion": "Oshana",
+                    "addressCountry": "NA"
+                },
+                "geo": { "@type": "GeoCoordinates", "latitude": -17.7463585, "longitude": 15.7096291 },
+                "hasMap": "https://www.google.com/maps?cid=1649500988041479029",
+                "openingHoursSpecification": [{
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                    "opens": "07:00",
+                    "closes": "17:00"
+                }],
+                "parentOrganization": { "@id": "https://leerspeelspeel.com/#organization" }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Shared icon: referenced by every WhatsApp button with <use href="#icon-whatsapp"> -->
@@ -45,7 +152,7 @@
     <header class="site-header" id="top">
         <div class="container header-inner">
             <a class="wordmark" href="#top" aria-label="Leer Speel-Speel Play-to-Learn Educational Centre — home">
-                <img class="wordmark-logo" src="assets/images/logo.webp" alt="Leer Speel Speel logo" width="256" height="256" decoding="async">
+                <img class="wordmark-logo" src="assets/images/logo.webp" alt="Leer Speel-Speel logo" width="256" height="256" decoding="async">
                 <span class="wordmark-text sr-only">Leer Speel-Speel Play-to-Learn Educational Centre</span>
             </a>
 
@@ -81,24 +188,24 @@
                  --dur animation length). doodle--desk hides on phones, doodle--wide shows
                  only on wide screens. See "Crayon doodles" in style.css. -->
             <div class="doodle-layer" aria-hidden="true">
-                <img class="doodle doodle--spin doodle--desk" src="assets/doodles/doodle-sun.webp" alt="" width="494" height="512" decoding="async" style="--r:-60px;--t:-72px;--s:250px;--dur:70s">
-                <img class="doodle doodle--drift" src="assets/doodles/doodle-cloud.webp" alt="" width="512" height="364" decoding="async" style="--l:36%;--t:14px;--s:118px;--dur:19s">
-                <img class="doodle doodle--drift" src="assets/doodles/doodle-cloud.webp" alt="" width="512" height="364" decoding="async" style="--l:6%;--t:20px;--s:82px;--rot:-4deg;--dur:26s">
-                <img class="doodle doodle--drift doodle--desk" src="assets/doodles/cloud.svg" alt="" width="120" height="80" decoding="async" style="--r:23%;--t:26px;--s:64px;--dur:23s">
-                <img class="doodle doodle--wiggle" src="assets/doodles/doodle-star.webp" alt="" width="512" height="454" decoding="async" style="--l:47%;--b:12px;--s:42px;--rot:10deg;--dur:5s">
-                <img class="doodle doodle--bob doodle--desk" src="assets/doodles/doodle-star.webp" alt="" width="512" height="454" decoding="async" style="--l:20%;--b:16px;--s:28px;--rot:-14deg;--dur:6.5s">
-                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-flower.webp" alt="" width="392" height="512" decoding="async" style="--l:1%;--b:-8px;--s:66px;--rot:-6deg;--dur:7s">
-                <img class="doodle doodle--float" src="assets/doodles/doodle-butterfly.webp" alt="" width="512" height="342" decoding="async" style="--r:5%;--b:10px;--s:70px;--rot:12deg;--dur:8s">
-                <img class="doodle doodle--bob doodle--wide" src="assets/doodles/doodle-kite.webp" alt="" width="316" height="512" decoding="async" style="--l:1.5%;--t:38%;--s:74px;--rot:-12deg;--dur:9s">
+                <img class="doodle doodle--spin doodle--desk" src="assets/doodles/doodle-sun.webp" alt="" width="494" height="512" loading="lazy" decoding="async" style="--r:-60px;--t:-72px;--s:250px;--dur:70s">
+                <img class="doodle doodle--drift" src="assets/doodles/doodle-cloud.webp" alt="" width="240" height="171" decoding="async" style="--l:36%;--t:14px;--s:118px;--dur:19s">
+                <img class="doodle doodle--drift" src="assets/doodles/doodle-cloud.webp" alt="" width="240" height="171" decoding="async" style="--l:6%;--t:20px;--s:82px;--rot:-4deg;--dur:26s">
+                <img class="doodle doodle--drift doodle--desk" src="assets/doodles/cloud.svg" alt="" width="120" height="80" loading="lazy" decoding="async" style="--r:23%;--t:26px;--s:64px;--dur:23s">
+                <img class="doodle doodle--wiggle" src="assets/doodles/doodle-star.webp" alt="" width="88" height="78" decoding="async" style="--l:47%;--b:12px;--s:42px;--rot:10deg;--dur:5s">
+                <img class="doodle doodle--bob doodle--desk" src="assets/doodles/doodle-star.webp" alt="" width="88" height="78" loading="lazy" decoding="async" style="--l:20%;--b:16px;--s:28px;--rot:-14deg;--dur:6.5s">
+                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-flower.webp" alt="" width="136" height="178" loading="lazy" decoding="async" style="--l:1%;--b:-8px;--s:66px;--rot:-6deg;--dur:7s">
+                <img class="doodle doodle--float" src="assets/doodles/doodle-butterfly.webp" alt="" width="160" height="107" decoding="async" style="--r:5%;--b:10px;--s:70px;--rot:12deg;--dur:8s">
+                <img class="doodle doodle--bob doodle--wide" src="assets/doodles/doodle-kite.webp" alt="" width="160" height="259" loading="lazy" decoding="async" style="--l:1.5%;--t:38%;--s:74px;--rot:-12deg;--dur:9s">
             </div>
             <div class="container hero-inner">
                 <div class="hero-copy">
                     <p class="eyebrow">Daycare &amp; Pre-Primary · Ongwediva &amp; Okatana</p>
                     <h1 id="hero-heading">Leer <span class="hero-word">Speel</span>-<span class="hero-word">Speel</span><br><span class="hero-subname">Play-to-Learn Educational Centre</span></h1>
                     <p class="hero-motto">&ldquo;Because every child deserves to be loved, guided and truly known.&rdquo;</p>
-                    <p class="hero-lead">A warm, holistic daycare and pre-primary centre in Ongwediva and Okatana for children from 3 months to Grade 0 &mdash; teaching in English and Afrikaans, with meals provided and half-day or full-day options.</p>
+                    <p class="hero-lead">A warm, holistic daycare and pre-primary centre in Ongwediva and Okatana, Namibia, for children from 3 months to Grade 0 &mdash; teaching in English and Afrikaans, with meals provided and half-day or full-day options.</p>
                     <div class="hero-actions">
-                        <a class="btn btn-whatsapp" data-whatsapp href="https://wa.me/264812156444?text=Hi%20Leer%20Speel%20Speel%2C%20I%27d%20like%20to%20ask%20about%20enrolment" target="_blank" rel="noopener noreferrer">
+                        <a class="btn btn-whatsapp" data-whatsapp href="https://wa.me/264812156444?text=Hi%20Leer%20Speel-Speel%2C%20I%27d%20like%20to%20ask%20about%20enrolment" target="_blank" rel="noopener noreferrer">
                             <svg class="btn-icon" aria-hidden="true" focusable="false"><use href="#icon-whatsapp"/></svg>
                             WhatsApp Us<span class="sr-only"> (opens in a new tab)</span>
                         </a>
@@ -110,7 +217,7 @@
                 <!-- Hero photo (Fun Days, FD1). To swap it, keep the width/height attributes in
                      step with the new file. -->
                 <figure class="hero-visual">
-                    <img src="assets/images/gallery/fd-01-large.webp" srcset="assets/images/gallery/fd-01.webp 800w, assets/images/gallery/fd-01-large.webp 1600w" sizes="(max-width: 900px) min(92vw, 480px), 520px" alt="Children on the school lawn holding up big paper-plate flowers they made." width="1600" height="967" fetchpriority="high" decoding="async">
+                    <img src="assets/images/gallery/fun-days-01-large.webp" srcset="assets/images/gallery/fun-days-01-680.webp 680w, assets/images/gallery/fun-days-01.webp 800w, assets/images/gallery/fun-days-01-large.webp 1000w" sizes="(max-width: 900px) min(92vw, 480px), 520px" alt="Children on the school lawn holding up big paper-plate flowers they made." width="1000" height="604" fetchpriority="high" decoding="async">
                 </figure>
             </div>
         </section>
@@ -122,8 +229,8 @@
              the parent guides. Cards run R, Y, G, B, V. -->
         <section class="stats accent-pink" aria-label="Leer Speel-Speel at a glance">
             <div class="doodle-layer" aria-hidden="true">
-                <img class="doodle doodle--wiggle" src="assets/doodles/doodle-star.webp" alt="" width="512" height="454" loading="lazy" decoding="async" style="--l:2.5%;--t:12px;--s:38px;--rot:-12deg;--dur:6s">
-                <img class="doodle doodle--bob doodle--desk" src="assets/doodles/doodle-heart.webp" alt="" width="512" height="501" loading="lazy" decoding="async" style="--r:3%;--b:10px;--s:34px;--rot:14deg;--dur:7s">
+                <img class="doodle doodle--wiggle" src="assets/doodles/doodle-star.webp" alt="" width="88" height="78" loading="lazy" decoding="async" style="--l:2.5%;--t:12px;--s:38px;--rot:-12deg;--dur:6s">
+                <img class="doodle doodle--bob doodle--desk" src="assets/doodles/doodle-heart.webp" alt="" width="136" height="133" loading="lazy" decoding="async" style="--r:3%;--b:10px;--s:34px;--rot:14deg;--dur:7s">
             </div>
             <div class="container">
                 <ul class="stats-list">
@@ -154,11 +261,11 @@
         <!-- ABOUT -->
         <section id="about" class="section accent-red" aria-labelledby="about-heading">
             <div class="doodle-layer" aria-hidden="true">
-                <img class="doodle doodle--wiggle" src="assets/doodles/doodle-heart.webp" alt="" width="512" height="501" loading="lazy" decoding="async" style="--r:5%;--t:20px;--s:60px;--rot:12deg;--dur:6s">
-                <img class="doodle doodle--bob doodle--desk" src="assets/doodles/doodle-abc.webp" alt="" width="512" height="219" loading="lazy" decoding="async" style="--r:15%;--t:28px;--s:124px;--rot:-6deg;--dur:8s">
-                <img class="doodle doodle--bob" src="assets/doodles/doodle-apple.webp" alt="" width="439" height="512" loading="lazy" decoding="async" style="--r:3%;--b:12px;--s:58px;--rot:-10deg;--dur:7.5s">
-                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-star.webp" alt="" width="512" height="454" loading="lazy" decoding="async" style="--l:46%;--b:22px;--s:32px;--rot:18deg;--dur:5.5s">
-                <img class="doodle doodle--spin doodle--wide" src="assets/doodles/doodle-scribble.webp" alt="" width="512" height="467" loading="lazy" decoding="async" style="--r:1.5%;--t:44%;--s:86px;--dur:48s">
+                <img class="doodle doodle--wiggle" src="assets/doodles/doodle-heart.webp" alt="" width="136" height="133" loading="lazy" decoding="async" style="--r:5%;--t:20px;--s:60px;--rot:12deg;--dur:6s">
+                <img class="doodle doodle--bob doodle--desk" src="assets/doodles/doodle-abc.webp" alt="" width="248" height="106" loading="lazy" decoding="async" style="--r:15%;--t:28px;--s:124px;--rot:-6deg;--dur:8s">
+                <img class="doodle doodle--bob" src="assets/doodles/doodle-apple.webp" alt="" width="136" height="159" loading="lazy" decoding="async" style="--r:3%;--b:12px;--s:58px;--rot:-10deg;--dur:7.5s">
+                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-star.webp" alt="" width="88" height="78" loading="lazy" decoding="async" style="--l:46%;--b:22px;--s:32px;--rot:18deg;--dur:5.5s">
+                <img class="doodle doodle--spin doodle--wide" src="assets/doodles/doodle-scribble.webp" alt="" width="176" height="161" loading="lazy" decoding="async" style="--r:1.5%;--t:44%;--s:86px;--dur:48s">
             </div>
             <div class="container section-grid">
                 <div class="section-heading">
@@ -167,12 +274,13 @@
                     <!-- .art-crop trims a photo to the frame: --ratio sets the shape (default 4 / 3)
                          and --pos the part of the photo to keep in view. -->
                     <figure class="art-frame art-frame--left">
-                        <img class="art-crop" style="--pos:50% 45%" src="assets/images/gallery/ea-10.webp" srcset="assets/images/gallery/ea-10.webp 640w, assets/images/gallery/ea-10-large.webp 1086w" sizes="(max-width: 900px) min(92vw, 520px), 480px" alt="A smiling child in an orange Leer Speel-Speel shirt linking colourful plastic chains at a classroom table." width="640" height="853" loading="lazy" decoding="async">
+                        <img class="art-crop" style="--pos:50% 45%" src="assets/images/gallery/educational-activities-10.webp" srcset="assets/images/gallery/educational-activities-10.webp 640w, assets/images/gallery/educational-activities-10-large.webp 750w" sizes="(max-width: 900px) min(92vw, 520px), 480px" alt="A smiling child in an orange Leer Speel-Speel shirt linking colourful plastic chains at a classroom table." width="640" height="853" loading="lazy" decoding="async">
                     </figure>
                 </div>
                 <div class="section-copy">
-                    <p>At Leer Speel-Speel / Play-to-Learn Educational Centre, we believe every child deserves to be loved, guided and truly known. Our daycare and pre-primary programme takes a holistic approach to early learning, nurturing each child's curiosity, confidence and character alongside their early academic skills.</p>
+                    <p>At Leer Speel-Speel / Play-to-Learn Educational Centre, we believe every child deserves to be loved, guided and truly known. Our daycare and pre-primary programme takes a holistic, play-based approach to early childhood development, nurturing each child's curiosity, confidence and character alongside their early academic skills.</p>
                     <p>We teach in both English and Afrikaans, so children grow up comfortable moving between languages from an early age. Our team works to hold every family in Ongwediva and Okatana to a high standard of care and education &mdash; a place where little ones are safe, well fed, and genuinely known by the people looking after them.</p>
+                    <p>With one campus in Ongwediva and one in Okatana, both a short drive from Oshakati, we are a daycare and preschool close to home for families across the Oshana region.</p>
                 </div>
             </div>
         </section>
@@ -181,26 +289,20 @@
              The words are the founder's own, from the letter the school supplied; nothing has
              been added. Pink is the extra accent outside the rainbow order. script.js keeps the
              [data-years-since] number up to date (the number written here is the no-JS fallback).
-
-             FOUNDER PHOTO: when the school sends one, save it as assets/images/founder-1.webp
-             (portrait, about 800 x 1000px) and replace the whole .founder-photo-slot div with
-             <img src="assets/images/founder-1.webp" alt="MC (Lientjie) Potgieter, founder of Leer Speel-Speel" width="800" height="1000" loading="lazy" decoding="async">
-             The frame keeps its 4:5 shape either way, so the layout does not move. -->
+             The photo is the school's own portrait in its brown picture frame; the client
+             wants the frame shown, so it hangs on its own without the site's white mount. -->
         <section id="founder" class="section accent-pink" aria-labelledby="founder-heading">
             <div class="doodle-layer" aria-hidden="true">
-                <img class="doodle doodle--wiggle" src="assets/doodles/doodle-flower.webp" alt="" width="392" height="512" loading="lazy" decoding="async" style="--r:4%;--t:14px;--s:62px;--rot:8deg;--dur:7.5s">
-                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-star.webp" alt="" width="512" height="454" loading="lazy" decoding="async" style="--l:6%;--t:30px;--s:34px;--rot:-14deg;--dur:5.5s">
-                <img class="doodle doodle--float" src="assets/doodles/doodle-butterfly.webp" alt="" width="512" height="342" loading="lazy" decoding="async" style="--l:3%;--b:14px;--s:66px;--rot:-8deg;--dur:8.5s">
-                <img class="doodle doodle--drift doodle--desk" src="assets/doodles/doodle-snail.webp" alt="" width="512" height="384" loading="lazy" decoding="async" style="--r:9%;--b:12px;--s:78px;--dur:27s">
-                <img class="doodle doodle--bob doodle--wide" src="assets/doodles/doodle-balloon.webp" alt="" width="275" height="512" loading="lazy" decoding="async" style="--r:1.5%;--t:40%;--s:46px;--rot:8deg;--dur:8s">
+                <img class="doodle doodle--wiggle" src="assets/doodles/doodle-flower.webp" alt="" width="136" height="178" loading="lazy" decoding="async" style="--r:4%;--t:14px;--s:62px;--rot:8deg;--dur:7.5s">
+                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-star.webp" alt="" width="88" height="78" loading="lazy" decoding="async" style="--l:6%;--t:30px;--s:34px;--rot:-14deg;--dur:5.5s">
+                <img class="doodle doodle--float" src="assets/doodles/doodle-butterfly.webp" alt="" width="160" height="107" loading="lazy" decoding="async" style="--l:3%;--b:14px;--s:66px;--rot:-8deg;--dur:8.5s">
+                <img class="doodle doodle--drift doodle--desk" src="assets/doodles/doodle-snail.webp" alt="" width="168" height="126" loading="lazy" decoding="async" style="--r:9%;--b:12px;--s:78px;--dur:27s">
+                <img class="doodle doodle--bob doodle--wide" src="assets/doodles/doodle-balloon.webp" alt="" width="96" height="179" loading="lazy" decoding="async" style="--r:1.5%;--t:40%;--s:46px;--rot:8deg;--dur:8s">
             </div>
             <div class="container founder-layout">
                 <div class="founder-aside">
-                    <figure class="art-frame art-frame--left founder-photo">
-                        <div class="founder-photo-slot">
-                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4 8h3l1.6-2.4h6.8L17 8h3a1.5 1.5 0 011.5 1.5v8A1.5 1.5 0 0120 19H4a1.5 1.5 0 01-1.5-1.5v-8A1.5 1.5 0 014 8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.4" stroke="currentColor" stroke-width="1.6"/></svg>
-                            <span>Founder photo coming soon</span>
-                        </div>
+                    <figure class="founder-photo">
+                        <img src="assets/images/founder.webp" alt="Framed portrait of MC (Lientjie) Potgieter, founder of Leer Speel-Speel, smiling in the school playground." width="760" height="962" loading="lazy" decoding="async">
                     </figure>
                     <p class="since-badge"><span class="since-badge-label">Since</span> <span class="since-badge-year">2003</span></p>
                 </div>
@@ -224,12 +326,12 @@
         <!-- WHAT WE OFFER -->
         <section id="offer" class="section section-alt accent-orange" aria-labelledby="offer-heading">
             <div class="doodle-layer" aria-hidden="true">
-                <img class="doodle doodle--bob" src="assets/doodles/doodle-balloon.webp" alt="" width="275" height="512" loading="lazy" decoding="async" style="--l:4%;--t:8px;--s:44px;--rot:-8deg;--dur:7s">
-                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-123.webp" alt="" width="512" height="241" loading="lazy" decoding="async" style="--r:4%;--t:24px;--s:128px;--rot:8deg;--dur:6.5s">
-                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-star.webp" alt="" width="512" height="454" loading="lazy" decoding="async" style="--l:14%;--t:42px;--s:32px;--rot:-18deg;--dur:5s">
-                <img class="doodle doodle--wiggle" src="assets/doodles/doodle-flower.webp" alt="" width="392" height="512" loading="lazy" decoding="async" style="--r:2.5%;--b:6px;--s:58px;--rot:8deg;--dur:8s">
-                <img class="doodle doodle--drift doodle--desk" src="assets/doodles/doodle-cloud.webp" alt="" width="512" height="364" loading="lazy" decoding="async" style="--l:5%;--b:18px;--s:104px;--dur:21s">
-                <img class="doodle doodle--bob doodle--wide" src="assets/doodles/doodle-kite.webp" alt="" width="316" height="512" loading="lazy" decoding="async" style="--l:1.5%;--t:42%;--s:78px;--rot:14deg;--dur:9.5s">
+                <img class="doodle doodle--bob" src="assets/doodles/doodle-balloon.webp" alt="" width="96" height="179" loading="lazy" decoding="async" style="--l:4%;--t:8px;--s:44px;--rot:-8deg;--dur:7s">
+                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-123.webp" alt="" width="256" height="120" loading="lazy" decoding="async" style="--r:4%;--t:24px;--s:128px;--rot:8deg;--dur:6.5s">
+                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-star.webp" alt="" width="88" height="78" loading="lazy" decoding="async" style="--l:14%;--t:42px;--s:32px;--rot:-18deg;--dur:5s">
+                <img class="doodle doodle--wiggle" src="assets/doodles/doodle-flower.webp" alt="" width="136" height="178" loading="lazy" decoding="async" style="--r:2.5%;--b:6px;--s:58px;--rot:8deg;--dur:8s">
+                <img class="doodle doodle--drift doodle--desk" src="assets/doodles/doodle-cloud.webp" alt="" width="240" height="171" loading="lazy" decoding="async" style="--l:5%;--b:18px;--s:104px;--dur:21s">
+                <img class="doodle doodle--bob doodle--wide" src="assets/doodles/doodle-kite.webp" alt="" width="160" height="259" loading="lazy" decoding="async" style="--l:1.5%;--t:42%;--s:78px;--rot:14deg;--dur:9.5s">
             </div>
             <div class="container">
                 <div class="section-heading section-heading-center">
@@ -238,7 +340,7 @@
                 </div>
 
                 <figure class="art-frame art-frame--banner">
-                    <img class="art-crop" style="--ratio:16 / 9;--pos:50% 30%" src="assets/images/gallery/ea-02.webp" alt="Children hopping through a row of colourful hoops on the school lawn." width="800" height="600" loading="lazy" decoding="async">
+                    <img class="art-crop" style="--ratio:16 / 9;--pos:50% 30%" src="assets/images/gallery/educational-activities-02.webp" alt="Children hopping through a row of colourful hoops on the school lawn." width="800" height="600" loading="lazy" decoding="async">
                 </figure>
 
                 <ul class="offer-grid">
@@ -292,11 +394,11 @@
         <section id="day" class="section accent-yellow" aria-labelledby="day-heading">
             <div class="doodle-layer" aria-hidden="true">
                 <img class="doodle doodle--spin doodle--desk" src="assets/doodles/doodle-sun.webp" alt="" width="494" height="512" loading="lazy" decoding="async" style="--r:-52px;--t:-62px;--s:210px;--dur:80s">
-                <img class="doodle doodle--float" src="assets/doodles/doodle-butterfly.webp" alt="" width="512" height="342" loading="lazy" decoding="async" style="--l:5%;--t:24px;--s:80px;--rot:-10deg;--dur:8.5s">
-                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-star.webp" alt="" width="512" height="454" loading="lazy" decoding="async" style="--l:18%;--t:52px;--s:28px;--rot:16deg;--dur:5.5s">
-                <img class="doodle doodle--bob" src="assets/doodles/doodle-handprint.webp" alt="" width="415" height="512" loading="lazy" decoding="async" style="--l:2%;--b:10px;--s:60px;--rot:-14deg;--dur:7s">
-                <img class="doodle doodle--drift doodle--desk" src="assets/doodles/doodle-cloud.webp" alt="" width="512" height="364" loading="lazy" decoding="async" style="--r:13%;--b:16px;--s:108px;--dur:24s">
-                <img class="doodle doodle--wiggle doodle--wide" src="assets/doodles/doodle-heart.webp" alt="" width="512" height="501" loading="lazy" decoding="async" style="--r:1.5%;--t:50%;--s:68px;--rot:10deg;--dur:6s">
+                <img class="doodle doodle--float" src="assets/doodles/doodle-butterfly.webp" alt="" width="160" height="107" loading="lazy" decoding="async" style="--l:5%;--t:24px;--s:80px;--rot:-10deg;--dur:8.5s">
+                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-star.webp" alt="" width="88" height="78" loading="lazy" decoding="async" style="--l:18%;--t:52px;--s:28px;--rot:16deg;--dur:5.5s">
+                <img class="doodle doodle--bob" src="assets/doodles/doodle-handprint.webp" alt="" width="136" height="168" loading="lazy" decoding="async" style="--l:2%;--b:10px;--s:60px;--rot:-14deg;--dur:7s">
+                <img class="doodle doodle--drift doodle--desk" src="assets/doodles/doodle-cloud.webp" alt="" width="240" height="171" loading="lazy" decoding="async" style="--r:13%;--b:16px;--s:108px;--dur:24s">
+                <img class="doodle doodle--wiggle doodle--wide" src="assets/doodles/doodle-heart.webp" alt="" width="136" height="133" loading="lazy" decoding="async" style="--r:1.5%;--t:50%;--s:68px;--rot:10deg;--dur:6s">
             </div>
             <div class="container">
                 <div class="section-heading section-heading-center">
@@ -307,11 +409,12 @@
 
                 <!-- Ten numbered cards with the school's own wording. Colours run R → V, then pink,
                      then start again (R, O), so no two neighbours match at any column count. A card
-                     shows a real photo where one fits; the others show an icon in the same space. -->
+                     shows a picture where one exists; Coding Classes has none yet, so it shows an
+                     icon in the same space. -->
                 <ol class="learn-grid" role="list">
                     <li class="learn-card accent-red">
                         <span class="learn-media">
-                            <img style="--pos:50% 35%" src="assets/images/gallery/ea-09.webp" alt="A child proudly holding up a wooden stacking-ring toy in the classroom." width="800" height="600" loading="lazy" decoding="async">
+                            <img style="--pos:50% 35%" src="assets/images/gallery/educational-activities-09.webp" alt="A child proudly holding up a wooden stacking-ring toy in the classroom." width="800" height="600" loading="lazy" decoding="async">
                         </span>
                         <span class="learn-num" aria-hidden="true">1</span>
                         <div class="learn-text">
@@ -321,7 +424,7 @@
                     </li>
                     <li class="learn-card accent-orange">
                         <span class="learn-media">
-                            <img style="--pos:50% 30%" src="assets/images/gallery/ea-11.webp" alt="Two children building with wooden shape blocks and gears at a classroom table." width="640" height="853" loading="lazy" decoding="async">
+                            <img style="--pos:50% 30%" src="assets/images/gallery/educational-activities-11.webp" alt="Two children building with wooden shape blocks and gears at a classroom table." width="640" height="853" loading="lazy" decoding="async">
                         </span>
                         <span class="learn-num" aria-hidden="true">2</span>
                         <div class="learn-text">
@@ -331,7 +434,7 @@
                     </li>
                     <li class="learn-card accent-yellow">
                         <span class="learn-media">
-                            <img style="--pos:50% 62%" src="assets/images/gallery/ea-12.webp" alt="A child shaping playdough numbers on a number mat." width="640" height="853" loading="lazy" decoding="async">
+                            <img style="--pos:50% 62%" src="assets/images/gallery/educational-activities-12.webp" alt="A child shaping playdough numbers on a number mat." width="640" height="853" loading="lazy" decoding="async">
                         </span>
                         <span class="learn-num" aria-hidden="true">3</span>
                         <div class="learn-text">
@@ -340,8 +443,8 @@
                         </div>
                     </li>
                     <li class="learn-card accent-green">
-                        <span class="learn-media learn-media--icon" aria-hidden="true">
-                            <svg viewBox="0 0 48 24" focusable="false"><text x="24" y="19" text-anchor="middle" font-family="'Baloo 2', ui-rounded, sans-serif" font-weight="800" font-size="20" fill="currentColor">Abc</text></svg>
+                        <span class="learn-media">
+                            <img style="--pos:30% 50%" src="assets/images/offer-literacy.webp" alt="A colourful tracing worksheet with a big number 3, crayons and coloured pencils." width="640" height="427" loading="lazy" decoding="async">
                         </span>
                         <span class="learn-num" aria-hidden="true">4</span>
                         <div class="learn-text">
@@ -361,7 +464,7 @@
                     </li>
                     <li class="learn-card accent-indigo">
                         <span class="learn-media">
-                            <img style="--pos:50% 30%" src="assets/images/gallery/pz-13.webp" alt="Children holding feed tubs beside the chickens in the petting zoo." width="800" height="600" loading="lazy" decoding="async">
+                            <img style="--pos:50% 30%" src="assets/images/gallery/petting-zoo-13.webp" alt="Children holding feed tubs beside the chickens in the petting zoo." width="800" height="600" loading="lazy" decoding="async">
                         </span>
                         <span class="learn-num" aria-hidden="true">6</span>
                         <div class="learn-text">
@@ -371,7 +474,7 @@
                     </li>
                     <li class="learn-card accent-violet">
                         <span class="learn-media">
-                            <img style="--pos:50% 45%" src="assets/images/gallery/fd-08.webp" alt="Three children in hair nets icing and decorating cupcakes." width="800" height="600" loading="lazy" decoding="async">
+                            <img style="--pos:50% 45%" src="assets/images/gallery/fun-days-08.webp" alt="Three children in hair nets icing and decorating cupcakes." width="800" height="600" loading="lazy" decoding="async">
                         </span>
                         <span class="learn-num" aria-hidden="true">7</span>
                         <div class="learn-text">
@@ -380,8 +483,8 @@
                         </div>
                     </li>
                     <li class="learn-card accent-pink">
-                        <span class="learn-media learn-media--icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M8.5 3.5L12 8l3.5-4.5L20 6l-1.5 4.6-2-.8v10.7h-9V9.8l-2 .8L4 6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7.5 14h9" stroke="currentColor" stroke-width="2.6"/><path d="M12 14l-1.6 4.2M12 14l1.6 4.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                        <span class="learn-media">
+                            <img style="--pos:8% 50%" src="assets/images/offer-karate.webp" alt="Silhouettes of two children in karate uniforms doing high kicks." width="640" height="427" loading="lazy" decoding="async">
                         </span>
                         <span class="learn-num" aria-hidden="true">8</span>
                         <div class="learn-text">
@@ -391,7 +494,7 @@
                     </li>
                     <li class="learn-card accent-red">
                         <span class="learn-media">
-                            <img style="--pos:50% 78%" src="assets/images/gallery/fd-04.webp" alt="Trays of cupcakes with sprinkles and icing flowers on a party table." width="640" height="853" loading="lazy" decoding="async">
+                            <img style="--pos:50% 78%" src="assets/images/gallery/fun-days-04.webp" alt="Trays of cupcakes with sprinkles and icing flowers on a party table." width="640" height="853" loading="lazy" decoding="async">
                         </span>
                         <span class="learn-num" aria-hidden="true">9</span>
                         <div class="learn-text">
@@ -400,8 +503,8 @@
                         </div>
                     </li>
                     <li class="learn-card accent-orange">
-                        <span class="learn-media learn-media--icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" focusable="false"><rect x="5" y="3" width="14" height="18" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8.2 3v18" stroke="currentColor" stroke-width="1.6"/><path d="M13.6 7.5v8M11 10.3h5.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                        <span class="learn-media">
+                            <img src="assets/images/offer-bible.webp" alt="An open Bible in front of a wooden cross, with books, coloured pencils and a toy Noah's ark." width="640" height="360" loading="lazy" decoding="async">
                         </span>
                         <span class="learn-num" aria-hidden="true">10</span>
                         <div class="learn-text">
@@ -420,14 +523,15 @@
              the album card's photo count updates automatically. Each photo has two files in
              assets/images/gallery: <name>.webp for the tile and <name>-large.webp for the lightbox
              (data-file). --pos on a tile's <img> picks the part of the photo the tile shows.
-             Albums run R, Y, G, V: Premises, Educational Activities, Petting Zoo, Fun Days. -->
+             Albums run R, O, Y, G, V: Ongwediva Campus, Okatana Campus, Educational Activities,
+             Petting Zoo, Fun Days. Campus photos stay in their own campus album, never mixed. -->
         <section id="gallery" class="section section-alt accent-green" aria-labelledby="gallery-heading">
             <div class="doodle-layer" aria-hidden="true">
-                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-tree.webp" alt="" width="512" height="428" loading="lazy" decoding="async" style="--l:-34px;--b:-12px;--s:190px;--rot:-4deg;--dur:11s">
-                <img class="doodle doodle--bob" src="assets/doodles/doodle-kite.webp" alt="" width="316" height="512" loading="lazy" decoding="async" style="--r:4%;--t:6px;--s:50px;--rot:12deg;--dur:8s">
-                <img class="doodle doodle--wiggle" src="assets/doodles/doodle-star.webp" alt="" width="512" height="454" loading="lazy" decoding="async" style="--l:5%;--t:28px;--s:44px;--rot:-10deg;--dur:5.5s">
-                <img class="doodle doodle--bob doodle--desk" src="assets/doodles/doodle-heart.webp" alt="" width="512" height="501" loading="lazy" decoding="async" style="--l:16%;--t:54px;--s:26px;--rot:16deg;--dur:6.5s">
-                <img class="doodle doodle--drift doodle--desk" src="assets/doodles/doodle-snail.webp" alt="" width="512" height="384" loading="lazy" decoding="async" style="--r:6%;--b:12px;--s:84px;--dur:28s">
+                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-tree.webp" alt="" width="384" height="321" loading="lazy" decoding="async" style="--l:-34px;--b:-12px;--s:190px;--rot:-4deg;--dur:11s">
+                <img class="doodle doodle--bob" src="assets/doodles/doodle-kite.webp" alt="" width="160" height="259" loading="lazy" decoding="async" style="--r:4%;--t:6px;--s:50px;--rot:12deg;--dur:8s">
+                <img class="doodle doodle--wiggle" src="assets/doodles/doodle-star.webp" alt="" width="88" height="78" loading="lazy" decoding="async" style="--l:5%;--t:28px;--s:44px;--rot:-10deg;--dur:5.5s">
+                <img class="doodle doodle--bob doodle--desk" src="assets/doodles/doodle-heart.webp" alt="" width="136" height="133" loading="lazy" decoding="async" style="--l:16%;--t:54px;--s:26px;--rot:16deg;--dur:6.5s">
+                <img class="doodle doodle--drift doodle--desk" src="assets/doodles/doodle-snail.webp" alt="" width="168" height="126" loading="lazy" decoding="async" style="--r:6%;--b:12px;--s:84px;--dur:28s">
                 <img class="doodle doodle--bob doodle--wide" src="assets/doodles/balloons.svg" alt="" width="110" height="150" loading="lazy" decoding="async" style="--r:1.5%;--t:34%;--s:82px;--rot:6deg;--dur:9s">
             </div>
             <div class="container">
@@ -441,38 +545,38 @@
                     </p>
                 </div>
 
-                <!-- Five highlights: the two Premises tiles are still stand-in illustrations (the
-                     school has not sent photos of the buildings yet); the other three are real
-                     photos. On phones this list becomes a swipeable carousel (see style.css). -->
+                <!-- Five highlights, one per album (hand-picked copies, not pulled from the albums).
+                     Campus photos always name their campus. On phones this list becomes a
+                     swipeable carousel (see style.css). -->
                 <div class="gallery-overview">
                     <ul class="gallery-preview" data-gallery-group="preview" aria-label="Picture highlights">
                         <li class="accent-red">
-                            <button type="button" class="gallery-item" data-caption="Our Playground (illustration)" data-file="assets/images/illustration-playground.webp">
-                                <img class="gallery-photo" src="assets/images/illustration-playground.webp" alt="Illustration of a sunny playground with a jungle gym, a red slide, swings, a seesaw and painted tyres under acacia trees." width="900" height="673" loading="lazy" decoding="async">
-                                <span class="gallery-label"><span class="gallery-chip">Premises</span> Our Playground</span>
+                            <button type="button" class="gallery-item" data-caption="Our Ongwediva Campus" data-file="assets/images/gallery/ongwediva-campus-03-large.webp">
+                                <img class="gallery-photo" src="assets/images/gallery/ongwediva-campus-03.webp" alt="The orange classroom building at our Ongwediva campus, with painted tyres and toy cars in the front play area." width="800" height="600" loading="lazy" decoding="async">
+                                <span class="gallery-label"><span class="gallery-chip">Ongwediva Campus</span> Our Classrooms</span>
                             </button>
                         </li>
-                        <li class="accent-red">
-                            <button type="button" class="gallery-item" data-caption="Our Learning Space (illustration)" data-file="assets/images/illustration-classroom.webp">
-                                <img class="gallery-photo" src="assets/images/illustration-classroom.webp" alt="Illustration of a bright classroom corner with toy shelves, baskets, a teddy bear, cushions and a book rack under colourful bunting." width="900" height="673" loading="lazy" decoding="async">
-                                <span class="gallery-label"><span class="gallery-chip">Premises</span> Our Learning Space</span>
+                        <li class="accent-orange">
+                            <button type="button" class="gallery-item" data-caption="Our Okatana Campus" data-file="assets/images/gallery/okatana-campus-13-large.webp">
+                                <img class="gallery-photo" src="assets/images/gallery/okatana-campus-13.webp" alt="A wooden climbing fort and brightly painted tyres under shady trees at our Okatana campus." width="800" height="600" loading="lazy" decoding="async">
+                                <span class="gallery-label"><span class="gallery-chip">Okatana Campus</span> Climbing Fort</span>
                             </button>
                         </li>
                         <li class="accent-yellow">
-                            <button type="button" class="gallery-item" data-caption="Shapes &amp; Patterns" data-file="assets/images/gallery/ea-08-large.webp">
-                                <img class="gallery-photo" style="--pos:50% 12%" src="assets/images/gallery/ea-08.webp" alt="A smiling child fitting colourful shape tiles into a pattern board at a classroom table." width="640" height="853" loading="lazy" decoding="async">
+                            <button type="button" class="gallery-item" data-caption="Shapes &amp; Patterns" data-file="assets/images/gallery/educational-activities-08-large.webp">
+                                <img class="gallery-photo" style="--pos:50% 12%" src="assets/images/gallery/educational-activities-08.webp" alt="A smiling child fitting colourful shape tiles into a pattern board at a classroom table." width="640" height="853" loading="lazy" decoding="async">
                                 <span class="gallery-label"><span class="gallery-chip">Educational Activities</span> Shapes &amp; Patterns</span>
                             </button>
                         </li>
                         <li class="accent-green">
-                            <button type="button" class="gallery-item" data-caption="Meeting the Pony" data-file="assets/images/gallery/pz-10-large.webp">
-                                <img class="gallery-photo" src="assets/images/gallery/pz-10.webp" alt="Children reaching over the fence to stroke a pony's nose." width="800" height="599" loading="lazy" decoding="async">
+                            <button type="button" class="gallery-item" data-caption="Meeting the Pony" data-file="assets/images/gallery/petting-zoo-10-large.webp">
+                                <img class="gallery-photo" src="assets/images/gallery/petting-zoo-10.webp" alt="Children reaching over the fence to stroke a pony's nose." width="800" height="599" loading="lazy" decoding="async">
                                 <span class="gallery-label"><span class="gallery-chip">Petting Zoo</span> Meeting the Pony</span>
                             </button>
                         </li>
                         <li class="accent-violet">
-                            <button type="button" class="gallery-item" data-caption="Animal Mask Day" data-file="assets/images/gallery/fd-10-large.webp">
-                                <img class="gallery-photo" style="--pos:50% 30%" src="assets/images/gallery/fd-10.webp" alt="A group of children wearing paper animal masks and holding party bags." width="800" height="656" loading="lazy" decoding="async">
+                            <button type="button" class="gallery-item" data-caption="Animal Mask Day" data-file="assets/images/gallery/fun-days-10-large.webp">
+                                <img class="gallery-photo" style="--pos:50% 30%" src="assets/images/gallery/fun-days-10.webp" alt="A group of children wearing paper animal masks and holding party bags." width="800" height="656" loading="lazy" decoding="async">
                                 <span class="gallery-label"><span class="gallery-chip">Fun Days</span> Animal Mask Day</span>
                             </button>
                         </li>
@@ -482,9 +586,9 @@
                     <h3 class="album-picker-heading">Explore our albums</h3>
 
                     <ul class="album-picker">
-                        <!-- Premises (red): schoolhouse panel with a roof-peak top edge -->
+                        <!-- Ongwediva Campus (red): schoolhouse panel with a roof-peak top edge -->
                         <li class="album-card album-card--premises accent-red">
-                            <a class="album-art" href="#album-premises" tabindex="-1" aria-hidden="true">
+                            <a class="album-art" href="#album-ongwediva" tabindex="-1" aria-hidden="true">
                                 <svg viewBox="0 0 320 240" focusable="false">
                                     <path d="M0 74L160 8l160 66v148a18 18 0 01-18 18H18a18 18 0 01-18-18z" fill="#eaf6fc"/>
                                     <g class="sun">
@@ -514,10 +618,10 @@
                                     <circle cx="226" cy="212" r="4" fill="#f28c28"/>
                                 </svg>
                             </a>
-                            <h3>Premises</h3>
-                            <p class="album-blurb">Our classrooms, playground and the spaces your child will call their own.</p>
-                            <span class="album-count" data-album-count="album-premises">Photos</span>
-                            <a class="album-btn album-btn--premises" href="#album-premises">
+                            <h3>Ongwediva Campus</h3>
+                            <p class="album-blurb">Bright classrooms, a shady playground and the spaces your child will call their own in Ongwediva.</p>
+                            <span class="album-count" data-album-count="album-ongwediva">Photos</span>
+                            <a class="album-btn album-btn--premises" href="#album-ongwediva">
                                 <svg class="album-btn-roof" viewBox="0 0 92 30" aria-hidden="true" focusable="false">
                                     <path d="M66 15V5h8v16" fill="#e8483f" stroke="#b83a31" stroke-width="2" stroke-linejoin="round"/>
                                     <path d="M4 29L46 3l42 26z" fill="#e8483f" stroke="#b83a31" stroke-width="2.5" stroke-linejoin="round"/>
@@ -531,7 +635,51 @@
                                     </g>
                                     <path d="M2.5 21.5h19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                                 </svg>
-                                <span>Tour Our Premises</span><span class="sr-only"> (opens the Premises album)</span>
+                                <span>Tour Ongwediva</span><span class="sr-only"> (opens the Ongwediva Campus album)</span>
+                            </a>
+                        </li>
+
+                        <!-- Okatana Campus (orange): playground panel with a leafy top edge; the tyres hop on hover -->
+                        <li class="album-card album-card--premises accent-orange">
+                            <a class="album-art" href="#album-okatana" tabindex="-1" aria-hidden="true">
+                                <svg viewBox="0 0 320 240" focusable="false">
+                                    <path d="M0 222V40q20-28 40 0 20-28 40 0 20-28 40 0 20-28 40 0 20-28 40 0 20-28 40 0 20-28 40 0 20-28 40 0v182a18 18 0 01-18 18H18a18 18 0 01-18-18z" fill="#eaf6fc"/>
+                                    <circle class="sun" cx="270" cy="82" r="16" fill="#f6c443"/>
+                                    <path d="M196 84c-8 0-12-9-5-13-1-8 8-12 14-8 4-7 15-6 17 2 7-1 11 8 5 13z" fill="#ffffff"/>
+                                    <path d="M0 192q160-22 320 0v30a18 18 0 01-18 18H18a18 18 0 01-18-18z" fill="#f4dcae"/>
+                                    <rect x="40" y="112" width="14" height="86" rx="3" fill="#b45309"/>
+                                    <circle cx="47" cy="98" r="34" fill="#3fa34d"/>
+                                    <circle cx="22" cy="114" r="20" fill="#5dbb6a"/>
+                                    <circle cx="74" cy="112" r="22" fill="#5dbb6a"/>
+                                    <path d="M124 196v-86M196 196v-86" stroke="#b45309" stroke-width="6" stroke-linecap="round"/>
+                                    <path d="M126 120v18M138 120v18M150 120v18M162 120v18M174 120v18M186 120v18M122 120h76" stroke="#b45309" stroke-width="3" stroke-linecap="round"/>
+                                    <path d="M108 114l52-34 52 34z" fill="#2e9bda" stroke="#16425b" stroke-width="3" stroke-linejoin="round"/>
+                                    <rect x="114" y="138" width="92" height="10" rx="2" fill="#d08a3c" stroke="#16425b" stroke-width="2.5"/>
+                                    <path d="M98 196l12-50M112 196l12-50M101 184h13M104 170h13M107 158h13" stroke="#16425b" stroke-width="3" stroke-linecap="round"/>
+                                    <path d="M204 146q30 10 42 50" stroke="#f28c28" stroke-width="10" stroke-linecap="round" fill="none"/>
+                                    <path class="animal" d="M62 208a15 15 0 0130 0" stroke="#e8483f" stroke-width="9" fill="none"/>
+                                    <path class="animal animal--2" d="M254 210a15 15 0 0130 0" stroke="#f6c443" stroke-width="9" fill="none"/>
+                                    <path class="animal animal--3" d="M150 214a15 15 0 0130 0" stroke="#3fa34d" stroke-width="9" fill="none"/>
+                                </svg>
+                            </a>
+                            <h3>Okatana Campus</h3>
+                            <p class="album-blurb">Big wooden play forts, shady trees and cheerful classrooms at our Okatana campus.</p>
+                            <span class="album-count" data-album-count="album-okatana">Photos</span>
+                            <a class="album-btn album-btn--premises" href="#album-okatana">
+                                <svg class="album-btn-roof" viewBox="0 0 92 30" aria-hidden="true" focusable="false">
+                                    <path d="M66 15V5h8v16" fill="#f28c28" stroke="#b4560f" stroke-width="2" stroke-linejoin="round"/>
+                                    <path d="M4 29L46 3l42 26z" fill="#f28c28" stroke="#b4560f" stroke-width="2.5" stroke-linejoin="round"/>
+                                    <circle cx="46" cy="19" r="4" fill="#fef7dc" stroke="#b4560f" stroke-width="2"/>
+                                </svg>
+                                <svg class="album-btn-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <rect x="5" y="3" width="14" height="18" rx="2" fill="#f6c443"/>
+                                    <g class="door">
+                                        <rect x="5" y="3" width="14" height="18" rx="2" fill="currentColor"/>
+                                        <circle cx="16" cy="12.5" r="1.4" fill="#ffffff"/>
+                                    </g>
+                                    <path d="M2.5 21.5h19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <span>Tour Okatana</span><span class="sr-only"> (opens the Okatana Campus album)</span>
                             </a>
                         </li>
 
@@ -743,32 +891,136 @@
                 </div>
 
                 <div class="album-views">
-                    <!-- data-count-noun: this album still holds illustrations, so its count reads
-                         "pictures". Remove the attribute once the real building photos are in. -->
-                    <section class="album accent-red" id="album-premises" data-gallery-group="premises" data-count-noun="picture" aria-labelledby="album-premises-title">
+                    <section class="album accent-red" id="album-ongwediva" data-gallery-group="ongwediva" aria-labelledby="album-ongwediva-title">
                         <div class="album-head">
-                            <h3 id="album-premises-title" tabindex="-1">Premises <span class="album-count" data-album-count="album-premises">Photos</span></h3>
+                            <h3 id="album-ongwediva-title" tabindex="-1">Ongwediva Campus <span class="album-count" data-album-count="album-ongwediva">Photos</span></h3>
                             <a class="album-back" href="#gallery">
                                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                 All albums
                             </a>
                         </div>
+                        <p class="swipe-hint" aria-hidden="true">Swipe to see more &rarr;</p>
                         <ul class="gallery-grid">
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Our Playground (illustration)" data-file="assets/images/illustration-playground.webp">
-                                    <img class="gallery-photo" src="assets/images/illustration-playground.webp" alt="Illustration of a sunny playground with a jungle gym, a red slide, swings, a seesaw and painted tyres under acacia trees." width="900" height="673" loading="lazy" decoding="async">
-                                    <span class="gallery-label">Our Playground</span>
+                                <button type="button" class="gallery-item" data-caption="Our Ongwediva Classrooms" data-file="assets/images/gallery/ongwediva-campus-03-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/ongwediva-campus-03.webp" alt="The orange classroom building at our Ongwediva campus, with painted tyres and toy cars in the front play area." width="800" height="600" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Our Ongwediva Classrooms</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Our Learning Space (illustration)" data-file="assets/images/illustration-classroom.webp">
-                                    <img class="gallery-photo" src="assets/images/illustration-classroom.webp" alt="Illustration of a bright classroom corner with toy shelves, baskets, a teddy bear, cushions and a book rack under colourful bunting." width="900" height="673" loading="lazy" decoding="async">
-                                    <span class="gallery-label">Our Learning Space</span>
+                                <button type="button" class="gallery-item" data-caption="Jungle Gym &amp; Merry-go-round" data-file="assets/images/gallery/ongwediva-campus-07-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/ongwediva-campus-07.webp" alt="A colourful jungle gym and a merry-go-round beside a big shade tree at our Ongwediva campus." width="800" height="600" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Jungle Gym &amp; Merry-go-round</span>
                                 </button>
                             </li>
-                            <li class="gallery-placeholder">
-                                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7M5 9.5V20h14V9.5M10 20v-5h4v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                <span>Real photos coming soon</span>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Tyre Trail" data-file="assets/images/gallery/ongwediva-campus-08-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/ongwediva-campus-08.webp" alt="Painted tyres along a paved path, with ride-on toys and a wooden play fort under the trees at our Ongwediva campus." width="800" height="600" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Tyre Trail</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Wooden Play Fort" data-file="assets/images/gallery/ongwediva-campus-06-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/ongwediva-campus-06.webp" alt="A wooden play fort with slides and a climbing frame at our Ongwediva campus." width="640" height="853" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Wooden Play Fort</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Swings" data-file="assets/images/gallery/ongwediva-campus-05-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/ongwediva-campus-05.webp" alt="Blue and yellow swings in the sandpit, in front of a painted mural wall at our Ongwediva campus." width="800" height="600" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Swings</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Painted Tyre Sandpit" data-file="assets/images/gallery/ongwediva-campus-01-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/ongwediva-campus-01.webp" alt="Rows of brightly painted tyres in the sandpit at our Ongwediva campus playground." width="640" height="853" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Painted Tyre Sandpit</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Classroom" data-file="assets/images/gallery/ongwediva-campus-09-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/ongwediva-campus-09.webp" alt="A bright green classroom with wooden tables, toy shelves and an apple mural at our Ongwediva campus." width="640" height="853" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Classroom</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Our Hall" data-file="assets/images/gallery/ongwediva-campus-10-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/ongwediva-campus-10.webp" alt="Long wooden tables and benches in a hall with a red barn mural at our Ongwediva campus." width="640" height="851" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Our Hall</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Classroom Corner" data-file="assets/images/gallery/ongwediva-campus-11-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/ongwediva-campus-11.webp" alt="A classroom with group tables, a teacher&rsquo;s desk and a shapes chart at our Ongwediva campus." width="800" height="600" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Classroom Corner</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section class="album accent-orange" id="album-okatana" data-gallery-group="okatana" aria-labelledby="album-okatana-title">
+                        <div class="album-head">
+                            <h3 id="album-okatana-title" tabindex="-1">Okatana Campus <span class="album-count" data-album-count="album-okatana">Photos</span></h3>
+                            <a class="album-back" href="#gallery">
+                                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                All albums
+                            </a>
+                        </div>
+                        <p class="swipe-hint" aria-hidden="true">Swipe to see more &rarr;</p>
+                        <ul class="gallery-grid">
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Our Okatana Classrooms" data-file="assets/images/gallery/okatana-campus-01-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/okatana-campus-01.webp" alt="The brick classroom block at our Okatana campus, with its wide doors open onto blue chairs and tables." width="640" height="853" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Our Okatana Classrooms</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Climbing Fort &amp; Tyres" data-file="assets/images/gallery/okatana-campus-13-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/okatana-campus-13.webp" alt="A wooden climbing fort and brightly painted tyres under shady trees at our Okatana campus, with ponies grazing behind." width="800" height="600" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Climbing Fort &amp; Tyres</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Jungle Gym" data-file="assets/images/gallery/okatana-campus-12-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/okatana-campus-12.webp" alt="A long wooden jungle gym with a slide and a row of painted tyres at our Okatana campus." width="800" height="600" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Jungle Gym</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Merry-go-round" data-file="assets/images/gallery/okatana-campus-15-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/okatana-campus-15.webp" alt="A colourful merry-go-round and slide in the shade of tall trees at our Okatana campus." width="640" height="853" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Merry-go-round</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Climbing Net" data-file="assets/images/gallery/okatana-campus-07-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/okatana-campus-07.webp" alt="A wooden play fort with a rope climbing net at our Okatana campus." width="640" height="853" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Climbing Net</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Shaded Sandpit" data-file="assets/images/gallery/okatana-campus-08-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/okatana-campus-08.webp" alt="A shaded sandpit ringed with painted tyres and a basket of toys at our Okatana campus." width="640" height="853" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Shaded Sandpit</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Open Lawn" data-file="assets/images/gallery/okatana-campus-06-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/okatana-campus-06.webp" alt="A wide lawn and sand play area with palm trees at our Okatana campus." width="800" height="600" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Open Lawn</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Classroom" data-file="assets/images/gallery/okatana-campus-04-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/okatana-campus-04.webp" alt="A yellow classroom with a maths wall, alphabet posters and red chairs at our Okatana campus." width="640" height="853" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Classroom</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="gallery-item" data-caption="Reading Corner" data-file="assets/images/gallery/okatana-campus-05-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/okatana-campus-05.webp" alt="A reading corner with blue shelves full of books and a foosball table at our Okatana campus." width="800" height="600" loading="lazy" decoding="async">
+                                    <span class="gallery-label">Reading Corner</span>
+                                </button>
                             </li>
                         </ul>
                     </section>
@@ -781,71 +1033,60 @@
                                 All albums
                             </a>
                         </div>
+                        <p class="swipe-hint" aria-hidden="true">Swipe to see more &rarr;</p>
                         <ul class="gallery-grid">
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Shapes &amp; Patterns" data-file="assets/images/gallery/ea-08-large.webp">
-                                    <img class="gallery-photo" style="--pos:50% 12%" src="assets/images/gallery/ea-08.webp" alt="A smiling child fitting colourful shape tiles into a pattern board at a classroom table." width="640" height="853" loading="lazy" decoding="async">
+                                <button type="button" class="gallery-item" data-caption="Shapes &amp; Patterns" data-file="assets/images/gallery/educational-activities-08-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 12%" src="assets/images/gallery/educational-activities-08.webp" alt="A smiling child fitting colourful shape tiles into a pattern board at a classroom table." width="640" height="853" loading="lazy" decoding="async">
                                     <span class="gallery-label">Shapes &amp; Patterns</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Linking Chains" data-file="assets/images/gallery/ea-10-large.webp">
-                                    <img class="gallery-photo" style="--pos:50% 45%" src="assets/images/gallery/ea-10.webp" alt="A smiling child in an orange Leer Speel-Speel shirt linking colourful plastic chains at a classroom table." width="640" height="853" loading="lazy" decoding="async">
+                                <button type="button" class="gallery-item" data-caption="Linking Chains" data-file="assets/images/gallery/educational-activities-10-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 45%" src="assets/images/gallery/educational-activities-10.webp" alt="A smiling child in an orange Leer Speel-Speel shirt linking colourful plastic chains at a classroom table." width="640" height="853" loading="lazy" decoding="async">
                                     <span class="gallery-label">Linking Chains</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Playdough Numbers" data-file="assets/images/gallery/ea-12-large.webp">
-                                    <img class="gallery-photo" style="--pos:50% 62%" src="assets/images/gallery/ea-12.webp" alt="A child shaping playdough numbers on a number mat, with classmates working behind." width="640" height="853" loading="lazy" decoding="async">
+                                <button type="button" class="gallery-item" data-caption="Playdough Numbers" data-file="assets/images/gallery/educational-activities-12-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 62%" src="assets/images/gallery/educational-activities-12.webp" alt="A child shaping playdough numbers on a number mat, with classmates working behind." width="640" height="853" loading="lazy" decoding="async">
                                     <span class="gallery-label">Playdough Numbers</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Building with Blocks" data-file="assets/images/gallery/ea-11-large.webp">
-                                    <img class="gallery-photo" style="--pos:50% 30%" src="assets/images/gallery/ea-11.webp" alt="Two children building with wooden shape blocks and gears at a classroom table." width="640" height="853" loading="lazy" decoding="async">
+                                <button type="button" class="gallery-item" data-caption="Building with Blocks" data-file="assets/images/gallery/educational-activities-11-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 30%" src="assets/images/gallery/educational-activities-11.webp" alt="Two children building with wooden shape blocks and gears at a classroom table." width="640" height="853" loading="lazy" decoding="async">
                                     <span class="gallery-label">Building with Blocks</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Stacking &amp; Sorting" data-file="assets/images/gallery/ea-09-large.webp">
-                                    <img class="gallery-photo" style="--pos:50% 35%" src="assets/images/gallery/ea-09.webp" alt="A child proudly holding up a wooden stacking-ring toy in the classroom." width="800" height="600" loading="lazy" decoding="async">
+                                <button type="button" class="gallery-item" data-caption="Stacking &amp; Sorting" data-file="assets/images/gallery/educational-activities-09-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 35%" src="assets/images/gallery/educational-activities-09.webp" alt="A child proudly holding up a wooden stacking-ring toy in the classroom." width="800" height="600" loading="lazy" decoding="async">
                                     <span class="gallery-label">Stacking &amp; Sorting</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Hoop Hopping" data-file="assets/images/gallery/ea-02-large.webp">
-                                    <img class="gallery-photo" style="--pos:50% 30%" src="assets/images/gallery/ea-02.webp" alt="Children hopping through a row of colourful hoops on the school lawn." width="800" height="600" loading="lazy" decoding="async">
+                                <button type="button" class="gallery-item" data-caption="Hoop Hopping" data-file="assets/images/gallery/educational-activities-02-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 30%" src="assets/images/gallery/educational-activities-02.webp" alt="Children hopping through a row of colourful hoops on the school lawn." width="800" height="600" loading="lazy" decoding="async">
                                     <span class="gallery-label">Hoop Hopping</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Bean Bag Toss" data-file="assets/images/gallery/ea-01-large.webp">
-                                    <img class="gallery-photo" src="assets/images/gallery/ea-01.webp" alt="A child throwing a bean bag at a hoop target on the lawn while classmates watch." width="800" height="600" loading="lazy" decoding="async">
+                                <button type="button" class="gallery-item" data-caption="Bean Bag Toss" data-file="assets/images/gallery/educational-activities-01-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/educational-activities-01.webp" alt="A child throwing a bean bag at a hoop target on the lawn while classmates watch." width="800" height="600" loading="lazy" decoding="async">
                                     <span class="gallery-label">Bean Bag Toss</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Ball Games" data-file="assets/images/gallery/ea-04-large.webp">
-                                    <img class="gallery-photo" src="assets/images/gallery/ea-04.webp" alt="Children playing a catching game with buckets, cones and coloured balls under a big tree." width="800" height="600" loading="lazy" decoding="async">
+                                <button type="button" class="gallery-item" data-caption="Ball Games" data-file="assets/images/gallery/educational-activities-04-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/educational-activities-04.webp" alt="Children playing a catching game with buckets, cones and coloured balls under a big tree." width="800" height="600" loading="lazy" decoding="async">
                                     <span class="gallery-label">Ball Games</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Outdoor Games" data-file="assets/images/gallery/ea-03-large.webp">
-                                    <img class="gallery-photo" style="--pos:50% 80%" src="assets/images/gallery/ea-03.webp" alt="Children in navy school tracksuits running during an outdoor game under the trees." width="800" height="545" loading="lazy" decoding="async">
+                                <button type="button" class="gallery-item" data-caption="Outdoor Games" data-file="assets/images/gallery/educational-activities-03-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 80%" src="assets/images/gallery/educational-activities-03.webp" alt="Children in navy school tracksuits running during an outdoor game under the trees." width="800" height="545" loading="lazy" decoding="async">
                                     <span class="gallery-label">Outdoor Games</span>
-                                </button>
-                            </li>
-                            <li>
-                                <button type="button" class="gallery-item" data-caption="Fine Motor Activities" data-file="assets/images/gallery/ea-06-large.webp">
-                                    <img class="gallery-photo" style="--pos:50% 60%" src="assets/images/gallery/ea-06.webp" alt="A classroom table set out with lacing hands, shape sorters and peg boards." width="640" height="853" loading="lazy" decoding="async">
-                                    <span class="gallery-label">Fine Motor Activities</span>
-                                </button>
-                            </li>
-                            <li>
-                                <button type="button" class="gallery-item" data-caption="Colour Sorting" data-file="assets/images/gallery/ea-07-large.webp">
-                                    <img class="gallery-photo" style="--pos:50% 75%" src="assets/images/gallery/ea-07.webp" alt="Plastic chain links sorted by colour inside a hoop on the mat." width="640" height="853" loading="lazy" decoding="async">
-                                    <span class="gallery-label">Colour Sorting</span>
                                 </button>
                             </li>
                         </ul>
@@ -859,101 +1100,60 @@
                                 All albums
                             </a>
                         </div>
+                        <p class="swipe-hint" aria-hidden="true">Swipe to see more &rarr;</p>
                         <ul class="gallery-grid">
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Meeting the Pony" data-file="assets/images/gallery/pz-10-large.webp">
-                                    <img class="gallery-photo" src="assets/images/gallery/pz-10.webp" alt="Children reaching over the fence to stroke a pony's nose." width="800" height="599" loading="lazy" decoding="async">
+                                <button type="button" class="gallery-item" data-caption="Meeting the Pony" data-file="assets/images/gallery/petting-zoo-10-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/petting-zoo-10.webp" alt="Children reaching over the fence to stroke a pony's nose." width="800" height="599" loading="lazy" decoding="async">
                                     <span class="gallery-label">Meeting the Pony</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Feeding the Chickens" data-file="assets/images/gallery/pz-13-large.webp">
-                                    <img class="gallery-photo" style="--pos:50% 30%" src="assets/images/gallery/pz-13.webp" alt="Children holding feed tubs beside the chickens in the petting zoo." width="800" height="600" loading="lazy" decoding="async">
+                                <button type="button" class="gallery-item" data-caption="Feeding the Chickens" data-file="assets/images/gallery/petting-zoo-13-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 30%" src="assets/images/gallery/petting-zoo-13.webp" alt="Children holding feed tubs beside the chickens in the petting zoo." width="800" height="600" loading="lazy" decoding="async">
                                     <span class="gallery-label">Feeding the Chickens</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Feeding Time" data-file="assets/images/gallery/pz-12-large.webp">
-                                    <img class="gallery-photo" style="--pos:50% 35%" src="assets/images/gallery/pz-12.webp" alt="A smiling child holding a feed tub in the chicken run." width="640" height="853" loading="lazy" decoding="async">
+                                <button type="button" class="gallery-item" data-caption="Feeding Time" data-file="assets/images/gallery/petting-zoo-12-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 35%" src="assets/images/gallery/petting-zoo-12.webp" alt="A smiling child holding a feed tub in the chicken run." width="640" height="853" loading="lazy" decoding="async">
                                     <span class="gallery-label">Feeding Time</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Feeding the Birds" data-file="assets/images/gallery/pz-11-large.webp">
-                                    <img class="gallery-photo" style="--pos:50% 40%" src="assets/images/gallery/pz-11.webp" alt="Three smiling children with feed cups in the bird enclosure." width="800" height="599" loading="lazy" decoding="async">
+                                <button type="button" class="gallery-item" data-caption="Feeding the Birds" data-file="assets/images/gallery/petting-zoo-11-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 40%" src="assets/images/gallery/petting-zoo-11.webp" alt="Three smiling children with feed cups in the bird enclosure." width="800" height="599" loading="lazy" decoding="async">
                                     <span class="gallery-label">Feeding the Birds</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Feeding the Pony" data-file="assets/images/gallery/pz-14-large.webp">
-                                    <img class="gallery-photo" style="--pos:50% 25%" src="assets/images/gallery/pz-14.webp" alt="Children pouring feed into a pony's trough." width="640" height="776" loading="lazy" decoding="async">
+                                <button type="button" class="gallery-item" data-caption="Feeding the Pony" data-file="assets/images/gallery/petting-zoo-14-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 25%" src="assets/images/gallery/petting-zoo-14.webp" alt="Children pouring feed into a pony's trough." width="640" height="776" loading="lazy" decoding="async">
                                     <span class="gallery-label">Feeding the Pony</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Grooming the Pony" data-file="assets/images/gallery/pz-16-large.webp">
-                                    <img class="gallery-photo" style="--pos:50% 30%" src="assets/images/gallery/pz-16.webp" alt="A child brushing a pony while classmates and a teacher look on." width="640" height="853" loading="lazy" decoding="async">
+                                <button type="button" class="gallery-item" data-caption="Grooming the Pony" data-file="assets/images/gallery/petting-zoo-16-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 30%" src="assets/images/gallery/petting-zoo-16.webp" alt="A child brushing a pony while classmates and a teacher look on." width="640" height="853" loading="lazy" decoding="async">
                                     <span class="gallery-label">Grooming the Pony</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Collecting Eggs" data-file="assets/images/gallery/pz-15-large.webp">
-                                    <img class="gallery-photo" style="--pos:50% 85%" src="assets/images/gallery/pz-15.webp" alt="Children holding up eggs and feed bowls outside the animal enclosures." width="640" height="853" loading="lazy" decoding="async">
+                                <button type="button" class="gallery-item" data-caption="Collecting Eggs" data-file="assets/images/gallery/petting-zoo-15-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 85%" src="assets/images/gallery/petting-zoo-15.webp" alt="Children holding up eggs and feed bowls outside the animal enclosures." width="640" height="853" loading="lazy" decoding="async">
                                     <span class="gallery-label">Collecting Eggs</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Picking Lemons" data-file="assets/images/gallery/pz-09-large.webp">
-                                    <img class="gallery-photo" src="assets/images/gallery/pz-09.webp" alt="Children reaching up to pick lemons from a tree." width="800" height="600" loading="lazy" decoding="async">
+                                <button type="button" class="gallery-item" data-caption="Picking Lemons" data-file="assets/images/gallery/petting-zoo-09-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/petting-zoo-09.webp" alt="Children reaching up to pick lemons from a tree." width="800" height="600" loading="lazy" decoding="async">
                                     <span class="gallery-label">Picking Lemons</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Our Goats" data-file="assets/images/gallery/pz-03-large.webp">
-                                    <img class="gallery-photo" style="--pos:50% 70%" src="assets/images/gallery/pz-03.webp" alt="Two goats standing in their straw-covered pen." width="800" height="600" loading="lazy" decoding="async">
-                                    <span class="gallery-label">Our Goats</span>
-                                </button>
-                            </li>
-                            <li>
-                                <button type="button" class="gallery-item" data-caption="Our Pony" data-file="assets/images/gallery/pz-05-large.webp">
-                                    <img class="gallery-photo" style="--pos:50% 35%" src="assets/images/gallery/pz-05.webp" alt="A black-and-white pony standing in its stable." width="640" height="853" loading="lazy" decoding="async">
-                                    <span class="gallery-label">Our Pony</span>
-                                </button>
-                            </li>
-                            <li>
-                                <button type="button" class="gallery-item" data-caption="Peeking Out" data-file="assets/images/gallery/pz-06-large.webp">
-                                    <img class="gallery-photo" style="--pos:50% 35%" src="assets/images/gallery/pz-06.webp" alt="A brown-and-white pony looking out over its stable door." width="640" height="853" loading="lazy" decoding="async">
-                                    <span class="gallery-label">Peeking Out</span>
-                                </button>
-                            </li>
-                            <li>
-                                <button type="button" class="gallery-item" data-caption="A New Foal" data-file="assets/images/gallery/pz-08-large.webp">
-                                    <img class="gallery-photo" src="assets/images/gallery/pz-08.webp" alt="A young brown foal standing in long grass." width="800" height="697" loading="lazy" decoding="async">
+                                <button type="button" class="gallery-item" data-caption="A New Foal" data-file="assets/images/gallery/petting-zoo-08-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/petting-zoo-08.webp" alt="A young brown foal standing in long grass." width="800" height="697" loading="lazy" decoding="async">
                                     <span class="gallery-label">A New Foal</span>
-                                </button>
-                            </li>
-                            <li>
-                                <button type="button" class="gallery-item" data-caption="Our Turkeys" data-file="assets/images/gallery/pz-07-large.webp">
-                                    <img class="gallery-photo" style="--pos:50% 70%" src="assets/images/gallery/pz-07.webp" alt="Four turkeys strutting on the grass." width="640" height="629" loading="lazy" decoding="async">
-                                    <span class="gallery-label">Our Turkeys</span>
-                                </button>
-                            </li>
-                            <li>
-                                <button type="button" class="gallery-item" data-caption="Splash Time" data-file="assets/images/gallery/pz-02-large.webp">
-                                    <img class="gallery-photo" src="assets/images/gallery/pz-02.webp" alt="A duck spreading its wings in the pond while others swim by." width="800" height="600" loading="lazy" decoding="async">
-                                    <span class="gallery-label">Splash Time</span>
-                                </button>
-                            </li>
-                            <li>
-                                <button type="button" class="gallery-item" data-caption="Our Goose" data-file="assets/images/gallery/pz-04-large.webp">
-                                    <img class="gallery-photo" style="--pos:50% 55%" src="assets/images/gallery/pz-04.webp" alt="A white goose stretching its wings beside a small pond." width="640" height="800" loading="lazy" decoding="async">
-                                    <span class="gallery-label">Our Goose</span>
-                                </button>
-                            </li>
-                            <li>
-                                <button type="button" class="gallery-item" data-caption="Our Vegetable Garden" data-file="assets/images/gallery/pz-01-large.webp">
-                                    <img class="gallery-photo" src="assets/images/gallery/pz-01.webp" alt="Raised beds of flowers and seedlings under a green shade-net tunnel." width="800" height="600" loading="lazy" decoding="async">
-                                    <span class="gallery-label">Our Vegetable Garden</span>
                                 </button>
                             </li>
                         </ul>
@@ -967,58 +1167,59 @@
                                 All albums
                             </a>
                         </div>
+                        <p class="swipe-hint" aria-hidden="true">Swipe to see more &rarr;</p>
                         <ul class="gallery-grid">
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Paper Flower Day" data-file="assets/images/gallery/fd-01-large.webp">
-                                    <img class="gallery-photo" src="assets/images/gallery/fd-01.webp" alt="Children on the school lawn holding up big paper-plate flowers they made." width="800" height="484" loading="lazy" decoding="async">
+                                <button type="button" class="gallery-item" data-caption="Paper Flower Day" data-file="assets/images/gallery/fun-days-01-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/fun-days-01.webp" alt="Children on the school lawn holding up big paper-plate flowers they made." width="800" height="484" loading="lazy" decoding="async">
                                     <span class="gallery-label">Paper Flower Day</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Animal Mask Day" data-file="assets/images/gallery/fd-10-large.webp">
-                                    <img class="gallery-photo" style="--pos:50% 30%" src="assets/images/gallery/fd-10.webp" alt="A group of children wearing paper animal masks and holding party bags." width="800" height="656" loading="lazy" decoding="async">
+                                <button type="button" class="gallery-item" data-caption="Animal Mask Day" data-file="assets/images/gallery/fun-days-10-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 30%" src="assets/images/gallery/fun-days-10.webp" alt="A group of children wearing paper animal masks and holding party bags." width="800" height="656" loading="lazy" decoding="async">
                                     <span class="gallery-label">Animal Mask Day</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Wild Friends" data-file="assets/images/gallery/fd-11-large.webp">
-                                    <img class="gallery-photo" style="--pos:50% 35%" src="assets/images/gallery/fd-11.webp" alt="Four children in paper animal masks holding party bags beside a painted wall." width="800" height="600" loading="lazy" decoding="async">
+                                <button type="button" class="gallery-item" data-caption="Wild Friends" data-file="assets/images/gallery/fun-days-11-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 35%" src="assets/images/gallery/fun-days-11.webp" alt="Four children in paper animal masks holding party bags beside a painted wall." width="800" height="600" loading="lazy" decoding="async">
                                     <span class="gallery-label">Wild Friends</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Decorating Cupcakes" data-file="assets/images/gallery/fd-08-large.webp">
-                                    <img class="gallery-photo" style="--pos:50% 45%" src="assets/images/gallery/fd-08.webp" alt="Three children in hair nets icing and decorating cupcakes." width="800" height="600" loading="lazy" decoding="async">
+                                <button type="button" class="gallery-item" data-caption="Decorating Cupcakes" data-file="assets/images/gallery/fun-days-08-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 45%" src="assets/images/gallery/fun-days-08.webp" alt="Three children in hair nets icing and decorating cupcakes." width="800" height="600" loading="lazy" decoding="async">
                                     <span class="gallery-label">Decorating Cupcakes</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Picnic Time" data-file="assets/images/gallery/fd-13-large.webp">
-                                    <img class="gallery-photo" style="--pos:50% 70%" src="assets/images/gallery/fd-13.webp" alt="Children smiling around a picnic table with snacks and drinks at the playground." width="800" height="600" loading="lazy" decoding="async">
+                                <button type="button" class="gallery-item" data-caption="Picnic Time" data-file="assets/images/gallery/fun-days-13-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 70%" src="assets/images/gallery/fun-days-13.webp" alt="Children smiling around a picnic table with snacks and drinks at the playground." width="800" height="600" loading="lazy" decoding="async">
                                     <span class="gallery-label">Picnic Time</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Cupcakes Galore" data-file="assets/images/gallery/fd-04-large.webp">
-                                    <img class="gallery-photo" style="--pos:50% 72%" src="assets/images/gallery/fd-04.webp" alt="Trays of cupcakes with sprinkles and icing flowers on a party table." width="640" height="853" loading="lazy" decoding="async">
+                                <button type="button" class="gallery-item" data-caption="Cupcakes Galore" data-file="assets/images/gallery/fun-days-04-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 72%" src="assets/images/gallery/fun-days-04.webp" alt="Trays of cupcakes with sprinkles and icing flowers on a party table." width="640" height="853" loading="lazy" decoding="async">
                                     <span class="gallery-label">Cupcakes Galore</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Party Treats" data-file="assets/images/gallery/fd-03-large.webp">
-                                    <img class="gallery-photo" style="--pos:50% 72%" src="assets/images/gallery/fd-03.webp" alt="A party table with doughnuts, muffins and a fruit platter." width="640" height="853" loading="lazy" decoding="async">
+                                <button type="button" class="gallery-item" data-caption="Party Treats" data-file="assets/images/gallery/fun-days-03-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 72%" src="assets/images/gallery/fun-days-03.webp" alt="A party table with doughnuts, muffins and a fruit platter." width="640" height="853" loading="lazy" decoding="async">
                                     <span class="gallery-label">Party Treats</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Snack Table" data-file="assets/images/gallery/fd-05-large.webp">
-                                    <img class="gallery-photo" style="--pos:50% 40%" src="assets/images/gallery/fd-05.webp" alt="A party table with popcorn, crackers, wafers and sweets." width="640" height="853" loading="lazy" decoding="async">
+                                <button type="button" class="gallery-item" data-caption="Snack Table" data-file="assets/images/gallery/fun-days-05-large.webp">
+                                    <img class="gallery-photo" style="--pos:50% 40%" src="assets/images/gallery/fun-days-05.webp" alt="A party table with popcorn, crackers, wafers and sweets." width="640" height="853" loading="lazy" decoding="async">
                                     <span class="gallery-label">Snack Table</span>
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="gallery-item" data-caption="Fresh Fruit Platter" data-file="assets/images/gallery/fd-06-large.webp">
-                                    <img class="gallery-photo" src="assets/images/gallery/fd-06.webp" alt="A round platter of sliced fresh fruit." width="640" height="641" loading="lazy" decoding="async">
+                                <button type="button" class="gallery-item" data-caption="Fresh Fruit Platter" data-file="assets/images/gallery/fun-days-06-large.webp">
+                                    <img class="gallery-photo" src="assets/images/gallery/fun-days-06.webp" alt="A round platter of sliced fresh fruit." width="640" height="641" loading="lazy" decoding="async">
                                     <span class="gallery-label">Fresh Fruit Platter</span>
                                 </button>
                             </li>
@@ -1033,10 +1234,10 @@
         <section id="downloads" class="section accent-blue" aria-labelledby="downloads-heading">
             <div class="doodle-layer" aria-hidden="true">
                 <img class="doodle doodle--wiggle" src="assets/doodles/crayons.svg" alt="" width="160" height="124" loading="lazy" decoding="async" style="--r:4%;--t:14px;--s:104px;--rot:6deg;--dur:7s">
-                <img class="doodle doodle--bob" src="assets/doodles/doodle-abc.webp" alt="" width="512" height="219" loading="lazy" decoding="async" style="--l:3%;--t:28px;--s:112px;--rot:-8deg;--dur:8s">
-                <img class="doodle doodle--spin doodle--desk" src="assets/doodles/doodle-scribble.webp" alt="" width="512" height="467" loading="lazy" decoding="async" style="--l:2%;--b:12px;--s:76px;--dur:55s">
-                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-star.webp" alt="" width="512" height="454" loading="lazy" decoding="async" style="--r:8%;--b:24px;--s:40px;--rot:12deg;--dur:5s">
-                <img class="doodle doodle--bob doodle--wide" src="assets/doodles/doodle-apple.webp" alt="" width="439" height="512" loading="lazy" decoding="async" style="--r:1.5%;--t:48%;--s:66px;--rot:10deg;--dur:7.5s">
+                <img class="doodle doodle--bob" src="assets/doodles/doodle-abc.webp" alt="" width="248" height="106" loading="lazy" decoding="async" style="--l:3%;--t:28px;--s:112px;--rot:-8deg;--dur:8s">
+                <img class="doodle doodle--spin doodle--desk" src="assets/doodles/doodle-scribble.webp" alt="" width="176" height="161" loading="lazy" decoding="async" style="--l:2%;--b:12px;--s:76px;--dur:55s">
+                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-star.webp" alt="" width="88" height="78" loading="lazy" decoding="async" style="--r:8%;--b:24px;--s:40px;--rot:12deg;--dur:5s">
+                <img class="doodle doodle--bob doodle--wide" src="assets/doodles/doodle-apple.webp" alt="" width="136" height="159" loading="lazy" decoding="async" style="--r:1.5%;--t:48%;--s:66px;--rot:10deg;--dur:7.5s">
             </div>
             <div class="container">
                 <div class="section-heading section-heading-center">
@@ -1123,48 +1324,49 @@
         <!-- LOCATIONS -->
         <section id="locations" class="section accent-indigo" aria-labelledby="locations-heading">
             <div class="doodle-layer" aria-hidden="true">
-                <img class="doodle doodle--bob" src="assets/doodles/doodle-map-pin.webp" alt="" width="512" height="373" loading="lazy" decoding="async" style="--r:3%;--t:8px;--s:118px;--rot:4deg;--dur:8s">
-                <img class="doodle doodle--drift" src="assets/doodles/doodle-cloud.webp" alt="" width="512" height="364" loading="lazy" decoding="async" style="--l:4%;--t:22px;--s:98px;--dur:22s">
-                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-star.webp" alt="" width="512" height="454" loading="lazy" decoding="async" style="--l:20%;--t:56px;--s:26px;--rot:-16deg;--dur:5.5s">
+                <img class="doodle doodle--bob" src="assets/doodles/doodle-map-pin.webp" alt="" width="240" height="175" loading="lazy" decoding="async" style="--r:3%;--t:8px;--s:118px;--rot:4deg;--dur:8s">
+                <img class="doodle doodle--drift" src="assets/doodles/doodle-cloud.webp" alt="" width="240" height="171" loading="lazy" decoding="async" style="--l:4%;--t:22px;--s:98px;--dur:22s">
+                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-star.webp" alt="" width="88" height="78" loading="lazy" decoding="async" style="--l:20%;--t:56px;--s:26px;--rot:-16deg;--dur:5.5s">
                 <img class="doodle doodle--bob doodle--desk" src="assets/doodles/house.svg" alt="" width="120" height="120" loading="lazy" decoding="async" style="--l:2%;--b:8px;--s:78px;--rot:-5deg;--dur:9s">
-                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-tree.webp" alt="" width="512" height="428" loading="lazy" decoding="async" style="--r:3%;--b:6px;--s:92px;--rot:5deg;--dur:10s">
+                <img class="doodle doodle--wiggle doodle--desk" src="assets/doodles/doodle-tree.webp" alt="" width="384" height="321" loading="lazy" decoding="async" style="--r:3%;--b:6px;--s:92px;--rot:5deg;--dur:10s">
             </div>
             <div class="container">
                 <div class="section-heading section-heading-center">
                     <p class="eyebrow">Ongwediva &amp; Okatana</p>
                     <h2 id="locations-heading">Our Locations</h2>
-                    <p class="section-intro">Two campuses, one Leer Speel-Speel family. Tap Get Directions to open either campus in Google Maps.</p>
+                    <p class="section-intro">Two campuses, one Leer Speel-Speel family: daycare and pre-primary in Ongwediva and in Okatana. Tap Get Directions to open either campus in Google Maps.</p>
                 </div>
 
-                <!-- Two equal campus cards. The maps are keyless Google Maps embeds:
-                     Ongwediva by the listing's place ID (cid), Okatana by its coordinates. -->
+                <!-- Two equal campus cards: an entrance photo from that campus's own set (never
+                     swap them), then the map. The maps are keyless Google Maps embeds of each
+                     campus's own Google listing (cid = the place ID in its Get Directions link). -->
                 <div class="locations-grid">
                     <article class="location-card">
+                        <img class="location-photo" src="assets/images/location-ongwediva.webp" alt="The orange classroom building at our Ongwediva campus, with painted tyres in the front play area." width="1000" height="625" loading="lazy" decoding="async">
                         <div class="location-map">
                             <iframe src="https://www.google.com/maps?cid=14482890224313114944&amp;z=16&amp;output=embed" title="Map showing the Leer Speel-Speel Ongwediva campus on Onguti Street" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
                         </div>
                         <div class="location-body">
-                            <span class="location-tag">Ongwediva Campus</span>
-                            <h3>Leer Speel-Speel Play-to-Learn Educational Centre <span class="location-kind">Daycare &amp; Pre-Primary</span></h3>
+                            <h3><span class="location-tag">Ongwediva Campus</span> Leer Speel-Speel Play-to-Learn Educational Centre <span class="location-kind">Daycare &amp; Pre-Primary</span></h3>
                             <p class="location-address">Erf 2762, Onguti Street<br>Ongwediva, Namibia</p>
                             <p class="location-hours">Open 07:00&ndash;17:00</p>
-                            <p><a class="tel-link" href="tel:+264812156444">+264 81 215 6444</a></p>
+                            <p><a class="tel-link" href="tel:+264812156444">+264&nbsp;81&nbsp;215&nbsp;6444</a></p>
                             <a class="btn btn-outline" href="https://www.google.com/maps/place/Leer+Speel-Speel+Play-to-Learn+Educational+Centre+Daycare+%26+Pre-Primary/data=!4m2!3m1!1s0x0:0xc8fd8fece5292140?sa=X" target="_blank" rel="noopener noreferrer">
                                 Get Directions <span class="sr-only">to our Ongwediva campus (opens in a new tab)</span>
                             </a>
                         </div>
                     </article>
                     <article class="location-card">
+                        <img class="location-photo" src="assets/images/location-okatana.webp" alt="The brick classroom block at our Okatana campus, with its wide doors open onto blue chairs and tables." width="1000" height="625" loading="lazy" decoding="async">
                         <div class="location-map">
-                            <iframe src="https://www.google.com/maps?q=-17.7463585,15.7096291&amp;z=16&amp;output=embed" title="Map showing the Leer Speel-Speel Okatana campus" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                            <iframe src="https://www.google.com/maps?cid=1649500988041479029&amp;z=16&amp;output=embed" title="Map showing the Leer Speel-Speel Okatana campus" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
                         </div>
                         <div class="location-body">
-                            <span class="location-tag">Okatana Campus</span>
-                            <h3>Leer Speel-Speel Play-to-Learn Educational Centre <span class="location-kind">Daycare &amp; Pre-Primary</span></h3>
-                            <!-- PLACEHOLDER: replace with the Okatana campus street address -->
-                            <p class="location-address">[Okatana street address]<br>Okatana, Namibia</p>
+                            <h3><span class="location-tag">Okatana Campus</span> Leer Speel-Speel Play-to-Learn Educational Centre <span class="location-kind">Daycare &amp; Pre-Primary</span></h3>
+                            <!-- Okatana has no official street address (confirmed by Sean, 2026-10-17); the map pin and Get Directions do the work -->
+                            <p class="location-address">Okatana, Namibia</p>
                             <p class="location-hours">Open 07:00&ndash;17:00</p>
-                            <p><a class="tel-link" href="tel:+264812156444">+264 81 215 6444</a></p>
+                            <p><a class="tel-link" href="tel:+264812156444">+264&nbsp;81&nbsp;215&nbsp;6444</a></p>
                             <a class="btn btn-outline" href="https://www.google.com/maps/place/Leer+Speel-Speel+Play-to-Learn+Educational+Centre+Daycare+%26+Pre-Primary/@-17.7460315,15.7083416,17z/data=!4m6!3m5!1s0x1b939f75734f0edf:0x16e43468c0de4375!8m2!3d-17.7463585!4d15.7096291!16s%2Fg%2F11v64wkpvy" target="_blank" rel="noopener noreferrer">
                                 Get Directions <span class="sr-only">to our Okatana campus (opens in a new tab)</span>
                             </a>
@@ -1177,20 +1379,20 @@
         <!-- CONTACT / ENROLMENT -->
         <section id="contact" class="section section-alt accent-violet" aria-labelledby="contact-heading">
             <div class="doodle-layer" aria-hidden="true">
-                <img class="doodle doodle--wiggle" src="assets/doodles/doodle-heart.webp" alt="" width="512" height="501" loading="lazy" decoding="async" style="--r:6%;--t:22px;--s:58px;--rot:-10deg;--dur:6s">
-                <img class="doodle doodle--float doodle--desk" src="assets/doodles/doodle-butterfly.webp" alt="" width="512" height="342" loading="lazy" decoding="async" style="--r:18%;--t:32px;--s:64px;--rot:14deg;--dur:8.5s">
-                <img class="doodle doodle--wiggle" src="assets/doodles/doodle-flower.webp" alt="" width="392" height="512" loading="lazy" decoding="async" style="--r:3%;--b:4px;--s:56px;--rot:7deg;--dur:7.5s">
-                <img class="doodle doodle--bob doodle--desk" src="assets/doodles/doodle-123.webp" alt="" width="512" height="241" loading="lazy" decoding="async" style="--l:40%;--b:22px;--s:100px;--rot:-6deg;--dur:8s">
+                <img class="doodle doodle--wiggle" src="assets/doodles/doodle-heart.webp" alt="" width="136" height="133" loading="lazy" decoding="async" style="--r:6%;--t:22px;--s:58px;--rot:-10deg;--dur:6s">
+                <img class="doodle doodle--float doodle--desk" src="assets/doodles/doodle-butterfly.webp" alt="" width="160" height="107" loading="lazy" decoding="async" style="--r:18%;--t:32px;--s:64px;--rot:14deg;--dur:8.5s">
+                <img class="doodle doodle--wiggle" src="assets/doodles/doodle-flower.webp" alt="" width="136" height="178" loading="lazy" decoding="async" style="--r:3%;--b:4px;--s:56px;--rot:7deg;--dur:7.5s">
+                <img class="doodle doodle--bob doodle--desk" src="assets/doodles/doodle-123.webp" alt="" width="256" height="120" loading="lazy" decoding="async" style="--l:40%;--b:22px;--s:100px;--rot:-6deg;--dur:8s">
                 <img class="doodle doodle--bob doodle--desk" src="assets/doodles/crayon.svg" alt="" width="150" height="96" loading="lazy" decoding="async" style="--l:2%;--b:10px;--s:112px;--rot:-8deg;--dur:9s">
-                <img class="doodle doodle--bob doodle--wide" src="assets/doodles/doodle-handprint.webp" alt="" width="415" height="512" loading="lazy" decoding="async" style="--r:1.5%;--t:46%;--s:66px;--rot:12deg;--dur:7s">
+                <img class="doodle doodle--bob doodle--wide" src="assets/doodles/doodle-handprint.webp" alt="" width="136" height="168" loading="lazy" decoding="async" style="--r:1.5%;--t:46%;--s:66px;--rot:12deg;--dur:7s">
             </div>
             <div class="container section-grid">
                 <div class="section-heading">
                     <p class="eyebrow">Enrolment</p>
                     <h2 id="contact-heading">Enrolment is open all year</h2>
-                    <p>We'd love to welcome your child to the Leer Speel-Speel family. WhatsApp, call or email us any time to ask about enrolment &mdash; or send us a quick note below and we'll open it up in your email app, ready to send.</p>
+                    <p>We'd love to welcome your child to the Leer Speel-Speel family. WhatsApp, call or email us any time to ask about enrolment &mdash; or write us a quick note below.</p>
 
-                    <a class="btn btn-whatsapp contact-whatsapp" data-whatsapp href="https://wa.me/264812156444?text=Hi%20Leer%20Speel%20Speel%2C%20I%27d%20like%20to%20ask%20about%20enrolment" target="_blank" rel="noopener noreferrer">
+                    <a class="btn btn-whatsapp contact-whatsapp" data-whatsapp href="https://wa.me/264812156444?text=Hi%20Leer%20Speel-Speel%2C%20I%27d%20like%20to%20ask%20about%20enrolment" target="_blank" rel="noopener noreferrer">
                         <svg class="btn-icon" aria-hidden="true" focusable="false"><use href="#icon-whatsapp"/></svg>
                         WhatsApp Us<span class="sr-only"> (opens in a new tab)</span>
                     </a>
@@ -1199,14 +1401,22 @@
                         <li>
                             <a class="contact-link" href="tel:+264812156444">
                                 <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4h3.5l1.5 4-2 1.3a12 12 0 006.7 6.7l1.3-2 4 1.5V19a2 2 0 01-2 2C10.5 21 3 13.5 3 6a2 2 0 012-2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
-                                <span>+264 81 215 6444</span>
+                                <span>+264&nbsp;81&nbsp;215&nbsp;6444</span>
                             </a>
                         </li>
-                        <li>
-                            <a class="contact-link" href="mailto:potgieter@iway.na">
+                        <!-- Email: the address with a Copy button, plus "Open in Gmail" on computers
+                             only (.desktop-only). Nothing launches a mail app. The address is never
+                             written whole in the HTML: script.js fills it in, which keeps simple spam
+                             bots out; the [at]/[dot] text is the no-JS fallback. -->
+                        <li class="email-item">
+                            <span class="contact-link">
                                 <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                                <span>potgieter@iway.na</span>
-                            </a>
+                                <span data-email-address>potgieter [at] iway [dot] na</span>
+                            </span>
+                            <span class="email-actions">
+                                <button type="button" class="email-chip" data-copy-email>Copy<span class="sr-only"> email address</span></button>
+                                <a class="email-chip desktop-only" data-gmail href="https://mail.google.com/" target="_blank" rel="noopener noreferrer">Open in Gmail<span class="sr-only"> (opens in a new tab)</span></a>
+                            </span>
                         </li>
                     </ul>
 
@@ -1240,14 +1450,16 @@
                         <label for="enquiryMessage">Message</label>
                         <textarea id="enquiryMessage" name="enquiryMessage" rows="4" required></textarea>
                     </div>
+                    <!-- WhatsApp first (it is the form's submit button). "Send via Gmail" shows on
+                         computers only: on phones the Gmail app drops the address and message. -->
                     <div class="form-actions">
-                        <a class="btn btn-whatsapp" data-whatsapp href="https://wa.me/264812156444?text=Hi%20Leer%20Speel%20Speel%2C%20I%27d%20like%20to%20ask%20about%20enrolment" target="_blank" rel="noopener noreferrer">
+                        <button type="submit" class="btn btn-whatsapp">
                             <svg class="btn-icon" aria-hidden="true" focusable="false"><use href="#icon-whatsapp"/></svg>
-                            WhatsApp Us<span class="sr-only"> (opens in a new tab)</span>
-                        </a>
-                        <button type="submit" class="btn btn-primary">Open Email to Enquire</button>
+                            Send on WhatsApp
+                        </button>
+                        <button type="button" class="btn btn-primary desktop-only" id="enquiryGmail">Send via Gmail<span class="sr-only"> (opens in a new tab)</span></button>
                     </div>
-                    <p class="form-note" id="formNote" role="status" aria-live="polite">The email button opens Gmail in a new tab with this message ready to send &mdash; nothing is sent automatically.</p>
+                    <p class="form-note" id="formNote" role="status" aria-live="polite">Your message opens ready to send. Nothing is sent automatically.</p>
                 </form>
             </div>
         </section>
@@ -1256,7 +1468,7 @@
     <footer class="site-footer">
         <div class="container footer-inner">
             <div class="footer-brand">
-                <img class="footer-logo" src="assets/images/logo.webp" alt="Leer Speel Speel logo" width="256" height="256" loading="lazy" decoding="async">
+                <img class="footer-logo" src="assets/images/logo.webp" alt="Leer Speel-Speel logo" width="256" height="256" loading="lazy" decoding="async">
                 <p class="footer-name">Leer Speel-Speel<br>Play-to-Learn Educational Centre</p>
                 <p class="footer-motto">&ldquo;Because every child deserves to be loved, guided and truly known.&rdquo;</p>
                 <div class="footer-social-links">
@@ -1287,27 +1499,27 @@
             <div class="footer-contact">
                 <h3>Contact</h3>
                 <p>
-                    <a class="btn btn-whatsapp btn-sm" data-whatsapp href="https://wa.me/264812156444?text=Hi%20Leer%20Speel%20Speel%2C%20I%27d%20like%20to%20ask%20about%20enrolment" target="_blank" rel="noopener noreferrer">
+                    <a class="btn btn-whatsapp btn-sm" data-whatsapp href="https://wa.me/264812156444?text=Hi%20Leer%20Speel-Speel%2C%20I%27d%20like%20to%20ask%20about%20enrolment" target="_blank" rel="noopener noreferrer">
                         <svg class="btn-icon" aria-hidden="true" focusable="false"><use href="#icon-whatsapp"/></svg>
                         WhatsApp Us<span class="sr-only"> (opens in a new tab)</span>
                     </a>
                 </p>
-                <p><a href="tel:+264812156444">+264 81 215 6444</a></p>
-                <p><a href="mailto:potgieter@iway.na">potgieter@iway.na</a></p>
+                <p><a href="tel:+264812156444">+264&nbsp;81&nbsp;215&nbsp;6444</a></p>
+                <p class="footer-email"><span data-email-address>potgieter [at] iway [dot] na</span> <button type="button" class="email-chip email-chip--dark" data-copy-email>Copy<span class="sr-only"> email address</span></button></p>
                 <p>P.O. Box 15405, Oshakati</p>
             </div>
 
             <div class="footer-locations">
                 <h3>Our Locations</h3>
                 <p>Ongwediva &mdash; Erf 2762, Onguti Street<br><a href="https://www.google.com/maps/place/Leer+Speel-Speel+Play-to-Learn+Educational+Centre+Daycare+%26+Pre-Primary/data=!4m2!3m1!1s0x0:0xc8fd8fece5292140?sa=X" target="_blank" rel="noopener noreferrer">Get directions <span class="sr-only">to our Ongwediva campus (opens in a new tab)</span></a></p>
-                <!-- PLACEHOLDER: add the Okatana street address here once known -->
                 <p>Okatana<br><a href="https://www.google.com/maps/place/Leer+Speel-Speel+Play-to-Learn+Educational+Centre+Daycare+%26+Pre-Primary/@-17.7460315,15.7083416,17z/data=!4m6!3m5!1s0x1b939f75734f0edf:0x16e43468c0de4375!8m2!3d-17.7463585!4d15.7096291!16s%2Fg%2F11v64wkpvy" target="_blank" rel="noopener noreferrer">Get directions <span class="sr-only">to our Okatana campus (opens in a new tab)</span></a></p>
             </div>
 
             <div class="footer-banking">
                 <h3>Banking Details</h3>
                 <p>Banking details are provided on request and appear on your invoice or statement.</p>
-                <p><a href="mailto:potgieter@iway.na?subject=Banking%20details%20request">Request banking details</a></p>
+                <p class="footer-email">Request them by email: <span data-email-address>potgieter [at] iway [dot] na</span> <button type="button" class="email-chip email-chip--dark" data-copy-email>Copy<span class="sr-only"> email address</span></button></p>
+                <p class="desktop-only"><a data-gmail data-gmail-subject="Banking details request" href="https://mail.google.com/" target="_blank" rel="noopener noreferrer">Request banking details in Gmail<span class="sr-only"> (opens in a new tab)</span></a></p>
             </div>
         </div>
         <div class="container footer-bottom">
@@ -1319,7 +1531,7 @@
          Phones get a sticky bar along the bottom (WhatsApp first, then Call); wider screens
          get a round floating WhatsApp button instead. Only one of the two shows at a time. -->
     <nav class="contact-bar" aria-label="Quick contact">
-        <a class="contact-bar-btn contact-bar-btn--whatsapp" data-whatsapp href="https://wa.me/264812156444?text=Hi%20Leer%20Speel%20Speel%2C%20I%27d%20like%20to%20ask%20about%20enrolment" target="_blank" rel="noopener noreferrer">
+        <a class="contact-bar-btn contact-bar-btn--whatsapp" data-whatsapp href="https://wa.me/264812156444?text=Hi%20Leer%20Speel-Speel%2C%20I%27d%20like%20to%20ask%20about%20enrolment" target="_blank" rel="noopener noreferrer">
             <svg class="btn-icon" aria-hidden="true" focusable="false"><use href="#icon-whatsapp"/></svg>
             WhatsApp<span class="sr-only"> us (opens in a new tab)</span>
         </a>
@@ -1328,9 +1540,14 @@
             Call<span class="sr-only"> us</span>
         </a>
     </nav>
-    <a class="whatsapp-fab" data-whatsapp href="https://wa.me/264812156444?text=Hi%20Leer%20Speel%20Speel%2C%20I%27d%20like%20to%20ask%20about%20enrolment" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp us (opens in a new tab)">
-        <svg class="btn-icon" aria-hidden="true" focusable="false"><use href="#icon-whatsapp"/></svg>
-    </a>
+    <aside aria-label="WhatsApp">
+        <a class="whatsapp-fab" data-whatsapp href="https://wa.me/264812156444?text=Hi%20Leer%20Speel-Speel%2C%20I%27d%20like%20to%20ask%20about%20enrolment" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp us (opens in a new tab)">
+            <svg class="btn-icon" aria-hidden="true" focusable="false"><use href="#icon-whatsapp"/></svg>
+        </a>
+    </aside>
+
+    <!-- Tells screen-reader users when a Copy button has copied the email address -->
+    <p class="sr-only" id="copyStatus" role="status" aria-live="polite"></p>
 
     <!-- ALBUM POP-UP (filled by script.js with the .album sections from #gallery) -->
     <div class="album-modal" id="albumModal" hidden>
@@ -1338,7 +1555,8 @@
         <div class="album-modal-panel" role="dialog" aria-modal="true">
             <div class="album-modal-bar">
                 <nav class="album-tabs" aria-label="Switch album">
-                    <a class="album-tab accent-red" href="#album-premises">Premises</a>
+                    <a class="album-tab accent-red" href="#album-ongwediva">Ongwediva Campus</a>
+                    <a class="album-tab accent-orange" href="#album-okatana">Okatana Campus</a>
                     <a class="album-tab accent-yellow" href="#album-educational-activities">Educational Activities</a>
                     <a class="album-tab accent-green" href="#album-petting-zoo">Petting Zoo</a>
                     <a class="album-tab accent-violet" href="#album-fun-days">Fun Days</a>
@@ -1360,7 +1578,7 @@
             </button>
             <div class="lightbox-stage">
                 <div class="lightbox-visual" id="lightboxVisual">
-                    <img id="lightboxImage" src="" alt="">
+                    <img id="lightboxImage" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="">
                 </div>
                 <button type="button" class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous photo">
                     <svg viewBox="0 0 24 24" fill="none" width="22" height="22"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>

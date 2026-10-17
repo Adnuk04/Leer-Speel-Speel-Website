@@ -8,3 +8,10 @@ node_modules/
 
 # Client originals (full-size photos, logo, founder image) - web copies live in assets/images
 _originals/
+
+# Local-only photo picker (thumbnails of the originals) - never commit or upload
+_picker.html
+_picker/
+
+# Wrangler cache
+.wrangler/

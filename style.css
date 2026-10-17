@@ -2,6 +2,27 @@
    Leer Speel-Speel / Play-to-Learn Educational Centre
    ========================================================================== */
 
+/* ---------- Fonts ----------
+   Baloo 2 (headings) and Nunito (text), self-hosted rather than loaded from
+   Google Fonts so nothing third-party blocks the first paint. Each file is
+   Google's Latin subset of the variable font (covers ê, ë and the other
+   Afrikaans letters) and holds every weight the site uses. Both fonts are
+   SIL Open Font License; index.html preloads them. */
+@font-face {
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 600 800;
+    font-display: swap;
+    src: url("assets/fonts/baloo2-latin.woff2") format("woff2");
+}
+@font-face {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400 800;
+    font-display: swap;
+    src: url("assets/fonts/nunito-latin.woff2") format("woff2");
+}
+
 :root {
     --color-bg: #fbfdfb;
     --color-bg-alt: #eff6f0;
@@ -392,6 +413,17 @@ section[id] { scroll-margin-top: var(--header-offset); }
     padding-block: var(--space-6);
     background: var(--section-bg);
 }
+/* Speed: the browser skips laying out a section's content until it is near the
+   screen (about halves the first layout on phones). Only the inner container,
+   so the wavy edges and doodles, which reach outside it, are never clipped.
+   "auto" makes it remember each section's real height once it has been seen. */
+.section > .container {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 900px;
+}
+/* script.js switches the skipping off before any jump to a #section link, so the
+   jump is worked out from real heights rather than the 900px estimates */
+.cv-off .section > .container { content-visibility: visible; }
 .section-alt { --divider: var(--divider-scallop); --divider-size: 56px; }
 .stats { --divider: var(--divider-scallop); --divider-size: 56px; }
 .section::after,
@@ -479,7 +511,6 @@ section[id] { scroll-margin-top: var(--header-offset); }
     transform: translateX(-50%) rotate(-3deg);
 }
 .art-frame--left { transform: rotate(-2deg); }
-.art-frame--right { transform: rotate(2deg); margin-top: 0; }
 .art-frame--banner { max-width: 640px; margin: 0 auto var(--space-5); transform: rotate(-1deg); }
 .section-heading { max-width: 62ch; margin-bottom: var(--space-4); }
 .section-heading-center { margin-inline: auto; text-align: center; }
@@ -548,30 +579,13 @@ section[id] { scroll-margin-top: var(--header-offset); }
     max-width: 380px;
     justify-self: center;
 }
-.founder-photo { margin-top: 0; }
-/* The frame holds a 4:5 portrait, whether it is the placeholder or the real photo */
-.founder-photo img,
-.founder-photo-slot {
+/* The founder's own framed portrait, hung slightly tilted with a soft shadow */
+.founder-photo { margin: 0; transform: rotate(-2deg); }
+.founder-photo img {
     width: 100%;
-    aspect-ratio: 4 / 5;
-    border-radius: calc(var(--radius-md) - 6px);
+    height: auto;
+    filter: drop-shadow(0 14px 18px rgba(22, 66, 91, 0.22));
 }
-.founder-photo img { height: auto; object-fit: cover; }
-.founder-photo-slot {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
-    padding: var(--space-2);
-    border: 2px dashed var(--accent);
-    background: var(--accent-pale);
-    color: var(--accent-ink);
-    font-family: var(--font-heading);
-    font-weight: 700;
-    text-align: center;
-}
-.founder-photo-slot svg { width: 54px; height: 54px; }
 /* "Since 2003": a round badge pinned to the corner of the photo */
 .since-badge {
     position: absolute;
@@ -701,6 +715,25 @@ section[id] { scroll-margin-top: var(--header-offset); }
     .learn-card p { font-size: 0.9rem; }
 }
 
+/* ---------- Photo protection ----------
+   No long-press "Save image" menu on phones and no dragging pictures out
+   (script.js also blocks the right-click menu on them). */
+img, .gallery-item, .lightbox-visual {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+/* A clear layer over gallery and lightbox photos, so a tap or long-press lands on
+   it rather than on the image itself. The tile's label stays readable above it. */
+.gallery-item::after,
+.lightbox-visual::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+}
+.gallery-label { z-index: 1; }
+
 /* ---------- Gallery: photo tiles (shared by preview + albums) ---------- */
 .gallery-grid {
     display: grid;
@@ -752,25 +785,6 @@ section[id] { scroll-margin-top: var(--header-offset); }
     text-transform: uppercase;
 }
 
-/* "Photos coming soon" slot — not interactive, not part of the lightbox */
-.gallery-placeholder {
-    aspect-ratio: 4 / 3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: var(--space-2);
-    border-radius: var(--radius-md);
-    border: 2px dashed var(--accent);
-    background: var(--accent-pale);
-    color: var(--accent-ink);
-    text-align: center;
-    font-family: var(--font-heading);
-    font-weight: 700;
-}
-.gallery-placeholder svg { width: 40px; height: 40px; }
-
 /* ---------- Gallery: preview mosaic ---------- */
 .gallery-preview {
     display: grid;
@@ -803,13 +817,19 @@ section[id] { scroll-margin-top: var(--header-offset); }
     text-align: center;
     font-size: 1.35rem;
 }
-/* Four albums: one row on wide screens, 2 x 2 below 1100px, one column on phones */
+/* Five albums: three then two (centred) on wide screens, two per row below 1100px,
+   one column on phones. --cols sets how many share a row. */
 .album-picker {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-4) var(--space-2);
-    align-items: stretch;
+    --cols: 3;
+    --gap-x: var(--space-3);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-5) var(--gap-x);
+    max-width: 1020px;
+    margin-inline: auto;
 }
+.album-picker > li { flex: 0 0 calc((100% - (var(--cols) - 1) * var(--gap-x)) / var(--cols)); }
 .album-card {
     position: relative;
     display: flex;
@@ -1269,7 +1289,7 @@ section[id] { scroll-margin-top: var(--header-offset); }
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-3);
 }
-/* Campus card: map on top, details underneath. Both cards are the same height. */
+/* Campus card: entrance photo on top, then the map, then the details. Both cards are the same height. */
 .location-card {
     display: flex;
     flex-direction: column;
@@ -1281,8 +1301,16 @@ section[id] { scroll-margin-top: var(--header-offset); }
     transition: transform var(--transition), box-shadow var(--transition);
 }
 .location-card:hover { transform: translateY(-4px); box-shadow: 0 6px 0 var(--accent), var(--shadow-md); }
-.location-map {
+.location-photo {
+    display: block;
+    width: 100%;
+    height: auto;
     aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-bottom: 3px solid var(--accent);
+}
+.location-map {
+    aspect-ratio: 2 / 1;
     background: var(--accent-pale);
     border-bottom: 3px solid var(--accent);
 }
@@ -1294,8 +1322,9 @@ section[id] { scroll-margin-top: var(--header-offset); }
     flex: 1;
     padding: var(--space-3) var(--space-4) var(--space-4);
 }
+/* The campus name, inside the heading but shown as a pill on its own line */
 .location-tag {
-    display: inline-block;
+    display: table;
     margin-bottom: 0.6rem;
     padding: 0.2rem 0.9rem;
     border-radius: 999px;
@@ -1416,8 +1445,8 @@ section[id] { scroll-margin-top: var(--header-offset); }
     border-top: 1px solid rgba(255, 255, 255, 0.12);
     padding-block: var(--space-2);
     font-size: 0.82rem;
-    color: #9fb7c2;
 }
+.footer-bottom p { margin: 0; color: #9fb7c2; } /* 5.1:1 on the navy */
 
 /* ---------- Lightbox ---------- */
 .lightbox {
@@ -1457,6 +1486,7 @@ section[id] { scroll-margin-top: var(--header-offset); }
 }
 .lightbox-stage { position: relative; }
 .lightbox-visual {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1507,6 +1537,48 @@ section[id] { scroll-margin-top: var(--header-offset); }
 .lightbox-prev { left: 10px; }
 .lightbox-next { right: 10px; }
 .lightbox-nav:hover { background: var(--color-green-pale); color: var(--color-green-dark); }
+
+/* ---------- Email address + Copy ----------
+   The address is shown as text with a small Copy chip. "Open in Gmail" and
+   "Send via Gmail" are .desktop-only: shown only where there is a mouse,
+   because on phones the Gmail app drops the address and message. */
+@media not ((hover: hover) and (pointer: fine)) {
+    .desktop-only { display: none !important; } /* must beat .btn / .email-chip display rules */
+}
+.email-item { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.9rem; }
+.email-item .contact-link { overflow-wrap: anywhere; }
+.email-actions { display: inline-flex; flex-wrap: wrap; gap: 0.5rem; }
+.email-chip {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 0.2rem 0.9rem;
+    border: 2px solid var(--accent);
+    border-radius: 999px;
+    background: var(--color-surface);
+    color: var(--accent-ink);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.86rem;
+    line-height: 1.2;
+    transition: background var(--transition), color var(--transition);
+}
+.email-chip:hover, .email-chip:focus-visible { background: var(--accent-ink); border-color: var(--accent-ink); color: #fff; }
+/* On the navy footer */
+.email-chip--dark {
+    min-height: 30px;
+    margin-left: 0.3rem;
+    padding: 0.1rem 0.75rem;
+    border-color: rgba(255, 255, 255, 0.45);
+    background: transparent;
+    color: #fff;
+    font-size: 0.8rem;
+}
+.email-chip--dark:hover, .email-chip--dark:focus-visible { background: #fff; border-color: #fff; color: var(--color-blue); }
+.footer-email { overflow-wrap: anywhere; }
+
+/* Enquiry form: a required field left empty */
+.form-row [aria-invalid="true"] { border-color: var(--hue-red-ink); background: var(--hue-red-pale); }
 
 /* ---------- Quick contact: sticky bar (phones) / floating button (wider screens) ---------- */
 .contact-bar { display: none; }
@@ -1662,7 +1734,7 @@ section[id] { scroll-margin-top: var(--header-offset); }
 }
 
 @media (max-width: 1100px) {
-    .album-picker { grid-template-columns: repeat(2, 1fr); max-width: 780px; margin-inline: auto; gap: var(--space-5) var(--space-3); }
+    .album-picker { --cols: 2; max-width: 780px; }
     .album-card { padding-inline: var(--space-3); }
 }
 
@@ -1679,11 +1751,10 @@ section[id] { scroll-margin-top: var(--header-offset); }
     .since-badge { right: -14px; width: 108px; height: 108px; }
     .since-badge-year { font-size: 2.1rem; }
     .learn-grid { gap: var(--space-2); }
-    .art-frame--right, .section-heading .art-frame { max-width: 520px; margin-inline: auto; }
+    .section-heading .art-frame { max-width: 520px; margin-inline: auto; }
     /* Five stats: "years" takes the full first row, the other four pair up */
     .stats-list { grid-template-columns: repeat(2, 1fr); }
     .stat--since { grid-column: 1 / -1; }
-    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
     .locations-grid { grid-template-columns: 1fr; max-width: 560px; margin-inline: auto; }
     .footer-inner { grid-template-columns: repeat(2, 1fr); }
     .downloads-grid { gap: var(--space-4) var(--space-2); }
@@ -1695,7 +1766,7 @@ section[id] { scroll-margin-top: var(--header-offset); }
         grid-template-rows: repeat(2, clamp(120px, 22vw, 180px));
     }
     .gallery-preview > li:nth-child(n + 4) { display: none; }
-    .album-picker { gap: var(--space-4) var(--space-2); }
+    .album-picker { --gap-x: var(--space-2); row-gap: var(--space-4); }
     .album-card { padding-inline: var(--space-2); }
     .album-btn { padding-inline: 1rem; font-size: 0.95rem; }
 }
@@ -1748,7 +1819,7 @@ section[id] { scroll-margin-top: var(--header-offset); }
 }
 
 @media (max-width: 760px) {
-    .album-picker { grid-template-columns: 1fr; max-width: 400px; margin-inline: auto; gap: var(--space-5); }
+    .album-picker { --cols: 1; max-width: 400px; }
     .downloads-grid, .downloads-grid--guides { grid-template-columns: 1fr; max-width: 420px; margin-inline: auto; }
 
     /* Sticky quick-contact bar replaces the floating button */
@@ -1791,7 +1862,7 @@ section[id] { scroll-margin-top: var(--header-offset); }
 }
 
 @media (max-width: 620px) {
-    .offer-grid, .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .offer-grid { grid-template-columns: 1fr 1fr; }
     .learn-grid { grid-template-columns: 1fr; }
     .learn-card { grid-template-columns: 108px 1fr; }
     .learn-media { min-height: 108px; }
@@ -1802,9 +1873,24 @@ section[id] { scroll-margin-top: var(--header-offset); }
     .form-actions .btn { flex: 1 1 100%; }
     .contact-whatsapp { display: flex; }
     .location-body { padding: var(--space-3); }
-    .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2); }
-    .gallery-placeholder { padding: 0.5rem; font-size: 0.85rem; gap: 0.3rem; }
-    .gallery-placeholder svg { width: 30px; height: 30px; }
+    /* Albums become a swipeable strip: two photos stacked per swipe, the next pair peeking in */
+    .gallery-grid {
+        grid-auto-flow: column;
+        grid-template-columns: none;
+        grid-template-rows: repeat(2, auto);
+        grid-auto-columns: 84%;
+        gap: var(--space-2);
+        margin-inline: calc(-1 * var(--space-2));
+        padding: 4px var(--space-2) var(--space-1);
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+        scroll-padding-inline: var(--space-2);
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    .gallery-grid::-webkit-scrollbar { display: none; }
+    .gallery-grid > li { scroll-snap-align: start; }
 
     /* Highlights become a swipeable carousel: one picture at a time, the next one peeking in */
     .gallery-preview {
@@ -1832,6 +1918,7 @@ section[id] { scroll-margin-top: var(--header-offset); }
         font-size: 0.9rem;
         color: var(--accent-ink);
     }
+    .album .swipe-hint { margin-bottom: var(--space-1); }
     .lightbox { padding: var(--space-1); }
     .lightbox-panel { padding: 3.25rem var(--space-2) var(--space-2); max-width: 100%; }
     .lightbox-meta { flex-direction: column; gap: 0.15rem; }
@@ -1842,8 +1929,10 @@ section[id] { scroll-margin-top: var(--header-offset); }
     .album-modal-bar { padding: 0.6rem var(--space-2); }
     .album-modal-body { padding: var(--space-2); }
     .album-head-art { width: 64px; }
-    /* The four album tabs sit two by two so none hide off-screen */
-    .album-tabs { flex: 1; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.35rem; }
+    /* The five album tabs sit on two rows (three, then two) so none hide off-screen */
+    .album-tabs { flex: 1; display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.35rem; }
+    .album-tabs .album-tab { grid-column: span 2; }
+    .album-tabs .album-tab:nth-child(n+4) { grid-column: span 3; }
     .album-tab { justify-content: center; min-height: 40px; padding: 0.3rem 0.35rem; font-size: 0.84rem; line-height: 1.15; text-align: center; white-space: normal; }
     .album-tab::before { display: none; }
 

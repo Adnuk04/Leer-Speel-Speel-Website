@@ -4,7 +4,9 @@ Every crayon doodle and illustration added in the Round 2 edits (9 October 2026)
 
 This is a working note, not site content: leave it out of the Cloudflare upload folder.
 
-**Round 3 (11 October 2026):** the school's real photos replaced eight of the ten illustrations, and those files were deleted. Only `illustration-playground.webp` and `illustration-classroom.webp` are still on the site (Premises album and two gallery highlights), until photos of the buildings arrive. The prompts below are kept in case any are needed again.
+**Round 3 (11 October 2026):** the school's real photos replaced eight of the ten illustrations, and those files were deleted. Only `illustration-playground.webp` and `illustration-classroom.webp` stayed on, until photos of the buildings arrived.
+
+**Session 4 (17 October 2026):** the real campus photos replaced those last two, and the files were deleted. No fal.ai illustrations remain on the site; only the doodles do. The prompts below are kept in case any are needed again.
 
 ## Models
 
