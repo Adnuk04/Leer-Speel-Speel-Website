@@ -682,13 +682,6 @@ section[id] { scroll-margin-top: var(--header-offset); }
     object-fit: cover;
     object-position: var(--pos, center);
 }
-.learn-media--icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--accent-ink);
-}
-.learn-media--icon svg { width: 56%; max-width: 78px; height: auto; }
 .learn-num {
     position: absolute;
     top: 8px;
